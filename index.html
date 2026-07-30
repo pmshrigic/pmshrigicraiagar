@@ -168,6 +168,58 @@
                 }
             }
         </script>
+        <!-- ================= फोटो गैलरी सेक्शन (बटन और ग्रिड) ================= -->
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+            <button onclick="toggleGallery()" style="background: linear-gradient(135deg, #002147, #003366); color: white; width: 100%; text-align: left; padding: 15px 20px; font-size: 18px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <span>📸 फोटो गैलरी (Photo Gallery)</span>
+                <span id="gallery-btn-icon">➕ Click Here</span>
+            </button>
+            
+            <div id="gallery-grid-box" style="display: none; transition: 0.3s; margin-top: 15px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: #fff; padding: 15px; border-radius: 6px;">
+                    
+                    <!-- इमेज 1: लोक नृत्य -->
+                    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <img src="https://ibb.co" alt="Folk Dance" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">सांस्कृतिक गतिविधि - लोक नृत्य</div>
+                    </div>
+                    
+                    <!-- इमेज 2: लाइब्रेरी -->
+                    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <img src="https://ibb.co" alt="Library" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">विद्यालय पुस्तकालय (Library)</div>
+                    </div>
+                    
+                    <!-- इमेज 3: स्टेम लैब -->
+                    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <img src="https://ibb.co" alt="STEM Lab" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">स्टेम प्रयोगशाला (Science Lab)</div>
+                    </div>
+                    
+                    <!-- इमेज 4: योग -->
+                    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <img src="https://ibb.co" alt="Yoga" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">शारीरिक विकास - योग शिविर</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= गैलरी चालू करने का जावास्क्रिप्ट लॉजिक ================= -->
+        <script>
+            function toggleGallery() {
+                var box = document.getElementById("gallery-grid-box");
+                var icon = document.getElementById("gallery-btn-icon");
+                if (box.style.display === "none") {
+                    box.style.display = "block";
+                    icon.innerHTML = "➖ Close";
+                } else {
+                    box.style.display = "none";
+                    icon.innerHTML = "➕ Click Here";
+                }
+            }
+        </script>
 
 </div>
     <!-- दाईं तरफ का सूचना पट्ट (Notice Board) -->
