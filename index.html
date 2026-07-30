@@ -12,11 +12,10 @@
 
         /* Top Bar & Header */
         .top-bar { background-color: #002147; color: #fff; padding: 8px 20px; font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; }
-        .top-bar a { color: #ffbc00; text-decoration: underline; }
         header { background: #ffffff; padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-area { display: flex; align-items: center; }
         
-        /* School Custom Logo Styling */
+        /* Fixed Logo Design using Official PM SHRI Image */
         .school-custom-logo { width: 110px; height: 110px; margin-right: 20px; display: flex; align-items: center; justify-content: center; }
         .school-custom-logo img { width: 100%; height: 100%; object-fit: contain; }
 
@@ -34,17 +33,17 @@
         .hero h2 { font-size: 42px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
         .hero p { font-size: 20px; color: #ffbc00; font-weight: 500; }
 
-        /* Main Content Grid */
+        /* Main Grid Container */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
         
-        /* Section Design */
-        .main-panel, .side-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        /* Section Panels */
+        .main-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; }
+        .side-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content; }
         .section-title { font-size: 22px; color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 8px; display: inline-block; }
         
-        /* Tab Switching Logical Visibility */
+        /* Tab System Visibility */
         .tab-content { display: none; width: 100%; }
         .tab-content.active-tab { display: block; }
-        .full-width-panel { grid-column: span 2; }
 
         /* Photo Gallery Styling */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 15px; margin-bottom: 35px; }
@@ -53,15 +52,15 @@
         .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .gallery-caption { padding: 10px; text-align: center; font-weight: 600; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0; }
 
-        /* Principal Signature Style */
+        /* Principal Signature */
         .principal-sign { margin-top: 20px; text-align: right; font-weight: bold; color: #002147; margin-bottom: 30px; }
         .principal-sign span { display: block; font-size: 14px; color: #555; font-weight: normal; }
 
-        /* Info Grid for History/Academics */
+        /* Info Grid Cards */
         .info-card { background: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #002147; margin-bottom: 20px; }
         .info-card h4 { color: #002147; margin-bottom: 8px; font-size: 18px; }
 
-        /* Table Styling for Staff List */
+        /* Staff Table Styling */
         .staff-table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 30px; font-size: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         .staff-table th, .staff-table td { border: 1px solid #e2e8f0; padding: 14px; text-align: left; }
         .staff-table th { background-color: #002147; color: white; }
@@ -81,7 +80,7 @@
         footer { background-color: #001530; color: #a0aec0; padding: 40px 20px; text-align: center; font-size: 15px; margin-top: 60px; }
         footer p { color: #fff; margin-bottom: 10px; }
 
-        /* Responsive Design */
+        /* Responsive Layout */
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
             header { flex-direction: column; text-align: center; }
@@ -89,8 +88,7 @@
             .school-custom-logo { margin-right: 0; margin-bottom: 15px; }
             nav ul { flex-direction: column; text-align: center; }
             .hero h2 { font-size: 30px; }
-            .staff-table { font-size: 13px; }
-            .staff-table th, .staff-table td { padding: 8px; }
+            .staff-table { font-size: 13px; padding: 8px; }
         }
     </style>
 </head>
@@ -105,9 +103,9 @@
 <!-- School Main Header -->
 <header>
     <div class="logo-area">
-        <!-- School Custom Image Logo -->
+        <!-- School Custom Image Logo System linked with Direct Image Link -->
         <div class="school-custom-logo">
-            <img src="logo.png" alt="PM Shri GIC Raiagar Official Logo">
+            <img src="https://ibb.co" alt="PM Shri GIC Raiagar Official Logo">
         </div>
 
         <div class="school-name">
@@ -117,26 +115,25 @@
     </div>
 </header>
 
-<!-- Navigation Menu -->
+<!-- Navigation Menu Links -->
 <nav>
     <ul>
-        <li><a onclick="switchTab('home-tab')" id="nav-home-tab" class="active">मुख्य पृष्ठ</a></li>
-        <li><a onclick="switchTab('staff-tab')" id="nav-staff-tab">स्टाफ सूची</a></li>
+        <li><a onclick="switchTab('home-view')" id="btn-home-view" class="active">मुख्य पृष्ठ</a></li>
+        <li><a onclick="switchTab('staff-view')" id="btn-staff-view">स्टाफ सूची</a></li>
     </ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero Banner View -->
 <div class="hero">
     <h2>ज्ञानं परमं भूषणम्</h2>
     <p>PM Shri राजकीय इंटर कॉलेज राईआगर में आपका स्वागत है</p>
 </div>
 
-<!-- Main Body Layout -->
+<!-- Main Body Core Layout -->
 <div class="container">
     
-    <!-- ================= TAB 1: MAIN HOMEPAGE CONTENT ================= -->
-    <div id="home-tab" class="main-panel tab-content active-tab">
-        
+    <!-- ================= VIEW 1: HOME PAGE SECTION ================= -->
+    <div id="home-view" class="main-panel tab-content active-tab">
         <!-- School History Section -->
         <h3 class="section-title">हमारा इतिहास और परिचय (Our History)</h3>
         <p>PM Shri राजकीय इंटर कॉलेज राईआगर की स्थापना वर्ष <strong>1989</strong> में हुई थी। पिछले तीन दशकों से अधिक समय से यह संस्थान क्षेत्र में शिक्षा की अलख जगा रहा है। हमारा विद्यालय एक सह-शिक्षा (Co-education) संस्थान है, जहाँ छात्र और छात्राएं दोनों एक साथ सौहार्दपूर्ण वातावरण में ज्ञान प्राप्त करते हैं। वर्तमान में विद्यालय को प्रतिष्ठित <strong>PM Shri</strong> योजना के तहत आधुनिक सुविधाओं से सुसज्जित किया जा रहा है।</p>
@@ -157,11 +154,10 @@
             <br>• 🎨 कला वर्ग (Arts Stream) - सामाजिक विज्ञान और रचनात्मक विषयों के लिए।</p>
         </div>
 
-        <!-- School Gallery Section -->
+        <!-- School Gallery Section with ImgBB links uploaded by you -->
         <div style="margin-top: 40px;">
             <h3 class="section-title">फोटो गैलरी (Photo Gallery)</h3>
             <p>विद्यालय के शैक्षणिक वातावरण, गतिविधियों और बुनियादी ढांचे की वास्तविक झलकियां:</p>
             
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://ibb.co" alt="Gallery 1"><div class="gallery-caption">विद्यालय गतिविधि - १</div></div>
-                <div class="gallery-item"><img src="https://ibb.co" alt="Gallery 2"><div class="gallery-caption">विद्यालय गतिविधि - २</div></div>
+                <div class="gallery-item"><img src="https://ibb.co" alt="Img 1"><div class="gallery-caption">विद्यालय गतिविधि - १</div></div>
