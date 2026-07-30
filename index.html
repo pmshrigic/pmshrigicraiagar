@@ -103,13 +103,11 @@
 <!-- Navigation Menu -->
 <nav>
     <ul>
-        <li><a href="#">मुख्य पृष्ठ (Home)</a></li>
-        <li><a href="#">हमारे बारे में (About Us)</a></li>
-        <li><a href="#">स्टाफ सूची (Staff)</a></li>
-        <li><a href="#">गैलरी (Gallery)</a></li>
-        <li><a href="#">संपर्क (Contact)</a></li>
+        <li><a onclick="switchTab('home-tab')" id="nav-home-tab" class="active" style="cursor:pointer; padding:15px 25px; color:#fff; display:block; font-weight:600;">मुख्य पृष्ठ</a></li>
+        <li><a onclick="switchTab('staff-tab')" id="nav-staff-tab" style="cursor:pointer; padding:15px 25px; color:#fff; display:block; font-weight:600;">स्टाफ सूची</a></li>
     </ul>
 </nav>
+
 
 <!-- Hero Section -->
 <div class="hero">
@@ -142,8 +140,8 @@
             <br>• 🔬 विज्ञान वर्ग (Science Stream) - उच्च तकनीकी और वैज्ञानिक शिक्षा के लिए।
             <br>• 🎨 कला वर्ग (Arts Stream) - सामाजिक विज्ञान और रचनात्मक विषयों के लिए।</p>
         
-
-                <table class="staff-table">
+<div id="staff-tab" class="tab-content" style="display:none; grid-column: span 2; width:100%;">
+  <table class="staff-table">
             <thead>
                 <tr>
                     <th>नाम (Name)</th>
@@ -196,6 +194,32 @@
                 <!-- व्यावसायिक शिक्षा-->
                 <tr class="staff-category"><td colspan="2">व्यावसायिक शिक्षा (Vocational Education)</td></tr>
                 <tr><td>श्री सुनील सिंह</td><td>व्यावसायिक शिक्षक (Vocational Teacher)</td></tr>
-            </tbody>
+            <script>
+    function switchTab(tabId) {
+        // दोनों पेजों को छुपाएं
+        document.getElementById('home-tab').style.display = 'none';
+        document.getElementById('staff-tab').style.display = 'none';
+        
+        // मेनू बटन्स का एक्टिव कलर हटाएं
+        document.getElementById('nav-home-tab').classList.remove('active');
+        document.getElementById('nav-staff-tab').classList.remove('active');
+        
+        // चुने गए पेज को दिखाएं
+        if(tabId === 'home-tab') {
+            document.getElementById('home-tab').style.display = 'block';
+            document.getElementById('side-notice-panel').style.display = 'block';
+        } else {
+            document.getElementById('staff-tab').style.display = 'block';
+            document.getElementById('side-notice-panel').style.display = 'none';
+        }
+        
+        // चुने गए बटन को एक्टिव करें
+        document.getElementById('nav-' + tabId).classList.add('active');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+</tbody>
         </table>
+    </div>
+
      
