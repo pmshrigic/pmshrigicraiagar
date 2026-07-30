@@ -105,12 +105,15 @@
 </header>
 
 <!-- 3. नेविगेशन मेनू बार -->
+<!-- 3. नेविगेशन मेनू बार (Updated with Gallery Button) -->
 <nav>
     <ul>
         <li><a onclick="switchTab('home-view')" id="btn-home-view" class="active">मुख्य पृष्ठ</a></li>
+        <li><a onclick="switchTab('gallery-view')" id="btn-gallery-view">फोटो गैलरी</a></li>
         <li><a onclick="switchTab('staff-view')" id="btn-staff-view">स्टाफ सूची</a></li>
     </ul>
 </nav>
+
 
 <!-- 4. मुख्य बैनर फोटो -->
 <div class="hero">
@@ -141,9 +144,12 @@
             </div>
 
             <!-- फोटो गैलरी (7 असली तस्वीरें) -->
-            <h3 class="section-title" style="margin-top: 40px;">फोटो गैलरी (Photo Gallery)</h3>
+                <!-- ================= VIEW 3: GALLERY VIEW SECTION ================= -->
+    <div id="gallery-view" class="main-panel tab-content">
+ <h3 class="section-title" style="margin-top: 40px;">फोटो गैलरी (Photo Gallery)</h3>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://ibb.co"><div class="gallery-caption">विद्यालय गतिविधि - १</div></div>
+                    </div>
+ <div class="gallery-item"><img src="https://ibb.co"><div class="gallery-caption">विद्यालय गतिविधि - १</div></div>
                 <div class="gallery-item"><img src="https://ibb.co"><div class="gallery-caption">विद्यालय गतिविधि - २</div></div>
                 <div class="gallery-item"><img src="https://ibb.co"><div class="gallery-caption">विद्यालय गतिविधि - ३</div></div>
                 <div class="gallery-item"><img src="https://ibb.co"><div class="gallery-caption">विद्यालय गतिविधि - ४</div></div>
@@ -233,25 +239,22 @@
 </footer>
 <script>
     function switchTab(viewId) {
-        // 1. दोनों व्यूज को पूरी तरह छुपाएं
+        // 1. सभी व्यूज (Home, Staff, Gallery) को पूरी तरह छुपाएं
         document.getElementById('home-view').classList.remove('active-tab');
         document.getElementById('staff-view').classList.remove('active-tab');
+        document.getElementById('gallery-view').classList.remove('active-tab');
         
-        // 2. मेनू बार बटन्स का एक्टिव हाइलाइट कलर हटाएं
+        // 2. सभी मेनू बटन्स का एक्टिव हाइलाइट कलर हटाएं
         document.getElementById('btn-home-view').classList.remove('active');
         document.getElementById('btn-staff-view').classList.remove('active');
+        document.getElementById('btn-gallery-view').classList.remove('active');
         
-        // 3. चुने गए सही व्यू को एक्टिव करके स्क्रीन पर रेंडर करें
         var gridLayout = document.querySelector('.container');
         var noticeWidget = document.getElementById('notice-side-panel');
         
-        if (viewId === 'staff-view') {
-            // स्टाफ पेज खुलने पर नोटिस बोर्ड छुपाएं और टेबल को फुल स्क्रीन चौड़ाई दें
-            gridLayout.style.gridTemplateColumns = '1fr';
-            noticeWidget.style.display = 'none'; 
-            document.getElementById('staff-view').classList.add('active-tab');
-        } else {
-            // मुख्य पृष्ठ खुलने पर साइडबार नोटिस बोर्ड वापस लाएं
+        // 3. चुने गए सही व्यू के अनुसार लेआउट एडजस्ट करें
+        if (viewId === 'home-view') {
+            // मुख्य पृष्ठ पर नोटिस बोर्ड वापस लाएं (डैशबोर्ड लेआउट)
             if (window.innerWidth > 768) {
                 gridLayout.style.gridTemplateColumns = '2fr 1fr';
             } else {
@@ -259,15 +262,19 @@
             }
             noticeWidget.style.display = 'block';
             document.getElementById('home-view').classList.add('active-tab');
+        } else {
+            // स्टाफ या गैलरी पेज खुलने पर नोटिस बोर्ड छुपाएं और फुल स्क्रीन चौड़ाई दें
+            gridLayout.style.gridTemplateColumns = '1fr';
+            noticeWidget.style.display = 'none'; 
+            document.getElementById(viewId).classList.add('active-tab');
         }
         
-        // 4. क्लिक किए गए बटन को हाइलाइट करें
+        // 4. क्लिक किए गए वर्तमान बटन को एक्टिव (हाइलाइट) करें
         document.getElementById('btn-' + viewId).classList.add('active');
         
         // 5. पेज को स्मूथली ऊपर स्क्रॉल करें
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
-
 </body>
 </html>
