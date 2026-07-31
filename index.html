@@ -319,6 +319,15 @@
 <footer>
     <p>&copy; 2026 PM Shri GIC राईआगर. सर्वाधिकार सुरक्षित।</p>
 </footer>
+<script>
+const slides = document.querySelectorAll(".slider img");
+let i = 0;
 
+setInterval(() => {
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
+}, 3000);
+</script>
 </body>
 </html>
