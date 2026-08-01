@@ -256,7 +256,8 @@
 
 </div> <!-- 🔒 मुख्य कंटेनर (.container) का div यहाँ बंद हुआ -->
   <!-- ================= 1. एक पेड़ माँ के नाम स्लाइडर सेक्शन ================= -->
-    <section class="tree-slider" style="margin-top: 40px;"> 
+       <!-- ================= 1. एक पेड़ माँ के नाम स्लाइडर सेक्शन ================= -->
+    <section class="tree-slider" style="margin-top: 40px; width: 100%;"> 
      <h2> एक पेड़ माँ के नाम | हर घर एक पेड़ </h2> 
      <div class="slider"> 
        <img src="tree1.jpg" class="active"> 
@@ -272,7 +273,7 @@
 
     <!-- ================= 2. प्रधानाचार्य का संदेश (Principal's Message) ================= -->
     <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block; margin-top: 40px;">प्रधानाचार्य का संदेश (Principal's Message)</h3> 
-    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 30px;"> 
+    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 40px; width: 100%;"> 
       <div style="flex: 1; min-width: 150px; max-width: 200px; border: 3px solid #002147; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"> 
         <img src="principal.png" alt="श्री भगवती प्रसाद पंत" style="width: 100%; height: auto; display: block; object-fit: cover;"> 
       </div> 
@@ -281,13 +282,64 @@
         <div style="margin-top: 20px; text-align: right; font-weight: bold; color: #002147;"> 
           श्री भगवती प्रसाद पंत
           <span style="display: block; font-size: 14px; color: #555; font-weight: normal; margin-top: 3px;">प्रधानाचार्य, पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर</span> 
-        </div>
-       </div>
+        </div> 
+      </div> 
+    </div>
 
+    <!-- ================= 3. महत्वपूर्ण सरकारी और शैक्षणिक लिंक्स (नीली पट्टी से ऊपर) ================= -->
+    <div style="margin-top: 40px; margin-bottom: 40px; width: 100%; font-family: 'Segoe UI', sans-serif;">
+      <h3 style="font-size: 22px; color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">महत्वपूर्ण लिंक्स (Important Web Links)</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+        
+        <!-- Link 1: PM SHRI Scheme -->
+        <a href="https://education.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #ffbc00; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#fffdf0'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">🏛️</span> PM SHRI Scheme (Official Portal)
+        </a>
 
+        <!-- Link 2: DIKSHA Portal -->
+        <a href="https://diksha.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">📲</span> DIKSHA Portal (Digital Infrastructure)
+        </a>
 
-       
-<!-- ================= 3. आधिकारिक वेबसाइट फ़ुटर (Blue Portion) ================= -->
+        <!-- Link 3: UBSE -->
+        <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">🌐</span> Uttarakhand Board of School Education (UBSE)
+        </a>
+
+        <!-- Link 4: SCERT -->
+        <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">📚</span> State Council of Educational Research & Training (SCERT)
+        </a>
+
+        <!-- Link 5: NDLI -->
+        <a href="https://iitkgp.ac.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">📖</span> National Digital Library of India (NDLI)
+        </a>
+
+        <!-- Link 6: SWAYAM -->
+        <a href="https://swayam.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">🎓</span> SWAYAM Central (Online Learning Platform)
+        </a>
+
+        <!-- Link 7: Anti-Ragging -->
+        <a href="https://antiragging.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #d32f2f; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#fff5f5'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #d32f2f; margin-right: 10px; font-size: 18px;">🛡️</span> National Anti-Ragging Monitoring Agency Centre
+        </a>
+
+        <!-- Link 8: UCOST -->
+        <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600; transition: 0.2s;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fff'; this.style.transform='none';">
+          <span style="color: #ffbc00; margin-right: 10px; font-size: 18px;">🔬</span> Uttarakhand State Council for Science & Technology (UCOST)
+        </a>
+
+      </div>
+    </div>
+
+  </div> <!-- 🔒 मुख्य पृष्ठ (home-section) का div यहाँ बंद हुआ -->
+
+</div> <!-- 🔒 मुख्य कंटेनर (.container) का div यहाँ बंद हुआ -->
+
+<!-- ================= 4. आधिकारिक वेबसाइट फ़ुटर (Blue Portion) ================= -->
 <footer> 
  <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर. सर्वाधिकार सुरक्षित।</p> 
  <div class="credit-footer" style="overflow: hidden; background: #002147; padding: 5px 0; margin-top: 10px;"> 
