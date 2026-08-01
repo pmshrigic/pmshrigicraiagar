@@ -47,15 +47,12 @@
    footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
  </style> 
 </head> 
-<body> 
-
-<!-- टॉप कांटेक्ट इनफार्मेशन रिबन --> 
+<body>  
 <div class="top-bar"> 
  <div>📍 Raiagar, Uttarakhand, India</div> 
  <div>📞 संपर्क: <a href="tel:+918057513300">+91 8057513300</a></div> 
  <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div> 
-</div> 
-<!-- विद्यालय लोगो और नाम एरिया --> 
+</div>  
 <header> 
  <div class="logo-area" style="display: flex; align-items: center;"> 
    <div class="school-custom-logo"> 
@@ -67,8 +64,6 @@
    </div> 
  </div> 
 </header> 
-
-<!-- डायनामिक नेविगेशन लिंक्स बटन्स --> 
 <nav> 
  <ul> 
    <li><a id="tab-home" class="active-tab" onclick="switchTab(event, 'home-section')">मुख्य पृष्ठ</a></li> 
@@ -76,17 +71,11 @@
    <li><a id="tab-gallery" onclick="switchTab(event, 'gallery-section')">फोटो गैलरी</a></li> 
  </ul> 
 </nav> 
-
-<!-- विद्यालय मुख्य द्वार बैनर चित्र --> 
 <div class="hero"> 
  <img src="gate.png" alt="PM SHRI GIC Raiagar" style="width:100%; height:300px; object-fit:cover;"> 
 </div> 
-
-<!-- मुख्य कंटेनर बॉक्स शुरुआत --> 
 <div class="container"> 
-
-  <!-- ================= टैब 1: मुख्य पृष्ठ (HOME PAGE SECTION) की शुरुआत ================= --> 
-  <div id="home-section" class="page-section active-section"> 
+ <div id="home-section" class="page-section active-section"> 
     <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 30px;"> 
         
        <!-- बायाँ भाग: इतिहास (Our History) --> 
@@ -107,9 +96,7 @@
            <p>इंटर स्तर पर छात्र एवं छात्राओं के लिए दो मुख्य शाखाएं उपलब्ध हैं:<br>• विज्ञान वर्ग (Science Stream)<br>• कला वर्ग (Arts Stream)</p> 
          </div> 
        </div> 
-
-       <!-- दायाँ भाग: सूचना पट्ट (Notice Board) --> 
-       <div style="flex: 1; min-width: 280px; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #ffbc00; height: fit-content;"> 
+<div style="flex: 1; min-width: 280px; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #ffbc00; height: fit-content;"> 
          <h3 style="font-size: 20px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">सूचना पट्ट (Notice Board)</h3> 
          <div style="background: linear-gradient(135deg, #fffdf0, #fff9e6); padding: 15px; border-radius: 6px; border-left: 5px solid #ffbc00;"> 
            <ul style="list-style: none; padding: 0;"> 
@@ -121,7 +108,14 @@
              <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 10px;"> 
                <marquee behavior="scroll" direction="left" scrollamount="5"> 
                  <strong>स्वतंत्रта दिवस समारोह:</strong> आगामी 15 अगस्त को विद्यालय परिसर में स्वतंत्रता दिवस का भव्य एवं सांस्कृतिक आयोजन किया जाएगा। सभी छात्र-छात्राओं की उपस्थिति अनिवार्य है.
-               </marquee> 
+               </marquee> <div style="width:100%; background:#fff8dc; border:2px solid #0b5ed7; padding:8px; overflow:hidden; margin-bottom: 30px;"> 
+      <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"> 
+        <a href="students.pdf" target="_blank" style="color:#d40000; font-size:18px; font-weight:bold; text-decoration:none;"> 
+          ★ NEW: विद्यार्थियों की सदनवार सूचना – PDF देखने के लिए यहाँ क्लिक करें ★
+        </a> 
+      </marquee> 
+    </div>
+  </div> 
              </li> 
              <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 15px;"> 
                <marquee behavior="scroll" direction="left" scrollamount="5"> 
@@ -136,18 +130,6 @@
          </div> 
        </div> 
     </div> 
-
-    <!-- न्यू स्क्रॉलिंग रिबन (सदनवार सूचना) --> 
-    <div style="width:100%; background:#fff8dc; border:2px solid #0b5ed7; padding:8px; overflow:hidden; margin-bottom: 30px;"> 
-      <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"> 
-        <a href="students.pdf" target="_blank" style="color:#d40000; font-size:18px; font-weight:bold; text-decoration:none;"> 
-          ★ NEW: विद्यार्थियों की सदनवार सूचना – PDF देखने के लिए यहाँ क्लिक करें ★
-        </a> 
-      </marquee> 
-    </div>
-  </div> <!-- 🔒 मुख्य पृष्ठ (home-section) का div यहाँ बंद हुआ -->
-
-    <!-- ================= 🟦 टैब 2: विद्यालय परिवार (STAFF SECTION) ================= --> 
   <div id="staff-section" class="page-section"> 
     <div class="main-panel"> 
       <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">🏫 विद्यालय परिवार (Our Staff Details)</h2> 
@@ -207,10 +189,7 @@
        </tbody> 
       </table> 
     </div> 
-  </div> <!-- 🔒 staff-section बंद -->
-
-
-  <!-- ================= 🟩 टैब 3: फोटो गैलरी (GALLERY SECTION) ================= --> 
+  </div> 
   <div id="gallery-section" class="page-section"> 
     <div class="main-panel"> 
       <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">🖼️ फोटो गैलरी (Photo Gallery)</h2> 
@@ -249,9 +228,7 @@
         </div> 
       </div> 
     </div> 
-  </div> <!-- 🔒 gallery-section बंद -->
-  <!-- ================= मुख्य पृष्ठ (Home Page) के निचले हिस्से का कंटेंट ================= -->
-  <!-- ध्यान दें: यह सब मुख्य पृष्ठ के एक्टिव रहने पर ही दिखेगा -->
+  </div> 
   <div style="width: 100%; display: block;" class="home-bottom-content">
 
     <!-- 1. एक पेड़ माँ के नाम स्लाइडर सेक्शन --> 
@@ -268,8 +245,7 @@
        <img src="tree8.jpg"> 
      </div> 
     </section> 
-    
-    <!-- 2. प्रधानाचार्य का संदेश (Principal's Message) --> 
+     <!-- 2. प्रधानाचार्य का संदेश (Principal's Message) --> 
     <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block; margin-top: 40px;">प्रधानाचार्य का संदेश (Principal's Message)</h3> 
     <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 40px; width: 100%;"> 
       <div style="flex: 1; min-width: 150px; max-width: 200px; border: 3px solid #002147; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"> 
@@ -333,11 +309,8 @@
       </div>
     </div>
 
-  </div> <!-- 🔒 .home-bottom-content बंद -->
-
-</div> <!-- 🔒 पूरी वेबसाइट का मुख्य कंटेनर बॉक्स (.container) यहाँ बंद हुआ --> 
-
-<!-- ================= 4. आधिकारिक वेबसाइट फ़ुटर (Blue Portion) ================= --> 
+  </div> 
+</div> 
 <footer> 
  <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर. सर्वाधिकार सुरक्षित।</p> 
  <div class="credit-footer" style="overflow: hidden; background: #002147; padding: 5px 0; margin-top: 10px;"> 
@@ -346,8 +319,6 @@
    </marquee> 
  </div> 
 </footer> 
-
-<!-- ================= मुख्य जावास्क्रिप्ट कंट्रोल्स ================= --> 
 <script> 
 // टैब्स को सही और सुरक्षित तरीके से स्विच करने का इंजन 
 function switchTab(event, sectionId) { 
