@@ -231,29 +231,31 @@
         </div> 
       
   
+    <!-- ================= मुख्य पृष्ठ (Home Section) के अंदर स्लाइडर ================= -->
+    <!-- एक पेड़ माँ के नाम स्लाइडर सेक्शन (अब यह सिर्फ मुख्य पृष्ठ पर ही दिखेगा) -->
+    <section class="tree-slider" style="margin-top: 40px;"> 
+     <h2> एक पेड़ माँ के नाम | हर घर एक पेड़ </h2> 
+     <div class="slider"> 
+       <img src="tree1.jpg" class="active"> 
+       <img src="tree2.jpg" class="active"> 
+       <img src="tree3.jpg"> 
+       <img src="tree4.jpg"> 
+       <img src="tree5.jpg"> 
+       <img src="tree6.jpg"> 
+       <img src="tree7.jpg"> 
+       <img src="tree8.jpg"> 
+     </div> 
+    </section> 
 
-  <!-- एक पेड़ माँ के नाम स्लाइडर सेक्शन -->
-  <section class="tree-slider"> 
-   <h2> एक पेड़ माँ के नाम | हर घर एक पेड़ </h2> 
-   <div class="slider"> 
-     <img src="tree1.jpg" class="active"> 
-     <img src="tree2.jpg" class="active"> 
-     <img src="tree3.jpg"> 
-     <img src="tree4.jpg"> 
-     <img src="tree5.jpg"> 
-     <img src="tree6.jpg"> 
-     <img src="tree7.jpg"> 
-     <img src="tree8.jpg"> 
-   </div> 
-  </section> 
+  </div> <!-- 🛑 यहाँ मुख्य पृष्ठ (home-section) का div बंद हो रहा है -->
 
-</div> <!-- .container का मुख्य बंद होना -->
+</div> <!-- 🛑 यहाँ पूरी वेबसाइट का मुख्य कंटेनर (.container) बंद हो रहा है -->
 
-<!-- आधिकारिक वेबसाइट फ़ुटर (Footer) सेक्शन -->
+<!-- आधिकारिक वेबसाइट फ़ुटर (Footer) सेक्शन (यह हमेशा नीचे रहेगा) -->
 <footer> 
  <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर. सर्वाधिकार सुरक्षित।</p> 
- <div class="credit-footer"> 
-   <marquee behavior="scroll" direction="left" scrollamount="5"> 
+ <div class="credit-footer" style="overflow: hidden; background: #002147; padding: 5px 0;"> 
+   <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();" style="color: #fff;"> 
      ★ Official Website of PM SHRI Government Inter College Raiagar • Designed and Maintained by the Physics Department under the supervision of our Principal, Shri Bhagwati Prasad Pant. ★
    </marquee> 
  </div> 
@@ -278,23 +280,43 @@ function switchTab(event, sectionId) {
   });
   
   // यूज़र द्वारा क्लिक किए गए सेक्शन को लाइव दिखाएं और बटन को हाईलाइट करें
-  document.getElementById(sectionId).classList.add('active-section');
+  if(document.getElementById(sectionId)) {
+    document.getElementById(sectionId).classList.add('active-section');
+  }
   event.currentTarget.classList.add('active-tab');
 }
 
 // 2. 'एक पेड़ माँ के नाम' ऑटो-प्ले इमेज स्लाइडर लॉजिक
 const images = document.querySelectorAll(".slider img"); 
 let index = 0; 
+
 function showPair(){ 
  if(images.length === 0) return;
+ 
+ // सभी तस्वीरों से पहले active क्लास हटाएं
  images.forEach(img => img.classList.remove("active")); 
+ 
+ // पहली तस्वीर को एक्टिव करें
  images[index].classList.add("active"); 
- images[(index+1)%images.length].classList.add("active"); 
- index += 2; 
- if(index >= images.length) index = 0; 
+ 
+ // यदि दूसरी तस्वीर उपलब्ध है, तो उसे भी एक्टिव करें (2-कॉलम ग्रिड के लिए अनिवार्य)
+ if (images.length > 1) {
+   let nextIndex = (index + 1) % images.length;
+   images[nextIndex].classList.add("active");
+ }
+ 
+ // इंडेक्स को 2 कदम आगे बढ़ाएं
+ index = (index + 2) % images.length;
+ 
+ // अगर इंडेक्स आखिरी विषम संख्या पर अटकता है, तो वापस 0 पर लाएं
+ if (images.length % 2 !== 0 && index === 0) {
+   index = 0;
+ }
 } 
+
+// स्लाइडर शुरू करें
 showPair(); 
-setInterval(showPair, 3000); // हर 3 सेकंड में तस्वीरें अपने आप बदलेंगी
+setInterval(showPair, 3000); // हर 3 सेकंड में तस्वीरें बदलेंगी
 </script> 
 
 </body> 
