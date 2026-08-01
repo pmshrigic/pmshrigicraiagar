@@ -231,8 +231,22 @@
         </div> 
       
   
-    <!-- ================= मुख्य पृष्ठ (Home Section) के अंदर स्लाइडर ================= -->
-    <!-- एक पेड़ माँ के नाम स्लाइडर सेक्शन (अब यह सिर्फ मुख्य पृष्ठ पर ही दिखेगा) -->
+        <!-- ================= प्रधानाचार्य का संदेश (Principal's Message) ================= -->
+    <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block; margin-top: 30px;">प्रधानाचार्य का संदेश (Principal's Message)</h3> 
+    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 30px;"> 
+      <div style="flex: 1; min-width: 150px; max-width: 200px; border: 3px solid #002147; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"> 
+        <img src="principal.png" alt="श्री भगवती प्रसाद पंत" style="width: 100%; height: auto; display: block; object-fit: cover;"> 
+      </div> 
+      <div style="flex: 2; min-width: 280px;"> 
+        <p>प्रिय छात्रों, अभिभावकों और शुभचिंतकों, पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर की आधिकारिक वेबसाइट पर स्वागत है। हमारा उद्देश्य विद्यार्थियों को उच्च गुणवत्ता वाली आधुनिक शिक्षा प्रदान करने के साथ-साथ उनमें नैतिक मूल्यों का विकास करना है, ताकि वे देश के जिम्मेदार नागरिक बन सकें। डिजिटल युग में स्कूल की यह वेबसाइट हमारे और आपके बीच सूचनाओं के आदान-प्रदान को और सरल बनाएगी।</p> 
+        <div style="margin-top: 20px; text-align: right; font-weight: bold; color: #002147;"> 
+          श्री भगवती प्रसाद पंत
+          <span style="display: block; font-size: 14px; color: #555; font-weight: normal; margin-top: 3px;">प्रधानाचार्य, पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर</span> 
+        </div> 
+      </div> 
+    </div>
+
+    <!-- ================= एक पेड़ माँ के नाम स्लाइडर ================= -->
     <section class="tree-slider" style="margin-top: 40px;"> 
      <h2> एक पेड़ माँ के नाम | हर घर एक पेड़ </h2> 
      <div class="slider"> 
@@ -247,11 +261,11 @@
      </div> 
     </section> 
 
-  </div> <!-- 🛑 यहाँ मुख्य पृष्ठ (home-section) का div बंद हो रहा है -->
+  </div> <!-- 🛑 मुख्य पृष्ठ (home-section) का div यहाँ बंद हुआ -->
 
-</div> <!-- 🛑 यहाँ पूरी वेबसाइट का मुख्य कंटेनर (.container) बंद हो रहा है -->
+</div> <!-- 🛑 मुख्य कंटेनर (.container) का div यहाँ बंद हुआ -->
 
-<!-- आधिकारिक वेबसाइट फ़ुटर (Footer) सेक्शन (यह हमेशा नीचे रहेगा) -->
+<!-- आधिकारिक वेबसाइट फ़ुटर (Footer) सेक्शन -->
 <footer> 
  <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर. सर्वाधिकार सुरक्षित।</p> 
  <div class="credit-footer" style="overflow: hidden; background: #002147; padding: 5px 0;"> 
@@ -265,58 +279,46 @@
 <script>
 // 1. मुख्य मेनू बार बटन्स/टैब्स को स्विच करने का लॉजिक
 function switchTab(event, sectionId) {
-  event.preventDefault(); // पेज को डिफ़ॉल्ट रीफ्रेश होने से रोकें
+  event.preventDefault(); 
   
-  // सभी मुख्य सेक्शन्स (Home, Staff, Gallery) को छुपाएं
   var sections = document.querySelectorAll('.page-section');
   sections.forEach(function(sec) {
     sec.classList.remove('active-section');
   });
   
-  // सभी नेविगेशन बटन्स से पुराना एक्टिव कलर (पीला रंग) हटाएं
   var navLinks = document.querySelectorAll('nav ul li a');
   navLinks.forEach(function(link) {
     link.classList.remove('active-tab');
   });
   
-  // यूज़र द्वारा क्लिक किए गए सेक्शन को लाइव दिखाएं और बटन को हाईलाइट करें
   if(document.getElementById(sectionId)) {
     document.getElementById(sectionId).classList.add('active-section');
   }
   event.currentTarget.classList.add('active-tab');
 }
 
-// 2. 'एक पेड़ माँ के नाम' ऑटो-प्ले इमेज स्लाइडर लॉजिक
+// 2. ऑटो-प्ले इमेज स्लाइडर लॉजिक
 const images = document.querySelectorAll(".slider img"); 
 let index = 0; 
 
 function showPair(){ 
  if(images.length === 0) return;
- 
- // सभी तस्वीरों से पहले active क्लास हटाएं
  images.forEach(img => img.classList.remove("active")); 
- 
- // पहली तस्वीर को एक्टिव करें
  images[index].classList.add("active"); 
  
- // यदि दूसरी तस्वीर उपलब्ध है, तो उसे भी एक्टिव करें (2-कॉलम ग्रिड के लिए अनिवार्य)
  if (images.length > 1) {
    let nextIndex = (index + 1) % images.length;
    images[nextIndex].classList.add("active");
  }
  
- // इंडेक्स को 2 कदम आगे बढ़ाएं
  index = (index + 2) % images.length;
- 
- // अगर इंडेक्स आखिरी विषम संख्या पर अटकता है, तो वापस 0 पर लाएं
  if (images.length % 2 !== 0 && index === 0) {
    index = 0;
  }
 } 
 
-// स्लाइडर शुरू करें
 showPair(); 
-setInterval(showPair, 3000); // हर 3 सेकंड में तस्वीरें बदलेंगी
+setInterval(showPair, 3000); 
 </script> 
 
 </body> 
