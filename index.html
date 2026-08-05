@@ -76,70 +76,79 @@
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
  <head>
-    /* ड्रॉपडाउन का मुख्य कंटेनर */
-li.dropdown {
-    position: relative;
-    display: inline-block;
+    
+ <style> 
+/* 1. पूरे मेनू बार का कंटेनर */
+.school-nav {
+    background-color: #002147; /* गहरा नेवी ब्लू रंग */
+    padding: 0;
+    margin: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
 }
 
-/* मुख्य साइंस लैब बटन की स्टाइल */
-.dropbtn {
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 15px;
-    font-weight: bold;
+/* 2. मेनू के सभी सामान्य बटन्स */
+.school-nav li {
+    position: relative;
+}
+
+.school-nav li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 20px;
     text-decoration: none;
-    border-radius: 4px;
-    display: inline-block;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background 0.3s;
 }
 
-/* ड्रॉपडाउन बॉक्स (शुरुआत में छुपा रहेगा) */
-.dropdown-content {
+/* 3. बटन पर माउस ले जाने पर रंग बदलना */
+.school-nav li a:hover {
+    background-color: #0056b3; /* हल्का नीला रंग */
+}
+
+/* 4. ड्रॉपडाउन (साइंस लैब) का मुख्य ढांचा */
+.school-dropdown {
+    position: relative;
+}
+
+/* 5. ड्रॉपडाउन बॉक्स (शुरुआत में छुपा रहेगा) */
+.school-dropdown-content {
     display: none;
     position: absolute;
     background-color: #ffffff;
     min-width: 260px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 999;
-    border-radius: 4px;
-    margin-top: 5px;
-    padding: 0;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+    border-top: 3px solid #0056b3;
 }
 
-/* ड्रॉपडाउन के अंदर वाले बटन्स की स्टाइल */
-.dropdown-content a {
-    color: #333333;
+/* 6. ड्रॉपडाउन के अंदर वाले छोटे बटन्स */
+.school-dropdown-content a {
+    color: #333333 !important; /* काला रंग ताकि सफ़ेद बैकग्राउंड पर दिखे */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid #f1f1f1;
-    font-size: 14px;
     text-align: left;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
 }
 
-.dropdown-content a:last-child {
-    border-bottom: none;
+/* 7. अंदर वाले बटन्स पर माउस ले जाने पर */
+.school-dropdown-content a:hover {
+    background-color: #f4f6f9 !important;
+    color: #0056b3 !important;
 }
 
-/* अंदर वाले बटन्स पर माउस ले जाने पर */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #0056b3;
-}
-
-/* माउस ले जाते ही पूरी लिस्ट खुल जाना */
-li.dropdown:hover .dropdown-content {
+/* 8. साइंस लैब पर माउस ले जाते ही लिस्ट खोलना */
+.school-dropdown:hover .school-dropdown-content {
     display: block;
 }
 
-/* मुख्य बटन पर माउस ले जाने पर */
-li.dropdown:hover .dropbtn {
-    background-color: #003d80;
-}
-
-
-<!-- HTML हिस्सा -->
+ </style> 
 <li class="dropdown">
     <a href="#" class="dropbtn">Science Lab ▾</a>
     <div class="dropdown-content">
