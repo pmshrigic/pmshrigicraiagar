@@ -76,87 +76,68 @@
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
  <head>
-    <!-- पुराना कोड -->
-    <style>
-        nav ul li a {
-            display: inline-block;
-            padding: 10px 15px;
-            margin: 5px;
-            background-color: #0056b3; 
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            background-color: #003d80; 
-        }
-    </style>
-  <!-- साइंस लैब ड्रॉपडाउन मेनू (HTML + CSS एक साथ) -->
-<style>
     /* ड्रॉपडाउन का मुख्य कंटेनर */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        list-style: none; /* बुलेट पॉइंट्स हटाने के लिए */
-    }
+li.dropdown {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+}
 
-    /* मुख्य साइंस लैब बटन की स्टाइल */
-    .dropbtn {
-        background-color: #0056b3;
-        color: white;
-        padding: 10px 15px;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 4px;
-        display: inline-block;
-    }
+/* मुख्य साइंस लैब बटन की स्टाइल */
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
 
-    /* ड्रॉपडाउन बॉक्स (यह शुरुआत में छुपा रहेगा) */
-    .dropdown-content {
-        display: none; /* इससे बटन छुप जाते हैं */
-        position: absolute;
-        background-color: #ffffff;
-        min-width: 260px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 999; /* ताकि यह बाकी कंटेंट के ऊपर दिखे */
-        border-radius: 4px;
-        margin-top: 5px;
-        padding: 0;
-    }
+/* ड्रॉपडाउन बॉक्स (शुरुआत में छुपा रहेगा) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 0;
+}
 
-    /* ड्रॉपडाउन के अंदर वाले बटन्स की स्टाइल */
-    .dropdown-content a {
-        color: #333333;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        border-bottom: 1px solid #f1f1f1;
-        font-size: 14px;
-        text-align: left;
-    }
+/* ड्रॉपडाउन के अंदर वाले बटन्स की स्टाइल */
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    text-align: left;
+}
 
-    /* आखरी बटन का बॉर्डर हटाना */
-    .dropdown-content a:last-child {
-        border-bottom: none;
-    }
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
 
-    /* अंदर वाले बटन्स पर माउस ले जाने पर रंग बदलना */
-    .dropdown-content a:hover {
-        background-color: #f1f1f1;
-        color: #0056b3;
-    }
+/* अंदर वाले बटन्स पर माउस ले जाने पर */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #0056b3;
+}
 
-    /* साइंस लैब पर माउस ले जाते ही पूरी लिस्ट खुल जाना */
-    .dropdown:hover .dropdown-content {
-        display: block; /* माउस ले जाने पर ही खुलेगा */
-    }
+/* माउस ले जाते ही पूरी लिस्ट खुल जाना */
+li.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-    /* मुख्य बटन पर माउस ले जाने पर रंग बदलना */
-    .dropdown:hover .dropbtn {
-        background-color: #003d80;
-    }
-</style>
+/* मुख्य बटन पर माउस ले जाने पर */
+li.dropdown:hover .dropbtn {
+    background-color: #003d80;
+}
+
 
 <!-- HTML हिस्सा -->
 <li class="dropdown">
