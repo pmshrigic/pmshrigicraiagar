@@ -92,6 +92,67 @@
             background-color: #003d80; 
         }
     </style>
+  /* ड्रॉपडाउन का मुख्य कंटेनर */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* मुख्य साइंस लैब बटन की स्टाइल */
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* ड्रॉपडाउन बॉक्स (शुरुआत में छुपा रहेगा) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 260px; /* बटन्स के नाम के हिसाब से चौड़ाई */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* ड्रॉपडाउन के अंदर वाले बटन्स की स्टाइल */
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* आखरी बटन का बॉर्डर हटाना */
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* अंदर वाले बटन्स पर माउस ले जाने पर रंग बदलना */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #0056b3;
+}
+
+/* साइंस लैब पर माउस ले जाते ही पूरी लिस्ट खुल जाना */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* मुख्य बटन पर माउस ले जाने पर रंग बदलना */
+.dropdown:hover .dropbtn {
+    background-color: #003d80;
+}
+
 </head>
 
 
@@ -150,7 +211,20 @@
    <li><a id="tab-staff" onclick="switchTab(event, 'staff-section')">विद्यालय परिवार</a></li> 
    <li><a id="tab-gallery" onclick="switchTab(event, 'gallery-section')">फोटो गैलरी</a></li> 
   <li><a href="video-gallery.html">Video Gallery</a></li>
- <li><a href="science-lab.html">Science Lab</a></li>
+
+<li class="dropdown">
+    <a href="#" class="dropbtn">Science Lab ▾</a>
+    <div class="dropdown-content">
+        <a href="inter-physics-lab.html">Intermediate Physics Lab</a>
+        <a href="inter-chemistry-lab.html">Intermediate Chemistry Lab</a>
+        <a href="inter-biology-lab.html">Intermediate Biology Lab</a>
+        <a href="stem-lab.html">STEM Lab</a>
+        <a href="high-school-science-lab.html">High School Science Lab</a>
+        <a href="high-school-math-lab.html">High School Mathematics Lab</a>
+        <a href="vocational-automotive-lab.html">Vocational Automotive Lab</a>
+    </div>
+</li>
+
  <li><a href="sports.html">Sports</a></li>
  <li><a href="ncc.html">NCC</a></li>
 
