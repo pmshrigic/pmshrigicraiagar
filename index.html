@@ -142,9 +142,68 @@
  <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 15px;">
  <marquee behavior="scroll" direction="left" scrollamount="5"><strong>खेल दिवस (Sports Day):</strong> आगामी 29 अगस्त को विद्यालय में खेल दिवस का भव्य आयोजन किया जाएगा। सभी छात्र तैयारियों में भाग लें.</marquee>
  </li>
-  <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 15px;">
- <marquee behavior="scroll" direction="left" scrollamount="5"><strong>मुख्यमंत्री युवामंथन कार्यक्रम:</strong> मुख्यमंत्री युवा मन्थन कार्यक्रम हेतु लिंक  https://youtube.com/live/ZTPQIrCay2w?feature=share </marquee>
-  </li>
+  <!-- मुख्यमंत्री युवा मंथन कार्यक्रम - Notice Board -->
+<div class="notice-board">
+  <div class="notice-title">📢 NOTICE BOARD</div>
+
+  <div class="notice-content">
+    <a href="https://youtube.com/live/ZTPQIrCay2w?feature=share"
+       target="_blank"
+       rel="noopener noreferrer">
+      🔴 मुख्यमंत्री युवा मंथन कार्यक्रम हेतु LIVE कार्यक्रम देखने के लिए यहाँ क्लिक करें
+    </a>
+  </div>
+</div>
+
+<style>
+.notice-board {
+  width: 100%;
+  overflow: hidden;
+  background: #fff8e1;
+  border: 2px solid #e65100;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  margin: 10px 0;
+}
+
+.notice-title {
+  background: #e65100;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+}
+
+.notice-content {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.notice-content a {
+  display: inline-block;
+  color: #d32f2f;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  animation: noticeScroll 18s linear infinite;
+}
+
+.notice-content a:hover {
+  animation-play-state: paused;
+  color: #1565c0;
+}
+
+@keyframes noticeScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
  <li class="notice-item"><strong>Holiday Calendar 2026</strong><br><br><a href="holiday.pdf" target="_blank" style="background:#002147;color:white;padding:8px 16px; text-decoration:none;border-radius:5px; display:inline-block;">View PDF</a></li>
  </ul>
  </div>
