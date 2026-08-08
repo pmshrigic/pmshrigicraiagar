@@ -458,6 +458,27 @@ setInterval(showPair, 3000);
          object-fit:contain; border-radius:8px;">
 </div>
 
+<!-- PHOTO PREVIEW FOR COMPUTER + MOBILE -->
+
+<div id="photoPreview"
+     style="display:none; position:fixed; z-index:99999;
+     left:0; top:0; width:100%; height:100%;
+     background:rgba(0,0,0,0.92);
+     align-items:center; justify-content:center;">
+
+    <span id="closePreview"
+          style="position:absolute; top:15px; right:25px;
+          color:white; font-size:45px; font-weight:bold;
+          cursor:pointer; z-index:100000;">
+        &times;
+    </span>
+
+    <img id="previewImg"
+         src=""
+         style="max-width:92%; max-height:88%;
+         object-fit:contain; border-radius:8px;">
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -468,11 +489,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!gallery) return;
 
-    // सभी Gallery images पर Double Click
     gallery.querySelectorAll("img").forEach(function(img) {
 
         img.style.cursor = "zoom-in";
 
+        /* COMPUTER - Double Click */
         img.addEventListener("dblclick", function(e) {
             e.preventDefault();
 
@@ -480,21 +501,44 @@ document.addEventListener("DOMContentLoaded", function () {
             preview.style.display = "flex";
         });
 
+        /* MOBILE - Single Tap */
+        img.addEventListener("touchend", function(e) {
+            e.preventDefault();
+
+            previewImg.src = this.src;
+            preview.style.display = "flex";
+        }, {passive:false});
+
     });
 
-    // Close button
+    /* Close button */
     closeBtn.addEventListener("click", function() {
         preview.style.display = "none";
         previewImg.src = "";
     });
 
-    // फोटो के बाहर क्लिक करने पर बंद
+    /* Mobile touch close */
+    closeBtn.addEventListener("touchend", function(e) {
+        e.preventDefault();
+        preview.style.display = "none";
+        previewImg.src = "";
+    }, {passive:false});
+
+    /* Preview के बाहर tap/click करने पर बंद */
     preview.addEventListener("click", function(e) {
         if (e.target === preview) {
             preview.style.display = "none";
             previewImg.src = "";
         }
     });
+
+    preview.addEventListener("touchend", function(e) {
+        if (e.target === preview) {
+            e.preventDefault();
+            preview.style.display = "none";
+            previewImg.src = "";
+        }
+    }, {passive:false});
 
 });
 </script>
