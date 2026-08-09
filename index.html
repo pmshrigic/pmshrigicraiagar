@@ -1,546 +1,267 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>PM Shri GIC Raiagar | Official Website</title>
- <style>
- /* global reset & design rules */
- * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
- body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+<!DOCTYPE html> 
+<html lang="hi"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>PM SHRI GIC Raiagar, Pithoragarh | Official Website</title> 
+ <meta name="description" content="Official website of PM SHRI Government Inter College Raiagar, Pithoragarh, Uttarakhand."> 
+ <meta name="keywords" content="PM SHRI GIC Raiagar, GIC Raiagar, Raiagar Pithoragarh, Uttarakhand"> 
+ <link rel="canonical" href="https://pmshrigicraiagar.com"> 
+ <meta name="robots" content="index, follow">
+ <style> 
+ * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; } 
+ body { background-color: #f8f9fa; color: #333; line-height: 1.6; } 
  
- /* top bar styling */
- .top-bar { background-color: #002147; color: #fff; padding: 10px 20px; font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; }
- .top-bar a { color: #ffbc00; text-decoration: none; font-weight: bold; }
+ .top-bar { background-color: #002147; color: #fff; padding: 10px 20px; font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; } 
+ .top-bar a { color: #ffbc00; text-decoration: none; font-weight: bold; } 
+ header { background: #ffffff; padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } 
+ .school-custom-logo { width: 90px; height: 90px; margin-right: 20px; } 
+ .school-custom-logo img { width: 100%; height: 100%; object-fit: contain; } 
+ .school-name h1 { font-size: 42px; color: #002147; font-weight: 700; } 
+ .school-name p { font-size: 13px; color: #ffbc00; font-weight: 600; text-transform: uppercase; } 
  
- /* header setup */
- header { background: #ffffff; padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
- .school-custom-logo { width: 90px; height: 90px; margin-right: 20px; }
- .school-custom-logo img { width: 100%; height: 100%; object-fit: contain; }
- .school-name h1 { font-size: 42px; color: #002147; font-weight: 700; }
- .school-name p { font-size: 13px; color: #ffbc00; font-weight: 600; text-transform: uppercase; }
- /* navigation menu bar */
- nav { background-color: #002147; position: sticky; top: 0; z-index: 1000; }
- nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
- nav ul li { position: relative; }
- nav ul li a, .dropbtn { display: block; padding: 15px 20px; color: #fff; font-weight: 600; text-decoration: none; cursor: pointer; transition: 0.2s; background: none; border: none; font-size: 16px; }
- nav ul li a.active-tab, .dropbtn.active-tab { background-color: #ffbc00; color: #002147 !important; border-radius: 4px; }
- nav ul li a:hover, .dropdown:hover .dropbtn { background-color: #003366; color: #ffbc00; }
+ nav { background-color: #002147; position: sticky; top: 0; z-index: 1000; } 
+ nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; } 
+ nav ul li { position: relative; } 
+ nav ul li a, .dropbtn { display: block; padding: 15px 20px; color: #fff; font-weight: 600; text-decoration: none; cursor: pointer; transition: 0.2s; background: none; border: none; font-size: 16px; } 
+ nav ul li a.active-tab, .dropbtn.active-tab { background-color: #ffbc00; color: #002147 !important; border-radius: 4px; } 
+ nav ul li a:hover, .dropdown:hover .dropbtn { background-color: #003366; color: #ffbc00; } 
+ .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 280px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1100; border-top: 3px solid #ffbc00; } 
+ .dropdown-content a { color: #333 !important; padding: 12px 16px; text-decoration: none; display: block; text-align: left; font-size: 14px; border-bottom: 1px solid #eee; } 
+ .dropdown-content a:hover { background-color: #f1f5f9 !important; color: #002147 !important; } 
+ .dropdown:hover .dropdown-content { display: block; } 
+ .hero { background: #002147; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden; } 
+ .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; } 
+ .main-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); } 
+ .page-section { display: none; } 
+ .page-section.active-section { display: block; } 
  
- /* Science Lab Dropdown Custom Styles */
- .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 280px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1100; border-top: 3px solid #ffbc00; }
- .dropdown-content a { color: #333 !important; padding: 12px 16px; text-decoration: none; display: block; text-align: left; font-size: 14px; border-bottom: 1px solid #eee; }
- .dropdown-content a:hover { background-color: #f1f5f9 !important; color: #002147 !important; }
- .dropdown:hover .dropdown-content { display: block; }
- /* hero banner layout */
- .hero { background: #002147; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden; }
- .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
- .main-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
- 
- /* active/inactive tabs engine control */
- .page-section { display: none; }
- .page-section.active-section { display: block; }
- 
- /* tree auto-slider style sheets */
- .tree-slider { max-width: 1100px; margin: 30px auto; text-align: center; }
- .tree-slider h2 { text-align: center; color: #1b5e20; margin-bottom: 15px; }
- .slider { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
- .slider img { width: 100%; height: 320px; object-fit: cover; border-radius: 10px; display: none; box-shadow: 0 3px 10px rgba(0,0,0,.3); }
- .slider img.active { display: block; }
- 
- /* footer section configuration */
- footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; }
- </style>
- <title>PM SHRI GIC Raiagar, Pithoragarh, Uttarakhand | Official Website</title>
-
-<meta name="description" content="Official website of PM SHRI Government Inter College Raiagar, Pithoragarh, Uttarakhand. Get information about school activities, academics, PM SHRI initiatives, facilities, NCC, sports, cultural activities and student achievements.">
-
-<meta name="keywords" content="PM SHRI GIC Raiagar, PM SHRI GIC Raiagar Pithoragarh, PM Rajkiya Inter College Raiagar, Government Inter College Raiagar, GIC Raiagar, Raiagar Pithoragarh, PM SHRI School Raiagar, Uttarakhand">
-
-<link rel="canonical" href="https://pmshrigicraiagar.com/">
-
-<meta name="robots" content="index, follow">
-</head>
+ .tree-slider { max-width: 1100px; margin: 30px auto; text-align: center; } 
+ .tree-slider h2 { text-align: center; color: #1b5e20; margin-bottom: 15px; } 
+ .slider { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } 
+ .slider img { width: 100%; height: 320px; object-fit: cover; border-radius: 10px; display: none; box-shadow: 0 3px 10px rgba(0,0,0,.3); } 
+ .slider img.active { display: block; } 
+ .my-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
+ .my-gallery video { width: 100%; border-radius: 6px; background: #000; }
+ footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
+ </style> 
+</head> 
 <body>
-<div class="top-bar">
- <div>  Raiagar, Uttarakhand, India</div>
- <div>  संपर्क: <a href="tel:+918057513300">+91 8057513300</a></div> <div>Udise: <a href="Udise code:05070702603">05070702603</a></div>
- <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div>
+<div class="top-bar"> 
+ <div> Raiagar, Uttarakhand, India</div> 
+ <div> संपकर्क: <a href="tel:+918057513300">+91 8057513300</a></div> 
+ <div>Udise: <a href="#">05070702603</a></div> 
+ <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div> 
 </div>
-
-<header>
- <div class="logo-area" style="display: flex; align-items: center;">
- <div class="school-custom-logo"><img src="logo.png" alt="logo"></div>
- <div class="school-name">
- <h1>PM SHRI GIC RAIAGAR</h1>
- <p>
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    <strong>
-      🌟 PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा • संस्कार • नवाचार 🌟
-    </strong>
-  </marquee>
-</p> 
- </div>
- </div>
+<header> 
+ <div class="logo-area" style="display: flex; align-items: center;"> 
+  <div class="school-custom-logo"><img src="logo.png" alt="logo"></div> 
+  <div class="school-name"> 
+   <h1>PM SHRI GIC RAIAGAR</h1> 
+   <p> 
+    <marquee behavior="scroll" direction="left" scrollamount="5"> 
+     <strong>PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा • संस्कार • नवाचार</strong> 
+    </marquee> 
+   </p> 
+  </div> 
+ </div> 
 </header>
-
-<nav>
- <ul>
- <li><a id="tab-home" class="active-tab" onclick="switchTab(event, 'home-section')">मुख्य पृष्ठ</a></li>
- <li><a id="tab-staff" onclick="switchTab(event, 'staff-section')">विद्यालय परिवार</a></li>
- <li><a id="tab-gallery" onclick="switchTab(event, 'gallery-section')">फोटो गैलरी</a></li>
- <li><a id="tab-video" onclick="switchTab(event, 'video-section')">वीडियो गैलरी</a></li>
- <li class="dropdown">
- <button class="dropbtn" id="tab-labs">Science Lab ▾</button>
- <div class="dropdown-content">
- <a onclick="switchTab(event, 'physics-lab-section')">Intermediate Physics Lab</a>
- <a onclick="switchTab(event, 'chemistry-lab-section')">Intermediate Chemistry Lab</a>
- <a onclick="switchTab(event, 'biology-lab-section')">Intermediate Biology Lab</a>
- <a onclick="switchTab(event, 'stem-lab-section')">STEM Lab</a>
- <a onclick="switchTab(event, 'hs-science-section')">High School Science Lab</a>
- <a onclick="switchTab(event, 'hs-maths-section')">High School Mathematics Lab</a>
- <a onclick="switchTab(event, 'automotive-lab-section')">Vocational Automotive Lab</a>
- </div>
- </li>
- <li><a id="tab-sports" onclick="switchTab(event, 'sports-section')">स्पोर्ट्स</a></li>
- <li><a id="tab-cultural" onclick="switchTab(event, 'cultural-section')">सांस्कृतिक गतिविधि</a></li>
- <li><a id="tab-ncc" onclick="switchTab(event, 'ncc-section')">NCC</a></li>
- </ul>
-</nav>
-
-<div class="hero">
- <img src="gate.png" alt="PM SHRI GIC Raiagar" style="width:100%; height:300px; object-fit:cover;">
+<nav> 
+ <ul> 
+  <li><a id="tab-home" class="active-tab" onclick="switchTab(event, 'home-section')">मुख्य पृष्ठ</a></li> 
+  <li><a id="tab-staff" onclick="switchTab(event, 'staff-section')">विद्यालय परिवार</a></li> 
+  <li><a id="tab-gallery" onclick="switchTab(event, 'gallery-section')">फोटो गैलरी</a></li> 
+  <li><a id="tab-video" onclick="switchTab(event, 'video-section')">वीडियो गैलरी</a></li> 
+  <li class="dropdown"> 
+   <button class="dropbtn" id="tab-labs">Science Lab ▾</button> 
+   <div class="dropdown-content"> 
+    <a href="physics-lab.html">Intermediate Physics Lab</a> 
+    <a href="chemistry-lab.html">Intermediate Chemistry Lab</a> 
+    <a href="biology-lab.html">Intermediate Biology Lab</a> 
+    <a href="stem-lab.html">STEM Lab</a> 
+    <a href="hs-science.html">High School Science Lab</a> 
+    <a href="hs-maths.html">High School Mathematics Lab</a> 
+    <a href="automotive-lab.html">Vocational Automotive Lab</a> 
+   </div> 
+  </li> 
+  <li><a id="tab-sports" onclick="switchTab(event, 'sports-section')">स्पोर्ट्स</a></li> 
+  <li><a id="tab-cultural" onclick="switchTab(event, 'cultural-section')">सांस्कृतिक गतिविधि</a></li> 
+  <li><a id="tab-ncc" onclick="switchTab(event, 'ncc-section')">NCC</a></li> 
+ </ul> 
+</nav> 
+<div class="hero"> 
+ <img src="gate.png" alt="PM SHRI GIC Raiagar" style="width:100%; height:300px; object-fit:cover;"> 
 </div>
-
 <div class="container">
- <!-- ================= टैब 1: मुख्य पृष्ठ (HOME PAGE SECTION) ================= -->
- <div id="home-section" class="page-section active-section">
- <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 30px;">
- <div class="main-panel" style="flex: 2; min-width: 300px;">
- <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">हमारा इतिहास और परिचय (Our History)</h3>
- <p style="margin-bottom: 25px;">पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर की स्थापना वर्ष <strong>1989</strong> में हुई थी। पिछले तीन दशकों से अधिक समय से यह संस्थान क्षेत्र में शिक्षा की अलख जगा रहा है। हमारा विद्यालय एक सह-शिक्षा (Co-education) संस्थान है, जहाँ छात्र और छात्राएं दोनों एक साथ सौहार्दपूर्ण वातावरण में ज्ञान प्राप्त करते हैं। वर्तमान में विद्यालय को प्रतिष्ठित <strong>पी0एम0श्री0</strong> योजना के तहत आधुनिक सुविधाओं से सुसज्जित किया जा रहा है।</p>
- <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">अकादिमक संरचना (Academics)</h3>
- <p style="margin-bottom: 15px;">हमारे विद्यालय में कक्षा 6 से कक्षा 12 तक के विद्यार्थियों को गुणवत्तापूर्ण शिक्षा दी जाती है। छात्र-छात्राओं के उज्जवल भविष्य के लिए विभिन्न स्तरों पर विषयों के चयन की बेहतरीन सुविधा उपलब्ध है:</p>
- <div style="background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 5px solid #002147; margin-bottom: 15px;">
- <h4 style="color: #002147; margin-bottom: 5px;"> माध्यमिक स्तर (कक्षा 9 और 10)</h4>
- <p>हाईस्कूल स्तर पर बालिकाओं के सर्वांगीण विकास को ध्यान में रखते हुए गृह विज्ञान (Home Science) and गणित (Maths) विषय के चयन का विशेष विकल्प/छूट उपलब्ध रहती है.</p>
+ <div id="home-section" class="page-section active-section"> 
+  <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 30px;"> 
+   <div class="main-panel" style="flex: 2; min-width: 300px;"> 
+    <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">हमारा इतिहास और परिचय (Our History)</h3> 
+    <p style="margin-bottom: 25px;">पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर की स्थापना वर्ष <strong>1989</strong> में हुई थी। पिछले तीन दशकों से अधिक समय से यह संस्थान क्षेत्र में शिक्षा की अलख जगा रहा है। हमारा विद्यालय एक सह-शिक्षा (Co-education) संस्थान है, जहाँ छात्र और छात्राएं दोनों एक साथ सौहार्दपूर्ण वातावरण में ज्ञान प्राप्त करते हैं। वर्तमान में विद्यालय को प्रतिष्ठित <strong>पी0एम0श्री0</strong> योजना के तहत आधुनिक सुविधाओं से सुसज्जित किया जा रहा है।</p> 
+    <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">अकादमिक संरचना (Academics)</h3> 
+    <p style="margin-bottom: 15px;">हमारे विद्यालय में कक्षा 6 से कक्षा 12 तक के विद्यार्थियों को गुणवत्तापूर्ण शिक्षा दी जाती है। छात्रों के उज्जवल भविष्य के लिए विषयों के चयन की बेहतरीन सुविधा उपलब्ध है:</p> 
+    <div style="background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 5px solid #002147; margin-bottom: 15px;"> 
+     <h4 style="color: #002147; margin-bottom: 5px;">माध्यमिक स्तर (कक्षा 9 और 10)</h4> 
+     <p>हाईस्कूल स्तर पर बालिकाओं के सर्वांगीण विकास को ध्यान में रखते हुए गृह विज्ञान (Home Science) और गणित (Maths) विषय के चयन का विशेष विकल्प उपलब्ध रहता है।</p> 
+    </div> 
+    <div style="background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 5px solid #002147;"> 
+     <h4 style="color: #002147; margin-bottom: 5px;">उच्च माध्यमिक स्तर (इंटरमीडिएट - कक्षा 11 और 12)</h4> 
+     <p>इंटर स्तर पर छात्र एवं छात्राओं के लिए दो मुख्य शाखाएं उपलब्ध हैं:<br>• विज्ञान वर्ग (Science Stream)<br>• कला वर्ग (Arts Stream)</p> 
+    </div> 
+   </div>
+   <div style="flex: 1; min-width: 280px; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #ffbc00; height: fit-content;"> 
+    <h3 style="font-size: 20px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">सूचना पट्ट (Notice Board)</h3> 
+    <div style="background: linear-gradient(135deg, #fffdf0, #fff9e6); padding: 15px; border-radius: 6px; border-left: 5px solid #ffbc00;"> 
+     <ul style="list-style: none; padding: 0;"> 
+      <li style="margin-bottom: 15px;"><strong>हर घर तिरंगा कार्यक्रम हेतु महत्वपूर्ण निर्देश</strong><br><small>दिनांक: 28 जुलाई 2026</small><br><br><a href="tiranga.pdf" target="_blank" style="background:#002147;color:white;padding:8px 16px; text-decoration:none;border-radius:5px; display:inline-block;">View PDF</a></li> 
+      <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; margin-bottom: 10px;"> 
+       <marquee behavior="scroll" direction="left" scrollamount="5"><strong>स्वतंत्रता दिवस समारोह:</strong> आगामी 15 अगस्त को विद्यालय परिसर में भव्य आयोजन किया जाएगा।</marquee> 
+       <div style="width:100%; background:#fff8dc; border:2px solid #0b5ed7; padding:8px; overflow:hidden; margin-bottom: 15px;"> 
+        <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"><a href="students.pdf" target="_blank" style="color:#d40000; font-size:18px; font-weight:bold; text-decoration:none;">★ NEW: विद्यार्थियों की सदनवार सूचना – यहाँ क्लिक करें ★</a></marquee> 
+       </div> 
+      </li> 
+      <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; margin-bottom: 15px;"> 
+       <marquee behavior="scroll" direction="left" scrollamount="5"><strong>खेल दिवस:</strong> आगामी 29 अगस्त को विद्यालय में खेल दिवस का भव्य आयोजन किया जाएगा।</marquee> 
+      </li> 
+      <li style="margin-bottom: 15px; background:#fff8e1; border:2px solid #e65100; border-radius:6px; padding:10px; text-align:center;"> 
+       <a href="https://youtube.com" target="_blank" style="color:#d32f2f; font-weight:bold; text-decoration:none;">मुख्यमंत्री युवा मंथन कार्यक्रम LIVE देखें</a> 
+      </li> 
+      <li><strong>Holiday Calendar 2026</strong><br><br><a href="holiday.pdf" target="_blank" style="background:#002147;color:white;padding:8px 16px; text-decoration:none;border-radius:5px; display:inline-block;">View PDF</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  
+  <section class="tree-slider"> 
+   <h2>एक पेड़ माँ के नाम | हर घर एक पेड़</h2> 
+   <div class="slider"> 
+    <img src="tree1.jpg" class="active"> <img src="tree2.jpg" class="active"> <img src="tree3.jpg"> <img src="tree4.jpg"> <img src="tree5.jpg"> <img src="tree6.jpg"> 
+   </div> 
+  </section> 
+  
+  <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block; margin-top: 40px;">प्रधानाचार्य का संदेश (Principal's Message)</h3> 
+  <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 40px;"> 
+   <div style="flex: 1; min-width: 150px; max-width: 200px; border: 3px solid #002147; border-radius: 8px; overflow: hidden;"><img src="principal.png" alt="Principal" style="width: 100%; height: auto; display: block;"></div> 
+   <div style="flex: 2; min-width: 280px;"> 
+    <p>प्रिय छात्रों, अभिभावकों और शुभचिंतकों, पी0एम0श्री0 राजकीय Inter College राईआगर की आधिकारिक वेबसाइट पर स्वागत है। हमारा उद्देश्य विद्यार्थियों को उच्च गुणवत्ता वाली आधुनिक शिक्षा प्रदान करने के साथ-साथ उनमें नैतिक मूल्यों का विकास करना है।</p> 
+    <div style="margin-top: 20px; text-align: right; font-weight: bold; color: #002147;">श्री भगवती प्रसाद पंत<span style="display: block; font-size: 14px; color: #555; font-weight: normal;">प्रधानाचार्य, पी0एम0श्री0 जी.आई.सी. राईआगर</span></div> 
+   </div> 
+  </div> 
  </div>
- <div style="background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 5px solid #002147;">
- <h4 style="color: #002147; margin-bottom: 5px;"> उच्च माध्यमिक स्तर (इंटरमीडिएट - कक्षा 11 और 12)</h4>
- <p>इंटर स्तर पर छात्र एवं छात्राओं के लिए दो मुख्य शाखाएं उपलब्ध हैं:<br>• विज्ञान वर्ग (Science Stream)<br>• कला वर्ग (Arts Stream)</p>
- </div>
+  <div id="staff-section" class="page-section"> 
+  <div class="main-panel"> 
+   <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">विद्यालय परिवार (Our Staff Details)</h2> 
+   <table style="width: 100%; border-collapse: collapse; font-size: 15px;"> 
+    <thead> 
+     <tr style="background-color: #002147; color: white;"> 
+      <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left;">नाम (Name)</th> 
+      <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left;">पद / विषय (Designation / Subject)</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <!-- प्रशासन -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">प्रशासन (Administration)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवती प्रसाद पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रधानाचार्य (Principal)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री प्रकाश जोशी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">वरिष्ठ प्रशासनिक अधिकारी (Head clerk)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">सुश्री निर्जला आर्या</td><td style="border: 1px solid #e2e8f0; padding: 12px;">कनिष्ठ सहायक (assistant clerk)</td></tr> 
+     
+     <!-- प्रवक्ता वर्ग -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">प्रवक्ता वर्ग (Lecturers)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवती प्रसाद पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता - अंग्रेजी (Lecturer - English)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भुवन पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता - जीव विज्ञान (Lecturer - Biology)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री बृजेश कुमार जोशी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता - गणित (Lecturer - Mathematics)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री पुनीत पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - भौतिक विज्ञान (Guest Lecturer - Physics)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्रीमती मेघा उप्रेती</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - रसायन विज्ञान (Guest Lecturer - Chemistry)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री मनोज कुमार विश्नोई</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - हिंदी (Guest Lecturer - Hindi)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भुवन नेवलिया</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - राजनीति विज्ञान (Guest Lecturer - Political Science)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री मुकेश कुमार</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - अर्थशास्त्र (Guest Lecturer - Economics)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री लक्ष्मण सिंह मेहरा</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - संस्कृत (Guest Lecturer - Sanskrit)</td></tr> 
+     
+     <!-- सहायक अध्यापक -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">सहायक अध्यापक (L.T)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री राजमणि सिंह</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - हिंदी (L.T. - Hindi)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री जगजीवन प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - विज्ञान (L.T. - Science)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भास्कर सिंह डोबाल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - गणित (L.T. - Mathematics)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री आनंद राम चन्याल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - गणित (L.T. - Mathematics)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री जगदीश प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - अंग्रेजी (L.T. - English)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री हरीश लाल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - हिंदी (L.T. - Hindi)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री चन्द्र सिंह डांगी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - सामाजिक विज्ञान (L.T. - Social Science)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भोपाल राम चन्याल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - व्यायाम (L.T. - Physical Education)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री राजेंद्र प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि एल.टी. - कला (Guest L.T. - Art)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्रीमती गीता कलोनी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि एल.टी. - सामाजिक विज्ञान (Guest L.T. - Social Science)</td></tr> 
+     
+     <!-- प्रयोगशाला सहायक -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">प्रयोगशाला सहायक (Lab Assistant)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री कमल भंडारी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रयोगशाला सहायक (Lab Assistant)</td></tr> 
+     
+     <!-- व्यावसायिक शिक्षा -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">व्यावसायिक शिक्षा (Vocational Education)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री सुनील सिंह</td><td style="border: 1px solid #e2e8f0; padding: 12px;">व्यावसायिक शिक्षक (Vocational Teacher)</td></tr> 
+     
+     <!-- अनुसेवक -->
+     <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="padding: 10px 12px;">अनुसेवक (Supporting Staff)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री नारायण नाथ</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री सुन्दर सिंह कठायत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री विक्रम राम</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Support Staff)</td></tr> 
+     <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवान सिंह धानिक</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr> 
+    </tbody> 
+   </table> 
+  </div> 
  </div>
 
- <!-- दायाँ भाग: सूचना पत्र (Notice Board) -->
- <div style="flex: 1; min-width: 280px; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #ffbc00; height: fit-content;">
- <h3 style="font-size: 20px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">सूचना पट्ट (Notice Board)</h3>
- <div style="background: linear-gradient(135deg, #fffdf0, #fff9e6); padding: 15px; border-radius: 6px; border-left: 5px solid #ffbc00;">
- <ul style="list-style: none; padding: 0;">
- <li class="notice-item" style="margin-bottom: 15px;">
- <strong>हर घर तिरंगा कार्यक्रम हेतु महत्वपूर्ण निर्देश</strong><br>
- <small>दिनांक: 28 जुलाई 2026 </small><br><br>
- <a href="tiranga.pdf" target="_blank" style="background:#002147;color:white;padding:8px 16px; text-decoration:none;border-radius:5px; display:inline-block;">View PDF</a>
- </li>
- <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 10px;">
- <marquee behavior="scroll" direction="left" scrollamount="5"><strong>स्वतंत्रता दिवस समारोह:</strong> आगामी 15 अगस्त को विद्यालय परिसर में स्वतंत्रता दिवस का भव्य एवं सांस्कृतिक आयोजन किया जाएगा। सभी छात्र-छात्राओं की उपस्थिति अनिवार्य है.</marquee>
- <div style="width:100%; background:#fff8dc; border:2px solid #0b5ed7; padding:8px; overflow:hidden; margin-bottom: 30px;">
- <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"><a href="students.pdf" target="_blank" style="color:#d40000; font-size:18px; font-weight:bold; text-decoration:none;">★ NEW: विद्यार्थियों की सदनवार सूचना – PDF देखने के लिए यहाँ क्लिक करें ★</a></marquee>
- </div>
+ <div id="gallery-section" class="page-section"> 
+  <div class="main-panel"> 
+   <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">फोटो गैलरी (Photo Gallery)</h2> 
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;"> 
+    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden;"><img src="folk.png" alt="Folk Dance" style="width: 100%; height: 180px; object-fit: cover;"><div style="padding: 10px; text-align: center; font-weight: bold; background: #f8fafc;">लोक नृत्य</div></div> 
+    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden;"><img src="library.png" alt="Library" style="width: 100%; height: 180px; object-fit: cover;"><div style="padding: 10px; text-align: center; font-weight: bold; background: #f8fafc;">पुस्तकालय</div></div> 
+    <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden;"><img src="yoga.png" alt="Yoga" style="width: 100%; height: 180px; object-fit: cover;"><div style="padding: 10px; text-align: center; font-weight: bold; background: #f8fafc;">योग शिविर</div></div> 
+   </div> 
+  </div> 
+ </div> 
  
- </li>
- <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; font-weight: 500; margin-bottom: 15px;">
- <marquee behavior="scroll" direction="left" scrollamount="5"><strong>खेल दिवस (Sports Day):</strong> आगामी 29 अगस्त को विद्यालय में खेल दिवस का भव्य आयोजन किया जाएगा। सभी छात्र तैयारियों में भाग लें.</marquee>
- </li>
-  <!-- मुख्यमंत्री युवा मंथन कार्यक्रम - Notice Board -->
-<div class="notice-board">
-  <div class="notice-title">📢 NOTICE BOARD</div>
-
-  <div class="notice-content">
-    <a href="https://youtube.com/live/ZTPQIrCay2w?feature=share"
-       target="_blank"
-       rel="noopener noreferrer">
-      🔴 मुख्यमंत्री युवा मंथन कार्यक्रम हेतु LIVE कार्यक्रम देखने के लिए यहाँ क्लिक करें
-    </a>
-  </div>
+ <div id="video-section" class="page-section"> 
+  <div class="main-panel"> 
+   <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">वीडियो गैलरी (Video Gallery)</h2> 
+   <div class="my-gallery"> 
+    <div><video src="dance.mp4" controls></video></div> 
+    <div><video src="craft.mp4" controls></video></div> 
+    <div><video src="PARADE.mp4" controls></video></div> 
+   </div> 
+  </div> 
+ </div>
+ <div id="sports-section" class="page-section"><div class="main-panel"><h2>स्पोर्ट्स एक्टिविटी (Sports Activity)</h2><p>खेलकूद प्रतियोगिताएं और शारीरिक शिक्षा गतिविधियां।</p></div></div> 
+ <div id="cultural-section" class="page-section"><div class="main-panel"><h2>सांस्कृतिक गतिविधियां (Art & Cultural Activity)</h2><p>लोक नृत्य, नाटक, संगीत और कला प्रदर्शनी क्षेत्र।</p></div></div> 
+ <div id="ncc-section" class="page-section"><div class="main-panel"><h2>NCC (National Cadet Corps)</h2><p>विद्यालय के एन.सी.सी कैडेट्स की ट्रेनिंग और परेड डिटेल्स।</p></div></div> 
 </div>
-
-<style>
-.notice-board {
-  width: 100%;
-  overflow: hidden;
-  background: #fff8e1;
-  border: 2px solid #e65100;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  margin: 10px 0;
-}
-
-.notice-title {
-  background: #e65100;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  padding: 8px;
-}
-
-.notice-content {
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 10px 0;
-}
-
-.notice-content a {
-  display: inline-block;
-  color: #d32f2f;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  animation: noticeScroll 18s linear infinite;
-}
-
-.notice-content a:hover {
-  animation-play-state: paused;
-  color: #1565c0;
-}
-
-@keyframes noticeScroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-</style>
- <li class="notice-item"><strong>Holiday Calendar 2026</strong><br><br><a href="holiday.pdf" target="_blank" style="background:#002147;color:white;padding:8px 16px; text-decoration:none;border-radius:5px; display:inline-block;">View PDF</a></li>
- </ul>
- </div>
- </div>
- </div>
- <!-- एक पेड़ माँ के नाम स्लाइडर सेक्शन -->
- <section class="tree-slider" style="margin-top: 40px; width: 100%;">
- <h2> एक पेड़ माँ के नाम | हर घर एक पेड़ </h2>
- <div class="slider">
- <img src="tree1.jpg" class="active"> <img src="tree2.jpg" class="active"> <img src="tree3.jpg"> <img src="tree4.jpg"> <img src="tree5.jpg"> <img src="tree6.jpg"> <img src="tree7.jpg"> <img src="tree8.jpg">
- </div>
- </section>
-
- <!-- प्रधानाचार्य का संदेश -->
- <h3 style="font-size: 22px; color: #002147; margin-bottom: 15px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block; margin-top: 40px;">प्रधानाचार्य का संदेश (Principal's Message)</h3>
- <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-top: 15px; margin-bottom: 40px; width: 100%;">
- <div style="flex: 1; min-width: 150px; max-width: 200px; border: 3px solid #002147; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"><img src="principal.png" alt="श्री भगवती प्रसाद पंत" style="width: 100%; height: auto; display: block; object-fit: cover;"></div>
- <div style="flex: 2; min-width: 280px;">
- <p>प्रिय छात्रों, अभिभावकों और शुभचिंतकों, पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर की आधिकारिक वेबसाइट पर स्वागत है। हमारा उद्देश्य विद्यार्थियों को उच्च गुणवत्ता वाली आधुनिक शिक्षा प्रदान करने के साथ-साथ उनमें नैतिक मूल्यों का विकास करना है, ताकि वे देश के जिम्मेदार नागरिक बन सकें। डिजिटल युग में स्कूल की यह वेबसाइट हमारे और आपके बीच सूचनाओं के आदान-प्रदान को ओर सरल बनाएगी.</p>
- <div style="margin-top: 20px; text-align: right; font-weight: bold; color: #002147;">श्री भगवती प्रसाद पंत<span style="display: block; font-size: 14px; color: #555; font-weight: normal; margin-top: 3px;">प्रधानाचार्य, पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर</span></div>
- </div>
- </div>
-
- <!-- शैक्षणिक लिंक्स -->
- <div style="margin-top: 40px; margin-bottom: 40px; width: 100%;">
- <h3 style="font-size: 22px; color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">महत्वपूर्ण लिंक्स (Important Web Links)</h3>
- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 14px;">
- <a href="https://educationportal.uk.gov.in/" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">School Education Uttarakhand</a>
- <a href="https://dst.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">Dept of Science & Tech, India</a>
- <a href="https://pmshri.education.gov.in/" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #ffbc00; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">PM SHRI Scheme Portal</a>
- <a href="https://diksha.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">DIKSHA Portal</a>
- <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">Uttarakhand Board (UBSE)</a>
- <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">SCERT Uttarakhand</a>
- <a href="https://iitkgp.ac.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">National Digital Library</a>
- <a href="https://swayam.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">SWAYAM Central Portal</a>
- <a href="https://antiragging.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #d32f2f; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">Anti-Ragging Agency</a>
- <a href="https://uk.gov.in" target="_blank" style="display: flex; align-items: center; background: #fff; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #002147; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-decoration: none; color: #333; font-weight: 600;">UCOST Uttarakhand</a>
- </div>
- </div>
- </div>
- <!-- ================= टैब 2: विद्यालय परिवार (STAFF SECTION) ================= -->
- <div id="staff-section" class="page-section">
- <div class="main-panel">
- <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">  विद्यालय परिवार (Our Staff Details)</h2>
- <table style="width: 100%; border-collapse: collapse; font-size: 15px; background: #fff;">
- <thead>
- <tr style="background-color: #002147; color: white;">
- <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left;">नाम (Name)</th>
- <th style="border: 1px solid #e2e8f0; padding: 12px; text-align: left;">पद / विषय (Designation / Subject)</th>
- </tr>
- </thead>
- <tbody>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">प्रशासन (Administration)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवती प्रसाद पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रधानाचार्य (Principal)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री प्रकाश जोशी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">वरिष्ठ प्रशासनिक अधिकारी (Head clerk)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">सुश्री निर्जला आर्या</td><td style="border: 1px solid #e2e8f0; padding: 12px;">कनिष्ठ सहायक (assistant clerk)</td></tr>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">प्रवक्ता वर्ग (Lecturers)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवती प्रसाद पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता -अंंग्रेज़ी (Lecturer - English)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भुवन पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता - जीव विज्ञान (Lecturer - Biology)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री बृजेश कुमार जोशी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रवक्ता - गणित (Lecturer - Mathematics)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री पुनीत पंत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - भौतिक विज्ञान (Guest Lecturer - Physics)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्रीमती मेघा उप्रेती</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - रसायन विज्ञान (Guest Lecturer - Chemistry)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री मनोज कुमार विश्नोई</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - हिंदी (Guest Lecturer - Hindi)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भुवन नेवलिया</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - राजनीति विज्ञान (Guest Lecturer - Political Science)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री मुकेश कुमार</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - अर्थशास्त्र (Guest Lecturer - Economics)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री लक्ष्मण सिंह मेहरा</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि प्रवक्ता - संस्कृत (Guest Lecturer - Sanskrit)</td></tr>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">सहायक अध्यापक (L.T)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री राजमणि सिंह</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - हिंदी (L.T. - Hindi)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री जगजीवन प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - विज्ञान (L.T. - Science)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भास्कर सिंह डोबाल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - गणित (L.T. - Mathematics)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री आनंद राम चन्याल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - गणित (L.T. - Mathematics)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री जगदीश प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - अंग्रेज़ी (L.T. - English)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री हरीश लाल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - हिंदी (L.T. - Hindi)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री चन्द्र सिंह डांगी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - सामाजिक विज्ञान (L.T. - Social Science)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भूपाल राम चन्याल</td><td style="border: 1px solid #e2e8f0; padding: 12px;">एल.टी. - व्यायाम (L.T. - Physical Education)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री राजेन्द्र प्रसाद</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि एल.टी. -कला (Guest L.T. - Art)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्रीमती गीता कलोनी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अतिथि एल.टी. - सामाजिक विज्ञान (Guest L.T. - Social Science)</td></tr>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">प्रयोगशाला सहायक (Lab Assistant)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री कमल भंडारी</td><td style="border: 1px solid #e2e8f0; padding: 12px;">प्रयोगशाला सहायक (Lab Assistant)</td></tr>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">व्यावसायिक शिक्षा (Vocational Education)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री सुनील सिंह</td><td style="border: 1px solid #e2e8f0; padding: 12px;">व्यावसायिक शिक्षक (Vocational Teacher)</td></tr>
- <tr style="background-color: #ffbc00; color: #002147; font-weight: bold;"><td colspan="2" style="border: 1px solid #e2e8f0; padding: 10px 12px;">अनुसेवक (Supporting Staff)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री नारायण नाथ</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री सुन्दर सिंह कठायत</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री विक्रम राम</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Support Staff)</td></tr>
- <tr><td style="border: 1px solid #e2e8f0; padding: 12px;">श्री भगवान सिंह धानिक</td><td style="border: 1px solid #e2e8f0; padding: 12px;">अनुसेवक (Supporting Staff)</td></tr>
- </tbody>
- </table>
- </div>
- </div>
- <!-- ================= टैब 3: फोटो गैलरी (GALLERY SECTION) ================= -->
- <div id="gallery-section" class="page-section">
- <div class="main-panel">
- <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">   फोटो गैलरी (Photo Gallery)</h2>
- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: #fff; padding: 15px; border-radius: 6px;">
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="folk.png" alt="Folk Dance" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">सांस्कृतिक गतिविधि - लोक नृत्य</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="library.png" alt="Library" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">विद्यालय पुस्तकालय (Library)</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="stem.png" alt="STEM Lab" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">स्टेम प्रयोगशाला (Science Lab)</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="yoga.png" alt="Yoga" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">शारीरिक विकास - योग शिविर</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="Sport.png" alt="Sport" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">शारीरिक विकास</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="Sports.png" alt="Sports" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">भौतिक कार्यकलाप</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="Ncc.png" alt="Ncc" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">Ncc</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="Soil.png" alt="Soil" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">Community Work</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="bio.png" alt="bio" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">Practical work in biology lab</div>
- </div>
- <div style="border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
- <img src="biology.png" alt="biology" style="width: 100%; height: 180px; object-fit: cover; display: block;">
- <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 14px; color: #002147; background: #f8fafc; border-top: 1px solid #e2e8f0;">Practical work in biology lab</div>
- </div>
- </div>
- </div>
- </div>
-
- <!-- ================= टैब 4: वीडियो गैलरी (VIDEO SECTION) ================= -->
- <div id="video-section" class="page-section">
- <div class="main-panel">
- <h2 style="color: #002147; margin-bottom: 20px; border-bottom: 3px solid #ffbc00; padding-bottom: 5px; display: inline-block;">वीडियो गैलरी (Video Gallery)</h2>
- <p>यहाँ विद्यालय के कार्यक्रमों और प्रयोगशाला गतिविधियों के वीडियो अपलोड किए जाएंगे.</p>
- </div>
-   <div class="my-gallery">
-    <div><video src="dance.mp4" controls></video></div>
-    <div><video src="craft.mp4" controls></video></div>
-    <div><video src="magnus.mp4" controls></video></div>
-    <div><video src="ncc.mp4" controls></video></div>
-<div><video src="danc.mp4" controls></video></div>
-    
-    <!-- Naya video yahan paste karein -->
-    <div>
-        <video controls>
-            <source src="PARADE.mp4" type="video/mp4">
-        </video>
-    </div>
-</div>
-
- </div>
- <!-- ================= Science Labs Sub-Sections ================= -->
- <div id="physics-lab-section" class="page-section"><div class="main-panel"><h2>Intermediate Physics Lab</h2><p>भौतिक विज्ञान प्रयोगों की आधुनिक प्रयोगशाला.</p></div></div>
- <div id="chemistry-lab-section" class="page-section"><div class="main-panel"><h2>Intermediate Chemistry Lab</h2><p>रसायन विज्ञान के व्यावहारिक प्रयोगों की जगह.</p></div></div>
- <div id="biology-lab-section" class="page-section"><div class="main-panel"><h2>Intermediate Biology Lab</h2><p>जीव विज्ञान प्रयोगों हेतु आधुनिक लैब.</p></div></div>
- <div id="stem-lab-section" class="page-section"><div class="main-panel"><h2>STEM Lab</h2><p>विज्ञान, प्रौद्योगिकी, इंजीनियरिंग और गणित मॉडल लैब.</p></div></div>
- <div id="hs-science-section" class="page-section"><div class="main-panel"><h2>High School Science Lab</h2><p>कक्षा 9 और 10 के छात्रों के लिए सामान्य विज्ञान लैब.</p></div></div>
- <div id="hs-maths-section" class="page-section"><div class="main-panel"><h2>High School Mathematics Lab</h2><p>गणितीय आकृतियों और सूत्रों को समझने की लैब.</p></div></div>
- <div id="automotive-lab-section" class="page-section"><div class="main-panel"><h2>Vocational Automotive Lab</h2><p>व्यावसायिक शिक्षा के अंतर्गत ऑटोमोटिव स्किल लैब.</p></div></div>
-
- <!-- ================= Activities Sections ================= -->
- <div id="sports-section" class="page-section"><div class="main-panel"><h2>स्पोर्ट्स एक्टिविटी (Sports Activity)</h2><p>खेलकूद प्रतियोगिताएं और शारीरिक शिक्षा गतिविधियां.</p></div></div>
- <div id="cultural-section" class="page-section"><div class="main-panel"><h2>सांस्कृतिक गतिविधियां (Art & Cultural Activity)</h2><p>लोक नृत्य, नाटक, संगीत और कला प्रदर्शनी क्षेत्र.</p></div></div>
- <div id="ncc-section" class="page-section"><div class="main-panel"><h2>NCC (National Cadet Corps)</h2><p>विद्यालय के एन.सी.सी कैडेट्स की ट्रेनिंग और परेड डिटेल्स.</p></div></div>
-</div> <!-- Master Container Box Close -->
-<footer>
- <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर. सर्वाधिकार सुरक्षित।</p>
- <div class="credit-footer" style="overflow: hidden; background: #002147; padding: 5px 0; margin-top: 10px;">
- <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();" style="color: #fff;">★ Official Website of PM SHRI Government Inter College Raiagar Pithoragarh Uttarakhand • Designed and Maintained by the Physics Department under the supervision of our Principal, Shri Bhagwati Prasad Pant. ★</marquee>
- </div>
+<footer> 
+ <p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p> 
+ <div style="background: #002147; padding: 5px 0; margin-top: 10px;"> 
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="color: #fff;">★ Official Website Designed and Maintained by the Physics Department under supervision of Shri Bhagwati Prasad Pant. ★</marquee> 
+ </div> 
 </footer>
+<script> 
+function switchTab(event, sectionId) { 
+ event.preventDefault(); 
+ var sections = document.querySelectorAll('.page-section'); 
+ sections.forEach(function(sec) { sec.classList.remove('active-section'); }); 
+ var navLinks = document.querySelectorAll('nav ul li a, .dropbtn'); 
+ navLinks.forEach(function(link) { link.classList.remove('active-tab'); }); 
+ if(document.getElementById(sectionId)) { document.getElementById(sectionId).classList.add('active-section'); } 
+ event.currentTarget.classList.add('active-tab'); 
+} 
 
-<script>
-// Upgraded JS Dynamic Tab Engine Control
-function switchTab(event, sectionId) {
- event.preventDefault();
- 
- // Hide all layout sections
- var sections = document.querySelectorAll('.page-section');
- sections.forEach(function(sec) { sec.classList.remove('active-section'); });
- 
- // Remove active yellow colors from navbar links
- var navLinks = document.querySelectorAll('nav ul li a, .dropbtn');
- navLinks.forEach(function(link) { link.classList.remove('active-tab'); });
- 
- // Show the targeted selection layout
- if(document.getElementById(sectionId)) {
- document.getElementById(sectionId).classList.add('active-section');
- }
- 
- // Highlight menu tab
- if(event.currentTarget.classList.contains('dropbtn')) {
- event.currentTarget.classList.add('active-tab');
- } else {
- event.currentTarget.classList.add('active-tab');
- }
-}
-
-// 'एक पेड़ माँ के नाम' Auto pair image slider logic
-const images = document.querySelectorAll(".slider img");
-let index = 0;
-function showPair(){
- if(images.length === 0) return;
- images.forEach(img => img.classList.remove("active"));
- images[index].classList.add("active");
- if (images.length > 1) {
- let nextIndex = (index + 1) % images.length;
- images[nextIndex].classList.add("active");
- }
- index = (index + 2) % images.length;
- if (images.length % 2 !== 0 && index === 0) { index = 0; }
-}
-showPair();
-setInterval(showPair, 3000);
-</script>
- <!-- PHOTO DOUBLE CLICK PREVIEW -->
-<div id="photoPreview"
-     style="display:none; position:fixed; z-index:99999;
-     left:0; top:0; width:100%; height:100%;
-     background:rgba(0,0,0,0.92);
-     align-items:center; justify-content:center;">
-
-    <span id="closePreview"
-          style="position:absolute; top:15px; right:25px;
-          color:white; font-size:45px; font-weight:bold;
-          cursor:pointer; z-index:100000;">
-        &times;
-    </span>
-
-    <img id="previewImg"
-         src=""
-         style="max-width:92%; max-height:88%;
-         object-fit:contain; border-radius:8px;">
-</div>
-
-<!-- PHOTO PREVIEW FOR COMPUTER + MOBILE -->
-
-<div id="photoPreview"
-     style="display:none; position:fixed; z-index:99999;
-     left:0; top:0; width:100%; height:100%;
-     background:rgba(0,0,0,0.92);
-     align-items:center; justify-content:center;">
-
-    <span id="closePreview"
-          style="position:absolute; top:15px; right:25px;
-          color:white; font-size:45px; font-weight:bold;
-          cursor:pointer; z-index:100000;">
-        &times;
-    </span>
-
-    <img id="previewImg"
-         src=""
-         style="max-width:92%; max-height:88%;
-         object-fit:contain; border-radius:8px;">
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const gallery = document.getElementById("gallery-section");
-    const preview = document.getElementById("photoPreview");
-    const previewImg = document.getElementById("previewImg");
-    const closeBtn = document.getElementById("closePreview");
-
-    if (!gallery) return;
-
-    gallery.querySelectorAll("img").forEach(function(img) {
-
-        img.style.cursor = "zoom-in";
-
-        /* COMPUTER - Double Click */
-        img.addEventListener("dblclick", function(e) {
-            e.preventDefault();
-
-            previewImg.src = this.src;
-            preview.style.display = "flex";
-        });
-
-        /* MOBILE - Single Tap */
-        img.addEventListener("touchend", function(e) {
-            e.preventDefault();
-
-            previewImg.src = this.src;
-            preview.style.display = "flex";
-        }, {passive:false});
-
-    });
-
-    /* Close button */
-    closeBtn.addEventListener("click", function() {
-        preview.style.display = "none";
-        previewImg.src = "";
-    });
-
-    /* Mobile touch close */
-    closeBtn.addEventListener("touchend", function(e) {
-        e.preventDefault();
-        preview.style.display = "none";
-        previewImg.src = "";
-    }, {passive:false});
-
-    /* Preview के बाहर tap/click करने पर बंद */
-    preview.addEventListener("click", function(e) {
-        if (e.target === preview) {
-            preview.style.display = "none";
-            previewImg.src = "";
-        }
-    });
-
-    preview.addEventListener("touchend", function(e) {
-        if (e.target === preview) {
-            e.preventDefault();
-            preview.style.display = "none";
-            previewImg.src = "";
-        }
-    }, {passive:false});
-
-});
-</script>
-</body>
+const images = document.querySelectorAll(".slider img"); 
+let index = 0; 
+function showPair(){ 
+ if(images.length === 0) return; 
+ images.forEach(img => img.classList.remove("active")); 
+ images[index].classList.add("active"); 
+ if (images.length > 1) { let nextIndex = (index + 1) % images.length; images[nextIndex].classList.add("active"); } 
+ index = (index + 2) % images.length; 
+} 
+showPair(); 
+setInterval(showPair, 3000); 
+</script> 
+</body> 
 </html>
