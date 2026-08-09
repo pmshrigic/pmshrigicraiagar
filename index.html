@@ -351,6 +351,534 @@ function showPair(){
 } 
 showPair(); 
 setInterval(showPair, 3000); 
-</script> 
+</script> <!-- 🇮🇳 INDEPENDENCE DAY SPECIAL THEME -->
+<div id="independence-theme">
+
+  <!-- Tricolour top line -->
+  <div class="tri-line">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Independence Day Hero -->
+  <section class="independence-hero">
+
+    <div class="hero-flag left-flag">🇮🇳</div>
+
+    <div class="hero-content">
+      <div class="ashoka">☸</div>
+
+      <div class="date-badge">15 अगस्त 2026</div>
+
+      <h1>
+        <span>स्वतंत्रता</span> 
+        <b>दिवस</b>
+      </h1>
+
+      <h3>की हार्दिक शुभकामनाएँ</h3>
+
+      <div class="jaihind">
+        जय हिन्द <i>•</i> जय भारत
+      </div>
+
+      <div class="school-name">
+        PM SHRI GIC RAIAGAR
+      </div>
+
+      <div class="tagline">
+        शिक्षित युवा • सशक्त भारत • विकसित भारत
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-box">
+        <div>
+          <strong id="days">00</strong>
+          <small>दिन</small>
+        </div>
+
+        <div>
+          <strong id="hours">00</strong>
+          <small>घंटे</small>
+        </div>
+
+        <div>
+          <strong id="minutes">00</strong>
+          <small>मिनट</small>
+        </div>
+
+        <div>
+          <strong id="seconds">00</strong>
+          <small>सेकंड</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-flag right-flag">🇮🇳</div>
+
+    <!-- Floating Ashoka Chakra -->
+    <div class="floating-chakra">☸</div>
+
+  </section>
+
+  <!-- Notice Strip -->
+  <div class="freedom-notice">
+    <span class="notice-title">🇮🇳 सूचना</span>
+
+    <marquee scrollamount="5">
+      15 अगस्त 2026 को स्वतंत्रता दिवस समारोह का आयोजन किया जाएगा
+      &nbsp;&nbsp; • &nbsp;&nbsp;
+      सभी छात्र-छात्राएँ समय पर उपस्थित रहें
+      &nbsp;&nbsp; • &nbsp;&nbsp;
+      जय हिन्द • जय भारत
+    </marquee>
+  </div>
+
+</div>
+
+
+<style>
+
+/* ==============================
+   INDEPENDENCE DAY THEME
+   ============================== */
+
+#independence-theme {
+    width: 100%;
+    display: none;
+    font-family: Arial, "Noto Sans Devanagari", sans-serif;
+}
+
+/* Tricolour */
+.tri-line {
+    height: 7px;
+    display: flex;
+}
+
+.tri-line span {
+    flex: 1;
+}
+
+.tri-line span:nth-child(1) {
+    background: #ff9933;
+}
+
+.tri-line span:nth-child(2) {
+    background: #ffffff;
+}
+
+.tri-line span:nth-child(3) {
+    background: #138808;
+}
+
+
+/* HERO */
+
+.independence-hero {
+    position: relative;
+    min-height: 390px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,153,51,.18),
+            rgba(255,255,255,.96) 48%,
+            rgba(19,136,8,.15)
+        );
+
+    border-bottom: 3px solid #ff9933;
+}
+
+
+/* हल्का decorative background */
+
+.independence-hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,128,.08);
+    top: -250px;
+    left: -150px;
+}
+
+.independence-hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 2px solid rgba(19,136,8,.08);
+    bottom: -250px;
+    right: -150px;
+}
+
+
+/* CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.ashoka {
+    font-size: 55px;
+    color: #000080;
+    line-height: 1;
+    animation: rotateChakra 12s linear infinite;
+}
+
+@keyframes rotateChakra {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.date-badge {
+    display: inline-block;
+    padding: 7px 28px;
+    margin-top: 5px;
+
+    background: #000080;
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+
+.hero-content h1 {
+    margin: 8px 0 0;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 span {
+    color: #ff6600;
+}
+
+.hero-content h1 b {
+    color: #138808;
+}
+
+
+.hero-content h3 {
+    margin: 3px 0;
+    font-size: 24px;
+    color: #222;
+}
+
+
+.jaihind {
+    margin-top: 8px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.jaihind {
+    color: #ff6600;
+}
+
+.jaihind i {
+    color: #000080;
+    font-style: normal;
+    padding: 0 10px;
+}
+
+.jaihind::first-letter {
+    color: #ff6600;
+}
+
+
+.school-name {
+    margin-top: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000080;
+}
+
+
+.tagline {
+    margin-top: 4px;
+    font-size: 15px;
+    color: #555;
+}
+
+
+/* FLAGS */
+
+.hero-flag {
+    position: absolute;
+    font-size: 100px;
+    z-index: 3;
+
+    animation: flagMove 2s ease-in-out infinite alternate;
+}
+
+.left-flag {
+    left: 4%;
+}
+
+.right-flag {
+    right: 4%;
+    animation-delay: .8s;
+}
+
+@keyframes flagMove {
+
+    from {
+        transform: rotate(-7deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(7deg) translateY(-10px);
+    }
+
+}
+
+
+/* Floating Chakra */
+
+.floating-chakra {
+    position: absolute;
+    right: 15%;
+    top: 12%;
+
+    font-size: 85px;
+    color: #000080;
+    opacity: .12;
+
+    animation: rotateChakra 20s linear infinite;
+}
+
+
+/* COUNTDOWN */
+
+.countdown-box {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.countdown-box div {
+    min-width: 70px;
+
+    padding: 8px;
+
+    background: rgba(255,255,255,.95);
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+
+    border-top: 4px solid #ff9933;
+}
+
+.countdown-box div:nth-child(2) {
+    border-top-color: #000080;
+}
+
+.countdown-box div:nth-child(3) {
+    border-top-color: #138808;
+}
+
+.countdown-box div:nth-child(4) {
+    border-top-color: #ff9933;
+}
+
+
+.countdown-box strong {
+    display: block;
+    font-size: 25px;
+    color: #000080;
+}
+
+.countdown-box small {
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* NOTICE */
+
+.freedom-notice {
+    display: flex;
+    align-items: center;
+
+    background: #000b3d;
+    color: white;
+
+    min-height: 45px;
+}
+
+.notice-title {
+    background: #ff6600;
+    padding: 12px 22px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.freedom-notice marquee {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .independence-hero {
+        min-height: 350px;
+        padding: 20px 10px;
+    }
+
+    .hero-flag {
+        font-size: 45px;
+        top: 20px;
+    }
+
+    .left-flag {
+        left: 5px;
+    }
+
+    .right-flag {
+        right: 5px;
+    }
+
+    .ashoka {
+        font-size: 40px;
+    }
+
+    .date-badge {
+        font-size: 14px;
+        padding: 6px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h3 {
+        font-size: 17px;
+    }
+
+    .jaihind {
+        font-size: 20px;
+    }
+
+    .school-name {
+        font-size: 15px;
+    }
+
+    .tagline {
+        font-size: 12px;
+    }
+
+    .countdown-box {
+        gap: 4px;
+    }
+
+    .countdown-box div {
+        min-width: 52px;
+        padding: 6px 3px;
+    }
+
+    .countdown-box strong {
+        font-size: 19px;
+    }
+
+    .countdown-box small {
+        font-size: 10px;
+    }
+
+    .floating-chakra {
+        font-size: 45px;
+        right: 5%;
+        top: 35%;
+    }
+
+    .freedom-notice {
+        font-size: 12px;
+    }
+
+    .notice-title {
+        padding: 10px;
+    }
+}
+
+</style>
+
+
+<script>
+
+/* 🇮🇳 SHOW THEME ONLY AROUND INDEPENDENCE DAY */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    const theme = document.getElementById("independence-theme");
+
+    /*
+       Theme दिखाई देगी:
+       13 अगस्त
+       14 अगस्त
+       15 अगस्त
+       16 अगस्त
+    */
+
+    if (
+        year === 2026 &&
+        month === 8 &&
+        day >= 13 &&
+        day <= 16
+    ) {
+
+        theme.style.display = "block";
+
+    }
+
+});
+
+
+/* COUNTDOWN TO 15 AUGUST 2026 */
+
+function updateIndependenceCountdown() {
+
+    const target =
+        new Date("August 15, 2026 08:30:00").getTime();
+
+    const now = new Date().getTime();
+
+    const difference = target - now;
+
+    if (difference <= 0) {
+
+        document.getElementById("days").innerHTML = "00";
+       
 </body> 
 </html>
