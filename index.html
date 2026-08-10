@@ -863,22 +863,106 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+<script>
+
+/* 🇮🇳 SHOW INDEPENDENCE DAY THEME */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    const theme = document.getElementById("independence-theme");
+
+    /*
+       Theme दिखाई देगी:
+       13 अगस्त
+       14 अगस्त
+       15 अगस्त
+       16 अगस्त
+    */
+
+    if (
+        year === 2026 &&
+        month === 8 &&
+        day >= 10 &&
+        day <= 16
+    ) {
+        theme.style.display = "block";
+    }
+
+});
 
 
-/* COUNTDOWN TO 15 AUGUST 2026 */
+/* 🇮🇳 COUNTDOWN TO 15 AUGUST 2026 */
 
 function updateIndependenceCountdown() {
 
-    const target =
-        new Date("August 15, 2026 08:30:00").getTime();
+    const target = new Date(
+        "August 15, 2026 08:30:00"
+    ).getTime();
 
     const now = new Date().getTime();
 
     const difference = target - now;
 
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
+
+    if (!days || !hours || !minutes || !seconds) {
+        return;
+    }
+
+    /* समारोह शुरू होने के बाद */
+
     if (difference <= 0) {
 
-        document.getElementById("days").innerHTML = "00";
+        days.innerHTML = "00";
+        hours.innerHTML = "00";
+        minutes.innerHTML = "00";
+        seconds.innerHTML = "00";
+
+        return;
+    }
+
+    const d = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const h = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const m = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const s = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    days.innerHTML = String(d).padStart(2, "0");
+    hours.innerHTML = String(h).padStart(2, "0");
+    minutes.innerHTML = String(m).padStart(2, "0");
+    seconds.innerHTML = String(s).padStart(2, "0");
+}
+
+
+/* Countdown हर 1 सेकंड में update होगा */
+
+updateIndependenceCountdown();
+
+setInterval(
+    updateIndependenceCountdown,
+    1000
+);
+
+</script>
        
 </body> 
 </html>
