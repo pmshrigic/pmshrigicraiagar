@@ -445,7 +445,7 @@ setInterval(showPair, 3000);
 
 #independence-theme {
     width: 100%;
-    display: none;
+    display: block !important;
     font-family: Arial, "Noto Sans Devanagari", sans-serif;
 }
 
@@ -867,34 +867,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* 🇮🇳 SHOW INDEPENDENCE DAY THEME */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const today = new Date();
-
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-
-    const theme = document.getElementById("independence-theme");
-
-    /*
-       Theme दिखाई देगी:
-       13 अगस्त
-       14 अगस्त
-       15 अगस्त
-       16 अगस्त
-    */
-
-    if (
-        year === 2026 &&
-        month === 8 &&
-        day >= 10 &&
-        day <= 16
-    ) {
-        theme.style.display = "block";
-    }
-
-});
 
 
 /* 🇮🇳 COUNTDOWN TO 15 AUGUST 2026 */
