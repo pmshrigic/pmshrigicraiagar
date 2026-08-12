@@ -44,6 +44,88 @@
  .my-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
  .my-gallery video { width: 100%; border-radius: 6px; background: #000; }
  footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
+  /* स्कूल नोटिस बोर्ड - स्पोर्ट्स नोटिस स्टाइल */
+.sports-notice-box {
+  background-color: #fffaf0;
+  border-left: 5px solid #ffbc00; /* आकर्षक पीला/नारंगी बॉर्डर */
+  border-top: 1px solid #ffe4b5;
+  border-right: 1px solid #ffe4b5;
+  border-bottom: 1px solid #ffe4b5;
+  border-radius: 4px;
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-family: Arial, sans-serif;
+}
+
+.sports-notice-header {
+  font-size: 16px;
+  color: #d9534f; /* अलर्ट रेड कलर */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.bell-icon {
+  margin-right: 8px;
+  animation: ring 1.5s infinite ease-in-out;
+}
+
+.sports-notice-body p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.sports-criteria-info ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.sports-criteria-info li {
+  font-size: 14px;
+  color: #002147;
+  margin-bottom: 5px;
+}
+
+.sports-alert-text {
+  font-size: 13px !important;
+  color: #b94a48 !important;
+}
+
+/* पंजीकरण बटन जो सीधे रीडायरेक्ट करेगा */
+.sports-reg-btn {
+  display: inline-block;
+  background-color: #138808; /* हरा रंग जो खेल और उत्तराखंड पोर्टल से मेल खाता है */
+  color: white !important;
+  text-decoration: none !important;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.sports-reg-btn:hover {
+  background-color: #0b6604;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* घंटी हिलने का एनीमेशन */
+@keyframes ring {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-15deg); }
+  30% { transform: rotate(10deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
  </style> 
 </head> 
 <body>
@@ -135,9 +217,32 @@
         <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"><a href="students.pdf" target="_blank" style="color:#d40000; font-size:18px; font-weight:bold; text-decoration:none;">★ NEW: विद्यार्थियों की सदनवार सूचना – यहाँ क्लिक करें ★</a></marquee> 
        </div> 
       </li> 
-      <li style="padding: 10px 0; border-bottom: 1px solid #f0e6cc; font-size: 15px; color: #4a5568; margin-bottom: 15px;"> 
-       <marquee behavior="scroll" direction="left" scrollamount="5"><strong>खेल दिवस:</strong> आगामी 29 अगस्त को विद्यालय में खेल दिवस का भव्य आयोजन किया जाएगा।</marquee> 
-      </li> 
+      <!-- मुख्यमंत्री चैंपियनशिप ट्रॉफी 2026 नोटिस -->
+<div class="sports-notice-box">
+  <div class="sports-notice-header">
+    <span class="bell-icon">🔔</span> 
+    <strong>महत्वपूर्ण सूचना: मुख्यमंत्री चैंपियनशिप ट्रॉफी 2026</strong>
+  </div>
+  
+  <div class="sports-notice-body">
+    <p>विद्यालय के सभी छात्र-छात्राओं को सूचित किया जाता है कि खेल महाकुंभ <strong>'मुख्यमंत्री चैंपियनशिप ट्रॉफी 2026'</strong> के लिए पंजीकरण शुरू हो चुके हैं।</p>
+    
+    <div class="sports-criteria-info">
+      <ul>
+        <li><strong>आयु वर्ग:</strong> 14 से 19 वर्ष के मध्य (Under-14 & Under-19)</li>
+        <li><strong>आवश्यक दस्तावेज:</strong> आधार कार्ड, स्थाई निवास प्रमाण पत्र, बैंक पासबुक एवं जन्म प्रमाण पत्र।</li>
+      </ul>
+    </div>
+    
+    <p class="sports-alert-text">⚠️ <strong>ध्यान दें:</strong> खेल प्रतियोगिताओं में भाग लेने के लिए आधिकारिक पोर्टल पर ऑनलाइन पंजीकरण करना अनिवार्य है।</p>
+    
+    <!-- Divert / Redirect करने वाला बटन -->
+    <a href="https://www.khelouk.in/registration" target="_blank" class="sports-reg-btn">
+      👉 ऑनलाइन पंजीकरण के लिए यहाँ क्लिक करें (khelouk.in)
+    </a>
+  </div>
+</div>
+
       <li style="margin-bottom: 15px; background: linear-gradient(135deg, #fff4e6, #ffe8cc); border: 2px solid #ff9933; border-radius: 6px; padding: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);"> 
  <span style="display: block; font-weight: bold; color: #d35400; font-size: 15px; margin-bottom: 8px; animation: blink 1.5s infinite;">★ मुख्यमंत्री विद्यार्थी मंथन कार्यक्रम ★ मेरे सपनों का उत्तराखण्ड : एक विकसित राज्य हेतु मेरा दृष्टिकोण</span>
  <a href="https://cmvidyarthimanthan.com" target="_blank" style="color: #002147; font-weight: bold; text-decoration: none; font-size: 16px; background: #ffffff; display: block; padding: 8px; border-radius: 4px; border: 1px dashed #ff9933; transition: 0.3s;">
