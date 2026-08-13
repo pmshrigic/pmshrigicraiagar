@@ -125,7 +125,55 @@
   50% { transform: rotate(0); }
   100% { transform: rotate(0); }
 }
+/* FINAL MOBILE FIX */
 
+@media (max-width: 700px) {
+
+  .dg-message-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 8px 10px !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+  }
+
+  .dg-message-icon {
+    width: 55px !important;
+    min-width: 55px !important;
+    height: 55px !important;
+    flex-shrink: 0 !important;
+    font-size: 25px !important;
+  }
+
+  .dg-message-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .dg-message-content h2 {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+    margin: 2px 0 4px !important;
+  }
+
+  .dg-subtitle {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 3px !important;
+  }
+
+  .dg-message-short {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    margin: 0 0 4px !important;
+  }
+
+  .dg-read-btn {
+    font-size: 10px !important;
+    padding: 5px 10px !important;
+  }
+}
  </style> 
 </head> 
 <body>
