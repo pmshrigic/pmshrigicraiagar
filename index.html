@@ -173,7 +173,226 @@
     font-size: 10px !important;
     padding: 5px 10px !important;
   }
-}
+}# Waving National Flag Layout for DG Message
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता दिवस संदेश और लहराता राष्ट्रीय ध्वज</title>
+    <style>
+        /* मुख्य कंटेनर की स्टाइलिंग */
+        .portal-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* तिरंगा हेडर लाइन डिवाइडर */
+        .tricolor-divider {
+            height: 5px;
+
+            background: linear-gradient(to right, #ff9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%);
+            margin: 15px 0 35px;
+        }
+
+        /* फ़्लेक्सबॉक्स लेआउट - संदेश और झंडे को आजू-बाजू (Side-by-Side) रखने के लिए */
+        .side-by-side-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* बाएँ भाग (DG Madam Message Image) की स्टाइलिंग */
+        .message-box-left {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+
+        }
+
+        .message-box-left img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 15px rgba(0,0,0,.15);
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* दाएँ भाग (Waving Flag Container) की स्टाइलिंग */
+        .flag-box-right {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10px;
+
+        }
+
+        /* झंडे का स्टैंड / डंडा (Flagpole) */
+        .flagpole {
+            width: 12px;
+            height: 340px;
+            background: linear-gradient(to right, #555, #ccc, #888, #444);
+            border-radius: 6px 6px 0 0;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        /* लहराते हुए झंडे का मुख्य ढांचा */
+        .waving-flag {
+            width: 240px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.25);
+
+            transform-origin: left center;
+            animation: flagWaveAnimation 3s ease-in-out infinite alternate;
+            position: relative;
+            margin-left: -2px; /* डंडे से जोड़ने के लिए */
+            z-index: 1;
+        }
+
+        /* तिरंगे की पट्टियाँ */
+        .stripe-saffron {
+            background-color: #FF9933;
+            flex: 1;
+        }
+
+        .stripe-white {
+            background-color: #FFFFFF;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .stripe-green {
+            background-color: #138808;
+            flex: 1;
+        }
+
+        /* अशोक चक्र */
+        .ashoka-chakra {
+            width: 42px;
+            height: 42px;
+            border: 2px dashed #000080;
+            border-radius: 50%;
+            position: relative;
+            animation: chakraSpin 12s linear infinite;
+        }
+
+        .ashoka-chakra::before {
+
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            background: repeating-conic-gradient(from 0deg, #000080 0deg 2deg, transparent 2deg 15deg);
+            border-radius: 50%;
+        }
+
+        /* झंडे के लहराने (Waving Effect) का CSS Keyframes */
+        @keyframes flagWaveAnimation {
+            0% {
+                transform: rotate(-1deg) skewY(-3deg) scaleY(0.98);
+            }
+            50% {
+                transform: rotate(1deg) skewY(1deg) scaleY(1);
+            }
+
+            100% {
+                transform: rotate(3deg) skewY(4deg) scaleY(0.98);
+            }
+        }
+
+        /* अशोक चक्र के घूमने का एनीमेशन */
+        @keyframes chakraSpin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* मोबाइल रिस्पॉन्सिवनेस के लिए अतिरिक्त सुधार */
+        @media (max-width: 768px) {
+            .side-by-side-flex {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .flagpole {
+
+                height: 280px;
+            }
+            .waving-flag {
+                width: 210px;
+                height: 140px;
+            }
+            .ashoka-chakra {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        
+        <!-- मुख्य शीर्षक -->
+        <h1 style="color:#174a87;">
+
+            🇮🇳 स्वतंत्रता दिवस संदेश — 2026
+        </h1>
+
+        <!-- तिरंगा डिवाइडर लाइन -->
+        <div class="tricolor-divider"></div>
+
+        <!-- मुख्य साइड-बाय-साइड सेक्शन -->
+        <div class="side-by-side-flex">
+            
+            <!-- बायाँ हिस्सा: DG Madam का संदेश फ़ोटो -->
+            <div class="message-box-left">
+                <img src="dg.png" alt="महानिदेशक विद्यालयी शिक्षा उत्तराखण्ड का स्वतंत्रता दिवस संदेश">
+            </div>
+
+            <!-- दायाँ हिस्सा: लहराता हुआ राष्ट्रीय ध्वज (Pure CSS) -->
+            <div class="flag-box-right">
+                <!-- झंडे का डंडा -->
+                <div class="flagpole"></div>
+                <!-- लहराता हुआ झंडा -->
+
+                <div class="waving-flag">
+                    <div class="stripe-saffron"></div>
+                    <div class="stripe-white">
+                        <div class="ashoka-chakra"></div>
+                    </div>
+                    <div class="stripe-green"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
  </style> 
 </head> 
 <body>
