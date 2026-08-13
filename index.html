@@ -364,8 +364,8 @@
 .dg-message-section {
   width: 100%;
   max-width: 1200px;
-  margin: 25px auto;
-  padding: 0 12px;
+  margin: 10px auto;
+  padding: 6px;
   box-sizing: border-box;
 }
 
@@ -400,8 +400,8 @@
 .dg-message-card {
   display: flex;
   align-items: center;
-  gap: 25px;
-  padding: 25px;
+  gap: 15px;
+  padding: 12px 15px;
   background: linear-gradient(135deg, #fffdf8, #ffffff);
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
@@ -488,12 +488,12 @@
 /* 📱 Mobile */
 @media (max-width: 700px) {
 
-  .dg-message-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 15px;
-    gap: 15px;
-  }
+.dg-message-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 8px 10px;
+    gap: 8px;
+}
 
   .dg-message-icon {
     min-width: 75px;
