@@ -23,6 +23,208 @@
   .main-panel h2 { color: #002147; margin-bottom: 15px; }
   .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #002147; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
   .back-btn:hover { background-color: #ffbc00; color: #002147; }
+  /* ==========================================
+   ART & CULTURE PHOTO GALLERY
+========================================== */
+
+.culture-gallery-section {
+  margin-top: 35px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid #ff9933;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.culture-gallery-title {
+  text-align: center;
+  color: #002147;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.culture-gallery-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.culture-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.culture-photo-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.culture-photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+.culture-photo-card img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.culture-photo-card:hover img {
+  transform: scale(1.03);
+}
+
+.culture-photo-caption {
+  padding: 12px;
+  text-align: center;
+  color: #002147;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/* ==========================================
+   CULTURE PHOTO LIGHTBOX
+========================================== */
+
+.culture-photo-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.90);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.culture-photo-lightbox img {
+  max-width: 92%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+.culture-photo-close {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+.culture-photo-close:hover {
+  color: #ffbc00;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 900px) {
+
+  .culture-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .culture-gallery-section {
+    padding: 22px 15px;
+  }
+
+  .culture-gallery-title {
+    font-size: 24px;
+  }
+
+  .culture-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .culture-photo-card img {
+    height: 230px;
+  }
+
+}
+  /* ==========================================
+   ART & CULTURE VIDEO GALLERY
+========================================== */
+
+.culture-video-section {
+  margin-top: 35px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid #138808;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.culture-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.culture-video-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.culture-video {
+  width: 100%;
+  height: 280px;
+  display: block;
+  background: #000;
+}
+
+.culture-video-caption {
+  padding: 13px;
+  text-align: center;
+  color: #002147;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .culture-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .culture-video {
+    height: 230px;
+  }
+
+}
   footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
  </style> 
 </head> 
@@ -63,10 +265,326 @@
  <div class="main-panel">
   <h2>सांस्कृतिक गतिविधियां (Art & Cultural Activity)</h2>
   <p>लोक नृत्य, नाटक, संगीत और कला प्रदर्शनी क्षेत्र। विद्यालय के छात्र-छात्राएं कुमाऊंनी लोक कला, पारंपरिक सांस्कृतिक कार्यक्रमों और राज्य स्तरीय प्रतियोगिताओं में बढ़-चढ़कर भाग लेते हैं।</p>
-  
+  <!-- ==========================================
+     ART & CULTURE PHOTO GALLERY
+========================================== -->
+
+<section class="culture-gallery-section">
+
+  <h2 class="culture-gallery-title">
+    🎨📸 Art & Cultural Photo Gallery
+  </h2>
+
+  <p class="culture-gallery-subtitle">
+    लोक नृत्य, संगीत, चित्रकला, नाटक एवं सांस्कृतिक गतिविधियों की झलकियाँ
+  </p>
+
+  <div class="culture-photo-grid">
+
+    <!-- PHOTO 1 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo1.jpg"
+        alt="Cultural Activity">
+
+      <div class="culture-photo-caption">
+        💃 लोक नृत्य
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 2 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo2.jpg"
+        alt="Cultural Programme">
+
+      <div class="culture-photo-caption">
+        🎭 सांस्कृतिक कार्यक्रम
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 3 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo3.jpg"
+        alt="Music Activity">
+
+      <div class="culture-photo-caption">
+        🎵 संगीत गतिविधि
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 4 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo4.jpg"
+        alt="Painting Activity">
+
+      <div class="culture-photo-caption">
+        🎨 चित्रकला गतिविधि
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 5 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo5.jpg"
+        alt="Drama Activity">
+
+      <div class="culture-photo-caption">
+        🎭 नाटक एवं अभिनय
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 6 -->
+    <div class="culture-photo-card"
+         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+      <img
+        src="culture-photo6.jpg"
+        alt="Art Activity">
+
+      <div class="culture-photo-caption">
+        🖌️ कला एवं रचनात्मक गतिविधि
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================================
+     CULTURE PHOTO LIGHTBOX
+========================================== -->
+
+<div id="culturePhotoLightbox"
+     class="culture-photo-lightbox"
+     onclick="closeCulturePhoto()">
+
+  <span class="culture-photo-close">
+    ✕
+  </span>
+
+  <img
+    id="cultureLargePhoto"
+    src=""
+    alt="Cultural Activity Photo">
+
+</div>
+  <!-- ==========================================
+     ART & CULTURE VIDEO GALLERY
+========================================== -->
+
+<section class="culture-video-section">
+
+  <h2 class="culture-gallery-title">
+    🎥 Art & Cultural Video Gallery
+  </h2>
+
+  <p class="culture-gallery-subtitle">
+    लोक नृत्य, संगीत, नाटक एवं विभिन्न सांस्कृतिक कार्यक्रमों के वीडियो
+  </p>
+
+  <div class="culture-video-grid">
+
+    <!-- VIDEO 1 -->
+    <div class="culture-video-card">
+
+      <video
+        class="culture-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="culture-video1.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="culture-video-caption">
+        💃 लोक नृत्य
+      </div>
+
+    </div>
+
+
+    <!-- VIDEO 2 -->
+    <div class="culture-video-card">
+
+      <video
+        class="culture-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="culture-video2.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="culture-video-caption">
+        🎵 सांस्कृतिक संगीत
+      </div>
+
+    </div>
+
+
+    <!-- VIDEO 3 -->
+    <div class="culture-video-card">
+
+      <video
+        class="culture-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="culture-video3.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="culture-video-caption">
+        🎭 नाटक एवं अभिनय
+      </div>
+
+    </div>
+
+
+    <!-- VIDEO 4 -->
+    <div class="culture-video-card">
+
+      <video
+        class="culture-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="culture-video4.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="culture-video-caption">
+        🎨 कला एवं सांस्कृतिक गतिविधि
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
   <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
  </div>
 </div>
 <footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
+ <script>
+
+/* ==========================================
+   CULTURE PHOTO LIGHTBOX
+========================================== */
+
+function openCulturePhoto(photoURL) {
+
+  const lightbox =
+    document.getElementById("culturePhotoLightbox");
+
+  const largePhoto =
+    document.getElementById("cultureLargePhoto");
+
+  largePhoto.src = photoURL;
+
+  lightbox.style.display = "flex";
+}
+
+
+function closeCulturePhoto() {
+
+  const lightbox =
+    document.getElementById("culturePhotoLightbox");
+
+  const largePhoto =
+    document.getElementById("cultureLargePhoto");
+
+  lightbox.style.display = "none";
+
+  largePhoto.src = "";
+}
+
+
+/* ESC दबाने पर photo बंद */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+      closeCulturePhoto();
+    }
+
+  }
+);
+
+</script>
+ <script>
+
+/* ==========================================
+   CULTURE VIDEO CONTROL
+   एक समय में केवल एक वीडियो चलेगा
+========================================== */
+
+const cultureVideos =
+  document.querySelectorAll(".culture-video");
+
+cultureVideos.forEach(function(video) {
+
+  video.addEventListener("play", function() {
+
+    cultureVideos.forEach(function(otherVideo) {
+
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
+
+    });
+
+  });
+
+});
+
+ </script>
 </body> 
 </html>
