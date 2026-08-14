@@ -1,378 +1,844 @@
-<!DOCTYPE html> 
-<html lang="hi"> 
-<head> 
- <meta charset="UTF-8"> 
- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- <title>NCC | PM SHRI GIC Raiagar</title> 
- <style> 
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; } 
-  body { background-color: #f8f9fa; color: #333; line-height: 1.6; } 
-  .top-bar { background-color: #002147; color: #fff; padding: 10px 20px; font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; } 
-  .top-bar a { color: #ffbc00; text-decoration: none; font-weight: bold; } 
-  header { background: #ffffff; padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } 
-  .school-custom-logo { width: 90px; height: 90px; margin-right: 20px; } 
-  .school-custom-logo img { width: 100%; height: 100%; object-fit: contain; } 
-  .school-name h1 { font-size: 42px; color: #002147; font-weight: 700; } 
-  nav { background-color: #002147; position: sticky; top: 0; z-index: 1000; } 
-  nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; } 
-  nav ul li { position: relative; } 
-  nav ul li a { display: block; padding: 15px 20px; color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; } 
-  nav ul li a:hover { background-color: #003366; color: #ffbc00; } 
-  .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; } 
-  .main-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #ffbc00; } 
-  .main-panel h2 { color: #002147; margin-bottom: 15px; }
-  .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #002147; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
-  .back-btn:hover { background-color: #ffbc00; color: #002147; }
-  /* ==========================================
-   NCC PHOTO GALLERY
-========================================== */
+<!DOCTYPE html>
+<html lang="hi">
 
-.ncc-gallery-section {
-  margin-top: 35px;
-  padding: 30px 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  border-left: 5px solid #138808;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NCC | PM SHRI GIC Raiagar</title>
+
+<style>
+
+/* ================================
+   BASIC
+================================ */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',sans-serif;
 }
 
-.gallery-title {
-  text-align: center;
-  color: #002147;
-  font-size: 30px;
-  margin-bottom: 8px;
+body{
+  background:#f8f9fa;
+  color:#333;
+  line-height:1.6;
 }
 
-.gallery-subtitle {
-  text-align: center;
-  color: #666;
-  margin-bottom: 25px;
-  font-size: 15px;
+
+/* ================================
+   TOP BAR
+================================ */
+
+.top-bar{
+  background:#002147;
+  color:#fff;
+  padding:10px 20px;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.top-bar a{
+  color:#ffbc00;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header{
+  background:linear-gradient(
+    135deg,
+    #FF9933 0%,
+    #FFFFFF 50%,
+    #138808 100%
+  );
+
+  padding:15px 40px;
+
+  display:flex;
+  align-items:center;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+  border-bottom:3px solid #000080;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  width:100%;
+}
+
+.school-custom-logo{
+  width:90px;
+  height:90px;
+
+  margin-right:20px;
+
+  background:rgba(255,255,255,0.85);
+
+  padding:5px;
+
+  border-radius:50%;
+
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+
+  flex-shrink:0;
+}
+
+.school-custom-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.school-name{
+  flex-grow:1;
+}
+
+.school-name h1{
+  font-size:42px;
+  color:#002147;
+  font-weight:700;
+  margin:0;
+
+  text-shadow:1px 1px 2px rgba(255,255,255,0.8);
+}
+
+
+/* ================================
+   MARQUEE
+================================ */
+
+.school-marquee{
+  width:100%;
+
+  background:rgba(0,33,71,0.9);
+
+  border-radius:4px;
+
+  padding:6px 0;
+
+  margin-top:8px;
+
+  overflow:hidden;
+
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.school-marquee span{
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:.5px;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav{
+  background:#002147;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+}
+
+nav ul{
+  list-style:none;
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+nav ul li a{
+  display:block;
+
+  padding:15px 20px;
+
+  color:#fff;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  font-size:16px;
+}
+
+nav ul li a:hover{
+  background:#003366;
+
+  color:#ffbc00;
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+.container{
+  max-width:1200px;
+
+  margin:30px auto;
+
+  padding:0 20px;
+}
+
+.main-panel{
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:10px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+
+  border-left:5px solid #ffbc00;
+}
+
+.main-panel h2{
+  color:#002147;
+
+  margin-bottom:15px;
+}
+
+.intro-text{
+  margin-bottom:10px;
+}
+
+
+/* ================================
+   PHOTO GALLERY
+================================ */
+
+.ncc-gallery-section{
+  margin-top:35px;
+
+  padding:30px 20px;
+
+  background:#fff;
+
+  border-radius:12px;
+
+  border-left:5px solid #138808;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.07);
+}
+
+.gallery-title{
+  text-align:center;
+
+  color:#002147;
+
+  font-size:28px;
+
+  margin-bottom:8px;
+}
+
+.gallery-subtitle{
+  text-align:center;
+
+  color:#666;
+
+  font-size:15px;
+
+  margin-bottom:25px;
 }
 
 
 /* PHOTO GRID */
 
-.ncc-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.ncc-photo-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
 }
 
 
 /* PHOTO CARD */
 
-.ncc-photo-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-  transition: transform 0.3s ease,
-              box-shadow 0.3s ease;
+.ncc-photo-card{
+  background:#f8f9fa;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.10);
+
+  transition:.3s ease;
 }
 
-.ncc-photo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+.ncc-photo-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.16);
+}
+
+.ncc-photo-card img{
+  width:100%;
+
+  height:230px;
+
+  display:block;
+
+  object-fit:cover;
+}
+
+.photo-caption{
+  padding:12px;
+
+  text-align:center;
+
+  color:#002147;
+
+  font-weight:600;
+
+  font-size:15px;
 }
 
 
-/* PHOTO */
-
-.ncc-photo-card img {
-  width: 100%;
-  height: 220px;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.ncc-photo-card:hover img {
-  transform: scale(1.03);
-}
-
-
-/* CAPTION */
-
-.photo-caption {
-  padding: 12px;
-  text-align: center;
-  color: #002147;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-
-/* ==========================================
+/* ================================
    PHOTO LIGHTBOX
-========================================== */
+================================ */
 
-.ncc-photo-lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.90);
+.ncc-photo-lightbox{
+  display:none;
 
-  align-items: center;
-  justify-content: center;
+  position:fixed;
 
-  padding: 25px;
+  z-index:99999;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,.92);
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+  cursor:pointer;
+}
+
+.ncc-photo-lightbox img{
+  max-width:95%;
+
+  max-height:90vh;
+
+  object-fit:contain;
+
+  border-radius:8px;
+}
+
+.ncc-photo-close{
+  position:absolute;
+
+  top:15px;
+
+  right:22px;
+
+  color:white;
+
+  font-size:38px;
+
+  font-weight:bold;
+
+  cursor:pointer;
 }
 
 
-/* LARGE PHOTO */
+/* ================================
+   VIDEO GALLERY
+================================ */
 
-.ncc-photo-lightbox img {
-  max-width: 92%;
-  max-height: 88vh;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+.ncc-video-section{
+  margin-top:35px;
+
+  padding:30px 20px;
+
+  background:#fff;
+
+  border-radius:12px;
+
+  border-left:5px solid #ff9933;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.07);
+}
+
+.ncc-video-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:25px;
+}
+
+.ncc-video-card{
+  background:#f8f9fa;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.10);
+}
+
+.ncc-video{
+  width:100%;
+
+  height:280px;
+
+  display:block;
+
+  background:#000;
+
+  border:0;
+}
+
+.video-caption{
+  padding:13px;
+
+  text-align:center;
+
+  color:#002147;
+
+  font-weight:600;
+
+  font-size:15px;
 }
 
 
-/* CLOSE BUTTON */
+/* ================================
+   BACK BUTTON
+================================ */
 
-.ncc-photo-close {
-  position: absolute;
-  top: 18px;
-  right: 28px;
+.back-btn{
+  display:inline-block;
 
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
+  margin-top:30px;
 
-  cursor: pointer;
+  padding:10px 20px;
 
-  line-height: 1;
+  background:#002147;
+
+  color:white;
+
+  text-decoration:none;
+
+  border-radius:5px;
+
+  font-weight:bold;
 }
 
-.ncc-photo-close:hover {
-  color: #ffbc00;
+.back-btn:hover{
+  background:#ffbc00;
+
+  color:#002147;
 }
 
 
-/* ==========================================
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+  background:#001530;
+
+  color:white;
+
+  padding:20px;
+
+  text-align:center;
+
+  margin-top:40px;
+
+  font-size:14px;
+}
+
+
+/* ================================
    MOBILE
-========================================== */
+================================ */
 
-@media (max-width: 900px) {
+@media(max-width:900px){
 
-  .ncc-photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .ncc-photo-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .school-name h1{
+    font-size:32px;
   }
 
 }
 
 
-@media (max-width: 550px) {
+@media(max-width:700px){
 
-  .ncc-gallery-section {
-    padding: 22px 15px;
+  header{
+    padding:15px;
   }
 
-  .gallery-title {
-    font-size: 24px;
+  .school-custom-logo{
+    width:70px;
+    height:70px;
+    margin-right:12px;
   }
 
-  .ncc-photo-grid {
-    grid-template-columns: 1fr;
+  .school-name h1{
+    font-size:25px;
   }
 
-  .ncc-photo-card img {
-    height: 230px;
+  .school-marquee span{
+    font-size:12px;
   }
 
-}
-  /* ==========================================
-   NCC VIDEO GALLERY
-========================================== */
-
-.ncc-video-section {
-  margin-top: 35px;
-  padding: 30px 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  border-left: 5px solid #ff9933;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-}
-
-.ncc-video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-.ncc-video-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-}
-
-.ncc-video {
-  width: 100%;
-  height: 280px;
-  display: block;
-  background: #000;
-}
-
-.video-caption {
-  padding: 13px;
-  text-align: center;
-  color: #002147;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-@media (max-width: 700px) {
-
-  .ncc-video-grid {
-    grid-template-columns: 1fr;
+  .ncc-video-grid{
+    grid-template-columns:1fr;
   }
 
-  .ncc-video {
-    height: 230px;
+  .ncc-video{
+    height:230px;
   }
 
 }
-  footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
- </style> 
-</head> 
+
+
+@media(max-width:550px){
+
+  .top-bar{
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:12px;
+  }
+
+  .container{
+    padding:0 10px;
+
+    margin-top:20px;
+  }
+
+  .main-panel{
+    padding:20px 15px;
+  }
+
+  .ncc-gallery-section,
+  .ncc-video-section{
+    padding:22px 15px;
+  }
+
+  .gallery-title{
+    font-size:23px;
+  }
+
+  .gallery-subtitle{
+    font-size:13px;
+  }
+
+  .ncc-photo-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ncc-photo-card img{
+    height:240px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
 <body>
-<div class="top-bar"> 
- <div> Raiagar, Uttarakhand, India</div> 
- <div> संपर्क: <a href="tel:+918057513300">+91 8057513300</a></div> 
- <div>Udise: <a>05070702603</a></div> 
- <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div> 
-</div>
-<header style="background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-bottom: 3px solid #000080;"> 
- <div class="logo-area" style="display: flex; align-items: center; width: 100%;"> 
-  
-  <div class="school-custom-logo" style="width: 90px; height: 90px; margin-right: 20px; background: rgba(255,255,255,0.85); padding: 5px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-   <img src="logo.png" alt="logo" style="width: 100%; height: 100%; object-fit: contain;">
-  </div> 
-  
-  <div class="school-name" style="flex-grow: 1;"> 
-   <h1 style="font-size: 42px; color: #002147; font-weight: 700; margin: 0; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">PM SHRI GIC RAIAGAR</h1> 
-   
-   <div style="width: 100%; background: rgba(0, 33, 71, 0.9); border-radius: 4px; padding: 6px 0; margin-top: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
-     <span style="color: #ffffff; font-size: 15px; font-weight: 700; font-family: 'Segoe UI', sans-serif; letter-spacing: 0.5px;">
-      ⚡ PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा • संस्कार • नवाचार ⚡
-     </span>
-    </marquee>
-   </div>
 
-  </div> 
- </div> 
-</header>
 
-<nav> 
- <ul> 
-  <li><a href="index.html">मुख्य पृष्ठ</a></li> 
- </ul> 
-</nav> 
-<div class="container">
- <div class="main-panel">
-  <h2>NCC (National Cadet Corps)</h2>
-  <p>विद्यालय के एन.सी.सी कैडेट्स की ट्रेनिंग और परेड डिटेल्स। यहाँ छात्रों को अनुशासन, नेतृत्व क्षमता और राष्ट्र सेवा के प्रति जागरूक बनाने के लिए सैन्य प्रशिक्षण और शिविरों (Camps) का आयोजन किया जाता है।</p>
-  <!-- ================================
-     NCC PHOTO GALLERY
+<!-- ================================
+     TOP BAR
 ================================ -->
 
-<section class="ncc-gallery-section">
+<div class="top-bar">
 
-  <h2 class="gallery-title">📸 NCC Photo Gallery</h2>
+  <div>Raiagar, Uttarakhand, India</div>
 
-  <p class="gallery-subtitle">
-    एन.सी.सी. कैडेट्स की परेड, प्रशिक्षण एवं विभिन्न गतिविधियों की झलकियाँ
-  </p>
+  <div>
+    संपर्क:
+    <a href="tel:+918057513300">
+      +91 8057513300
+    </a>
+  </div>
 
-  <div class="ncc-photo-grid">
+  <div>
+    Udise:
+    <a href="#">
+      05070702603
+    </a>
+  </div>
 
-<div class="ncc-photo-card"
-     onclick="openNCCPhoto('https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600')">
-    <!-- PHOTO 2 -->
-    <div class="ncc-photo-card"
-         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+  <div>
+    ✉ email:
+    <a href="mailto:principal.gic.raiagar@gmail.com">
+      principal.gic.raiagar@gmail.com
+    </a>
+  </div>
+
+</div>
+
+
+<!-- ================================
+     HEADER
+================================ -->
+
+<header>
+
+  <div class="logo-area">
+
+    <div class="school-custom-logo">
 
       <img
-        src="ncc-photo2.jpg"
-        alt="NCC Training">
-
-      <div class="photo-caption">
-        🎖️ NCC Training
-      </div>
+        src="logo.png"
+        alt="PM SHRI GIC Raiagar Logo">
 
     </div>
 
 
-    <!-- PHOTO 3 -->
-    <div class="ncc-photo-card"
-         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+    <div class="school-name">
 
-      <img
-        src="ncc-photo3.jpg"
-        alt="NCC Activity">
-
-      <div class="photo-caption">
-        🏃 NCC Activity
-      </div>
-
-    </div>
+      <h1>
+        PM SHRI GIC RAIAGAR
+      </h1>
 
 
-    <!-- PHOTO 4 -->
-    <div class="ncc-photo-card"
-         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+      <div class="school-marquee">
 
-      <img
-        src="ncc-photo4.jpg"
-        alt="NCC Camp">
+        <marquee
+          behavior="scroll"
+          direction="left"
+          scrollamount="5"
+          onmouseover="this.stop();"
+          onmouseout="this.start();">
 
-      <div class="photo-caption">
-        ⛺ NCC Camp
-      </div>
+          <span>
+            ⚡ PM SHRI GIC Raiagar |
+            Empowering Young Minds for Viksit Bharat @2047 |
+            सत्यमेव जयते |
+            शिक्षा • संस्कार • नवाचार ⚡
+          </span>
 
-    </div>
+        </marquee>
 
-
-    <!-- PHOTO 5 -->
-    <div class="ncc-photo-card"
-         ondblclick="openNCCPhoto(this.querySelector('img').src)">
-
-      <img
-        src="ncc-photo5.jpg"
-        alt="NCC Cadets">
-
-      <div class="photo-caption">
-        🎓 NCC Cadets
-      </div>
-
-    </div>
-
-
-    <!-- PHOTO 6 -->
-    <div class="ncc-photo-card"
-         ondblclick="openNCCPhoto(this.querySelector('img').src)">
-
-      <img
-        src="ncc-photo6.jpg"
-        alt="NCC Event">
-
-      <div class="photo-caption">
-        🏅 NCC Event
       </div>
 
     </div>
 
   </div>
+
+</header>
+
+
+<!-- ================================
+     NAVIGATION
+================================ -->
+
+<nav>
+
+  <ul>
+
+    <li>
+      <a href="index.html">
+        मुख्य पृष्ठ
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+<!-- ================================
+     MAIN CONTENT
+================================ -->
+
+<div class="container">
+
+<div class="main-panel">
+
+
+<h2>
+  NCC (National Cadet Corps)
+</h2>
+
+
+<p class="intro-text">
+
+विद्यालय के एन.सी.सी. कैडेट्स की ट्रेनिंग और परेड
+गतिविधियों की जानकारी यहाँ उपलब्ध है। NCC के माध्यम से
+छात्रों में अनुशासन, नेतृत्व क्षमता, साहस एवं राष्ट्र सेवा
+की भावना विकसित की जाती है।
+
+</p>
+
+
+<!-- ================================
+     PHOTO GALLERY
+================================ -->
+
+<section class="ncc-gallery-section">
+
+<h2 class="gallery-title">
+  📸 NCC Photo Gallery
+</h2>
+
+<p class="gallery-subtitle">
+
+एन.सी.सी. कैडेट्स की परेड, प्रशिक्षण एवं
+विभिन्न गतिविधियों की झलकियाँ
+
+</p>
+
+
+<div class="ncc-photo-grid">
+
+
+<!-- PHOTO 1 : GOOGLE DRIVE -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(
+  'https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600'
+  )">
+
+
+<img
+  src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
+  alt="NCC Parade">
+
+
+<div class="photo-caption">
+  🇮🇳 NCC Parade
+</div>
+
+</div>
+
+
+<!-- PHOTO 2 -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(this.querySelector('img').src)">
+
+<img
+  src="ncc-photo2.jpg"
+  alt="NCC Training">
+
+<div class="photo-caption">
+  🎖️ NCC Training
+</div>
+
+</div>
+
+
+<!-- PHOTO 3 -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(this.querySelector('img').src)">
+
+<img
+  src="ncc-photo3.jpg"
+  alt="NCC Activity">
+
+<div class="photo-caption">
+  🏃 NCC Activity
+</div>
+
+</div>
+
+
+<!-- PHOTO 4 -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(this.querySelector('img').src)">
+
+<img
+  src="ncc-photo4.jpg"
+  alt="NCC Camp">
+
+<div class="photo-caption">
+  ⛺ NCC Camp
+</div>
+
+</div>
+
+
+<!-- PHOTO 5 -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(this.querySelector('img').src)">
+
+<img
+  src="ncc-photo5.jpg"
+  alt="NCC Cadets">
+
+<div class="photo-caption">
+  🎓 NCC Cadets
+</div>
+
+</div>
+
+
+<!-- PHOTO 6 -->
+
+<div
+  class="ncc-photo-card"
+  onclick="openNCCPhoto(this.querySelector('img').src)">
+
+<img
+  src="ncc-photo6.jpg"
+  alt="NCC Event">
+
+<div class="photo-caption">
+  🏅 NCC Event
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -381,153 +847,175 @@
      PHOTO LIGHTBOX
 ================================ -->
 
-<div id="nccPhotoLightbox"
-     class="ncc-photo-lightbox"
-     onclick="closeNCCPhoto()">
-
-  <span class="ncc-photo-close">
-    ✕
-  </span>
-
-  <img
-    id="nccLargePhoto"
-    src=""
-    alt="NCC Photo">
-
-</div>
-  <!-- यहाँ Photo Gallery पहले से है -->
+<div
+  id="nccPhotoLightbox"
+  class="ncc-photo-lightbox"
+  onclick="closeNCCPhoto()">
 
 
-<!-- यहाँ Video Gallery paste करें -->
-
-<section class="ncc-video-section">
-
-  <h2 class="gallery-title">🎥 NCC Video Gallery</h2>
-
-  <p class="gallery-subtitle">
-    एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
-  </p>
-
-  <div class="ncc-video-grid">
-
-    <div class="ncc-video-card">
-
-  <iframe
-    src="https://drive.google.com/file/d/1kDXmYJNQ15r6DsdxFwN6PtFyjKNKCDK-/preview"
-    width="100%"
-    height="280"
-    allow="autoplay"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
-
-  <div class="video-caption">
-    🇮🇳 NCC Parade
-<!-- ==========================================
-     NCC PHOTO GALLERY
-========================================== -->
-
-<section class="ncc-gallery-section">
-
-  <h2 class="gallery-title">📸 NCC Photo Gallery</h2>
-
-  <p class="gallery-subtitle">
-    एन.सी.सी. कैडेट्स की परेड, प्रशिक्षण एवं विभिन्न गतिविधियों की झलकियाँ
-  </p>
-
-  <div class="ncc-photo-grid">
-
-    <!-- NCC PHOTO 1 -->
-
-    <div class="ncc-photo-card"
-         onclick="openNCCPhoto('https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600')">
-
-      <img
-        src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
-        alt="NCC Parade">
-
-      <div class="photo-caption">
-        🇮🇳 NCC Parade
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+<span class="ncc-photo-close">
+  ✕
+</span>
 
 
-<!-- ==========================================
-     PHOTO LIGHTBOX
-========================================== -->
+<img
+  id="nccLargePhoto"
+  src=""
+  alt="NCC Photo">
 
-<div id="nccPhotoLightbox"
-     class="ncc-photo-lightbox"
-     onclick="closeNCCPhoto()">
-
-  <span class="ncc-photo-close">✕</span>
-
-  <img
-    id="nccLargePhoto"
-    src=""
-    alt="NCC Photo">
 
 </div>
 
 
-<!-- ==========================================
-     NCC VIDEO GALLERY
-========================================== -->
+<!-- ================================
+     VIDEO GALLERY
+================================ -->
 
 <section class="ncc-video-section">
 
-  <h2 class="gallery-title">🎥 NCC Video Gallery</h2>
 
-  <p class="gallery-subtitle">
-    एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
-  </p>
+<h2 class="gallery-title">
+  🎥 NCC Video Gallery
+</h2>
 
-  <div class="ncc-video-grid">
 
-    <!-- NCC PARADE VIDEO -->
+<p class="gallery-subtitle">
 
-    <div class="ncc-video-card">
+एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
 
-      <iframe
-        src="https://drive.google.com/file/d/1kDXmYJNQ15r6DsdxFwN6PtFyjKNKCDK-/preview"
-        width="100%"
-        height="280"
-        allow="autoplay"
-        allowfullscreen
-        style="border:0; display:block;">
-      </iframe>
+</p>
 
-      <div class="video-caption">
-        🇮🇳 NCC Parade
-      </div>
 
-    </div>
+<div class="ncc-video-grid">
 
-  </div>
+
+<!-- VIDEO 1 : GOOGLE DRIVE -->
+
+<div class="ncc-video-card">
+
+
+<iframe
+  class="ncc-video"
+  src="https://drive.google.com/file/d/1kDXmYJNQ15r6DsdxFwN6PtFyjKNKCDK-/preview"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+
+<div class="video-caption">
+  🇮🇳 NCC Parade
+</div>
+
+
+</div>
+
+
+<!-- VIDEO 2 -->
+
+<div class="ncc-video-card">
+
+
+<video
+  class="ncc-video local-ncc-video"
+  controls
+  preload="metadata"
+  playsinline>
+
+  <source
+    src="nc.mp4"
+    type="video/mp4">
+
+  आपका browser video को support नहीं करता।
+
+</video>
+
+
+<div class="video-caption">
+  🎖️ NCC Training
+</div>
+
+
+</div>
+
+
+<!-- VIDEO 3 -->
+
+<div class="ncc-video-card">
+
+
+<video
+  class="ncc-video local-ncc-video"
+  controls
+  preload="metadata"
+  playsinline>
+
+  <source
+    src="ncc-video3.mp4"
+    type="video/mp4">
+
+  आपका browser video को support नहीं करता।
+
+</video>
+
+
+<div class="video-caption">
+  🏃 NCC Activity
+</div>
+
+
+</div>
+
+
+</div>
 
 </section>
 
-<!-- इसके बाद आपका पुराना Back Button -->
 
-<a href="index.html" class="back-btn">
+<!-- ================================
+     BACK BUTTON
+================================ -->
+
+<a
+  href="index.html"
+  class="back-btn">
+
   ← मुख्य पृष्ठ पर वापस जाएँ
+
 </a>
-  
- </div>
+
+
 </div>
-<footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
+
+</div>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+<p>
+  &copy; 2026
+  पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर।
+  सर्वाधिकार सुरक्षित।
+</p>
+
+</footer>
+
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+
 <script>
 
+
 /* ==========================================
-   NCC PHOTO LIGHTBOX
+   PHOTO LIGHTBOX
 ========================================== */
 
-function openNCCPhoto(photoURL) {
+function openNCCPhoto(photoURL){
 
   const lightbox =
     document.getElementById("nccPhotoLightbox");
@@ -538,10 +1026,11 @@ function openNCCPhoto(photoURL) {
   largePhoto.src = photoURL;
 
   lightbox.style.display = "flex";
+
 }
 
 
-function closeNCCPhoto() {
+function closeNCCPhoto(){
 
   const lightbox =
     document.getElementById("nccPhotoLightbox");
@@ -552,19 +1041,64 @@ function closeNCCPhoto() {
   lightbox.style.display = "none";
 
   largePhoto.src = "";
+
 }
 
 
-/* ESC से फोटो बंद */
+/* ==========================================
+   ESC KEY
+========================================== */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+  "keydown",
+  function(event){
 
-  if (event.key === "Escape") {
-    closeNCCPhoto();
+    if(event.key === "Escape"){
+
+      closeNCCPhoto();
+
+    }
+
   }
+);
+
+
+/* ==========================================
+   LOCAL VIDEOS
+   ONE VIDEO AT A TIME
+========================================== */
+
+const localVideos =
+  document.querySelectorAll(".local-ncc-video");
+
+
+localVideos.forEach(function(video){
+
+  video.addEventListener(
+    "play",
+    function(){
+
+      localVideos.forEach(
+        function(otherVideo){
+
+          if(otherVideo !== video){
+
+            otherVideo.pause();
+
+          }
+
+        }
+      );
+
+    }
+  );
 
 });
 
+
 </script>
-</body> 
+
+
+</body>
+
 </html>
