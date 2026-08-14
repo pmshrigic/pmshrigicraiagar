@@ -651,7 +651,355 @@
       Alumni Community
     </p>
 
-  </footer>
+  </footer><script>
+
+/* ==========================================
+   GOOGLE SHEET → ALUMNI CORNER
+   केवल PUBLISH = YES वाली entries दिखेंगी
+========================================== */
+
+const alumniSheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSnNFCylXhm_nzWTYhvnR0iPOsOOIqcYg1T_f2IdiuIYjsLmSh4xi3FSMxxn201o_pTrb4iwpCd7g8A/pub?gid=716467829&single=true&output=csv";
+
+
+async function loadAlumni() {
+
+  const container =
+    document.getElementById("dynamicAlumniGrid");
+
+  try {
+
+    const response =
+      await fetch(alumniSheetURL);
+
+    if (!response.ok) {
+      throw new Error("Google Sheet could not be loaded");
+    }
+
+    const csv =
+      await response.text();
+
+    const rows =
+      parseCSV(csv);
+
+    if (rows.length < 2) {
+
+      container.innerHTML = `
+        <div class="alumni-loading">
+          अभी कोई Alumni profile उपलब्ध नहीं है।
+        </div>
+      `;
+
+      return;
+    }
+
+
+    /* पहली row = headings */
+
+    const headers =
+      rows[0].map(function(h) {
+        return h.trim().toUpperCase();
+      });
+
+
+    const nameIndex =
+      headers.indexOf("FULL NAME");
+
+    const batchIndex =
+      headers.indexOf("PASS OUT BATCH YEAR");
+
+    const occupationIndex =
+      headers.indexOf("CURRENT STATUS/OCCUPATION");
+
+    const cityIndex =
+      headers.indexOf("CURRENT CITY/PLACE");
+
+    const achievementIndex =
+      headers.indexOf("SPECIAL ACHIEVEMENT");
+
+    const messageIndex =
+      headers.indexOf("MESSAGE TO OUR SCHOOL");
+
+    const photoIndex =
+      headers.indexOf("PASSPORT SIZE PHOTOGRAPH");
+
+    const publishIndex =
+      headers.indexOf("PUBLISH");
+
+
+    container.innerHTML = "";
+
+
+    rows.slice(1).forEach(function(row) {
+
+      /* केवल YES वाली entry दिखाई जाएगी */
+
+      const publish =
+        (row[publishIndex] || "")
+        .trim()
+        .toUpperCase();
+
+      if (publish !== "YES") {
+        return;
+      }
+
+
+      const name =
+        row[nameIndex] || "";
+
+      const batch =
+        row[batchIndex] || "";
+
+      const occupation =
+        row[occupationIndex] || "";
+
+      const city =
+        row[cityIndex] || "";
+
+      const achievement =
+        row[achievementIndex] || "";
+
+      const message =
+        row[messageIndex] || "";
+
+      const photo =
+        row[photoIndex] || "";
+
+
+      /* Alumni Card */
+
+      const card =
+        document.createElement("div");
+
+      card.className =
+        "dynamic-alumni-card";
+
+
+      /* Photo */
+
+      let photoHTML = `
+        <div class="dynamic-alumni-placeholder">
+          🎓
+        </div>
+      `;
+
+
+      if (photo) {
+
+        photoHTML = `
+          <div class="dynamic-alumni-placeholder">
+            📷
+          </div>
+        `;
+
+      }
+
+
+      card.innerHTML = `
+
+        ${photoHTML}
+
+        <h3>
+          ${name}
+        </h3>
+
+        <div class="dynamic-alumni-batch">
+          🎓 Batch: ${batch}
+        </div>
+
+        ${
+          occupation
+          ? `
+            <div class="dynamic-alumni-info">
+              💼 <strong>Occupation:</strong>
+              ${occupation}
+            </div>
+          `
+          : ""
+        }
+
+        ${
+          city
+          ? `
+            <div class="dynamic-alumni-info">
+              📍 <strong>Place:</strong>
+              ${city}
+            </div>
+          `
+          : ""
+        }
+
+        ${
+          achievement
+          ? `
+            <div class="dynamic-alumni-info">
+              🏆 <strong>Achievement:</strong><br>
+              ${achievement}
+            </div>
+          `
+          : ""
+        }
+
+        ${
+          message
+          ? `
+            <div class="dynamic-alumni-message">
+              “${message}”
+            </div>
+          `
+          : ""
+        }
+
+      `;
+
+
+      container.appendChild(card);
+
+    });
+
+
+    /* अगर कोई YES entry नहीं है */
+
+    if (container.children.length === 0) {
+
+      container.innerHTML = `
+        <div class="alumni-loading">
+          अभी कोई Alumni profile प्रकाशित नहीं की गई है।
+        </div>
+      `;
+
+    }
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "Alumni loading error:",
+      error
+    );
+
+    container.innerHTML = `
+      <div class="alumni-loading">
+        Alumni information अभी उपलब्ध नहीं है।
+      </div>
+    `;
+
+  }
+
+}
+
+
+/* ==========================================
+   CSV PARSER
+========================================== */
+
+function parseCSV(text) {
+
+  const rows = [];
+
+  let row = [];
+
+  let value = "";
+
+  let insideQuotes = false;
+
+
+  for (let i = 0; i < text.length; i++) {
+
+    const char = text[i];
+
+    const next = text[i + 1];
+
+
+    if (
+      char === '"' &&
+      insideQuotes &&
+      next === '"'
+    ) {
+
+      value += '"';
+
+      i++;
+
+    }
+
+    else if (char === '"') {
+
+      insideQuotes =
+        !insideQuotes;
+
+    }
+
+    else if (
+      char === "," &&
+      !insideQuotes
+    ) {
+
+      row.push(value);
+
+      value = "";
+
+    }
+
+    else if (
+      (char === "\n" || char === "\r") &&
+      !insideQuotes
+    ) {
+
+      if (
+        char === "\r" &&
+        next === "\n"
+      ) {
+        i++;
+      }
+
+      row.push(value);
+
+      rows.push(row);
+
+      row = [];
+
+      value = "";
+
+    }
+
+    else {
+
+      value += char;
+
+    }
+
+  }
+
+
+  if (
+    value !== "" ||
+    row.length > 0
+  ) {
+
+    row.push(value);
+
+    rows.push(row);
+
+  }
+
+
+  return rows;
+
+}
+
+
+/* ==========================================
+   PAGE LOAD
+========================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadAlumni
+);
+
+  </script>
 
 
 </body>
