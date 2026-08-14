@@ -786,11 +786,34 @@ async function loadAlumni() {
 
       if (photo) {
 
-        photoHTML = `
-          <div class="dynamic-alumni-placeholder">
-            📷
-          </div>
-        `;
+  let photoUrl = photo;
+
+  /* Google Drive file ID निकालना */
+
+  const driveMatch =
+    photo.match(/[-\w]{25,}/);
+
+  if (driveMatch) {
+
+    const fileId =
+      driveMatch[0];
+
+    photoUrl =
+      "https://drive.google.com/thumbnail?id=" +
+      fileId +
+      "&sz=w500";
+
+  }
+
+  photoHTML = `
+    <img
+      src="${photoUrl}"
+      alt="${name}"
+      class="dynamic-alumni-photo"
+      loading="lazy"
+      onerror="this.style.display='none';"
+    >
+  `;
 
       }
 
