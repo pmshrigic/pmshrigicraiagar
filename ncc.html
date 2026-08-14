@@ -23,6 +23,224 @@
   .main-panel h2 { color: #002147; margin-bottom: 15px; }
   .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #002147; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
   .back-btn:hover { background-color: #ffbc00; color: #002147; }
+  /* ==========================================
+   NCC PHOTO GALLERY
+========================================== */
+
+.ncc-gallery-section {
+  margin-top: 35px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid #138808;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.gallery-title {
+  text-align: center;
+  color: #002147;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.gallery-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+
+/* PHOTO GRID */
+
+.ncc-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* PHOTO CARD */
+
+.ncc-photo-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.ncc-photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+
+/* PHOTO */
+
+.ncc-photo-card img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ncc-photo-card:hover img {
+  transform: scale(1.03);
+}
+
+
+/* CAPTION */
+
+.photo-caption {
+  padding: 12px;
+  text-align: center;
+  color: #002147;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/* ==========================================
+   PHOTO LIGHTBOX
+========================================== */
+
+.ncc-photo-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.90);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+
+/* LARGE PHOTO */
+
+.ncc-photo-lightbox img {
+  max-width: 92%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+
+/* CLOSE BUTTON */
+
+.ncc-photo-close {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+.ncc-photo-close:hover {
+  color: #ffbc00;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 900px) {
+
+  .ncc-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .ncc-gallery-section {
+    padding: 22px 15px;
+  }
+
+  .gallery-title {
+    font-size: 24px;
+  }
+
+  .ncc-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ncc-photo-card img {
+    height: 230px;
+  }
+
+}
+  /* ==========================================
+   NCC VIDEO GALLERY
+========================================== */
+
+.ncc-video-section {
+  margin-top: 35px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid #ff9933;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.ncc-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.ncc-video-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.ncc-video {
+  width: 100%;
+  height: 280px;
+  display: block;
+  background: #000;
+}
+
+.video-caption {
+  padding: 13px;
+  text-align: center;
+  color: #002147;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+
+  .ncc-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ncc-video {
+    height: 230px;
+  }
+
+}
   footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
  </style> 
 </head> 
@@ -64,10 +282,326 @@
  <div class="main-panel">
   <h2>NCC (National Cadet Corps)</h2>
   <p>विद्यालय के एन.सी.सी कैडेट्स की ट्रेनिंग और परेड डिटेल्स। यहाँ छात्रों को अनुशासन, नेतृत्व क्षमता और राष्ट्र सेवा के प्रति जागरूक बनाने के लिए सैन्य प्रशिक्षण और शिविरों (Camps) का आयोजन किया जाता है।</p>
-  
+  <!-- ================================
+     NCC PHOTO GALLERY
+================================ -->
+
+<section class="ncc-gallery-section">
+
+  <h2 class="gallery-title">📸 NCC Photo Gallery</h2>
+
+  <p class="gallery-subtitle">
+    एन.सी.सी. कैडेट्स की परेड, प्रशिक्षण एवं विभिन्न गतिविधियों की झलकियाँ
+  </p>
+
+  <div class="ncc-photo-grid">
+
+    <!-- PHOTO 1 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo1.jpg"
+        alt="NCC Parade">
+
+      <div class="photo-caption">
+        🇮🇳 NCC Parade
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 2 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo2.jpg"
+        alt="NCC Training">
+
+      <div class="photo-caption">
+        🎖️ NCC Training
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 3 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo3.jpg"
+        alt="NCC Activity">
+
+      <div class="photo-caption">
+        🏃 NCC Activity
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 4 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo4.jpg"
+        alt="NCC Camp">
+
+      <div class="photo-caption">
+        ⛺ NCC Camp
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 5 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo5.jpg"
+        alt="NCC Cadets">
+
+      <div class="photo-caption">
+        🎓 NCC Cadets
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO 6 -->
+    <div class="ncc-photo-card"
+         ondblclick="openNCCPhoto(this.querySelector('img').src)">
+
+      <img
+        src="ncc-photo6.jpg"
+        alt="NCC Event">
+
+      <div class="photo-caption">
+        🏅 NCC Event
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================
+     PHOTO LIGHTBOX
+================================ -->
+
+<div id="nccPhotoLightbox"
+     class="ncc-photo-lightbox"
+     onclick="closeNCCPhoto()">
+
+  <span class="ncc-photo-close">
+    ✕
+  </span>
+
+  <img
+    id="nccLargePhoto"
+    src=""
+    alt="NCC Photo">
+
+</div>
+  <!-- यहाँ Photo Gallery पहले से है -->
+
+
+<!-- यहाँ Video Gallery paste करें -->
+
+<section class="ncc-video-section">
+
+  <h2 class="gallery-title">🎥 NCC Video Gallery</h2>
+
+  <p class="gallery-subtitle">
+    एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
+  </p>
+
+  <div class="ncc-video-grid">
+
+    <div class="ncc-video-card">
+
+      <video
+        class="ncc-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="ncc-video1.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="video-caption">
+        🇮🇳 NCC Parade
+      </div>
+
+    </div>
+
+
+    <div class="ncc-video-card">
+
+      <video
+        class="ncc-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="ncc-video2.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="video-caption">
+        🎖️ NCC Training
+      </div>
+
+    </div>
+
+
+    <div class="ncc-video-card">
+
+      <video
+        class="ncc-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="ncc-video3.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="video-caption">
+        🏃 NCC Activity
+      </div>
+
+    </div>
+
+
+    <div class="ncc-video-card">
+
+      <video
+        class="ncc-video"
+        controls
+        preload="metadata"
+        playsinline>
+
+        <source
+          src="ncc-video4.mp4"
+          type="video/mp4">
+
+        आपका browser video को support नहीं करता।
+
+      </video>
+
+      <div class="video-caption">
+        ⛺ NCC Camp
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- इसके बाद आपका पुराना Back Button -->
+
+<a href="index.html" class="back-btn">
+  ← मुख्य पृष्ठ पर वापस जाएँ
+</a>
   <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
  </div>
 </div>
 <footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
+ <script>
+
+/* ==========================================
+   NCC PHOTO LIGHTBOX
+========================================== */
+
+function openNCCPhoto(photoURL) {
+
+  const lightbox =
+    document.getElementById("nccPhotoLightbox");
+
+  const largePhoto =
+    document.getElementById("nccLargePhoto");
+
+  largePhoto.src = photoURL;
+
+  lightbox.style.display = "flex";
+}
+
+
+function closeNCCPhoto() {
+
+  const lightbox =
+    document.getElementById("nccPhotoLightbox");
+
+  const largePhoto =
+    document.getElementById("nccLargePhoto");
+
+  lightbox.style.display = "none";
+
+  largePhoto.src = "";
+}
+
+
+/* ESC key से photo बंद */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+      closeNCCPhoto();
+    }
+
+  }
+);
+
+ </script>
+ <script>
+
+/* ==========================================
+   NCC VIDEO CONTROL
+   एक समय में केवल एक वीडियो चलेगा
+========================================== */
+
+const nccVideos =
+  document.querySelectorAll(".ncc-video");
+
+nccVideos.forEach(function(video) {
+
+  video.addEventListener("play", function() {
+
+    nccVideos.forEach(function(otherVideo) {
+
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
+
+    });
+
+  });
+
+});
+
+ </script>
 </body> 
 </html>
