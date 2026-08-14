@@ -423,75 +423,31 @@
 
   <div class="video-caption">
     🇮🇳 NCC Parade
-  </div>
+<!-- ==========================================
+     NCC PHOTO GALLERY
+========================================== -->
 
-    </div>
+<section class="ncc-gallery-section">
 
+  <h2 class="gallery-title">📸 NCC Photo Gallery</h2>
 
-    <div class="ncc-video-card">
+  <p class="gallery-subtitle">
+    एन.सी.सी. कैडेट्स की परेड, प्रशिक्षण एवं विभिन्न गतिविधियों की झलकियाँ
+  </p>
 
-      <video
-        class="ncc-video"
-        controls
-        preload="metadata"
-        playsinline>
+  <div class="ncc-photo-grid">
 
-        <source
-          src="nc.mp4"
-          type="video/mp4">
+    <!-- NCC PHOTO 1 -->
 
-        आपका browser video को support नहीं करता।
+    <div class="ncc-photo-card"
+         onclick="openNCCPhoto('https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600')">
 
-      </video>
+      <img
+        src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
+        alt="NCC Parade">
 
-      <div class="video-caption">
-        🎖️ NCC Training
-      </div>
-
-    </div>
-
-
-    <div class="ncc-video-card">
-
-      <video
-        class="ncc-video"
-        controls
-        preload="metadata"
-        playsinline>
-
-        <source
-          src="ncc-video3.mp4"
-          type="video/mp4">
-
-        आपका browser video को support नहीं करता।
-
-      </video>
-
-      <div class="video-caption">
-        🏃 NCC Activity
-      </div>
-
-    </div>
-
-
-    <div class="ncc-video-card">
-
-      <video
-        class="ncc-video"
-        controls
-        preload="metadata"
-        playsinline>
-
-        <source
-  src="https://drive.google.com/uc?export=download&id=1kDXmYJNQ15r6DsdxFwN6PtFyjKNKCDK-"
-  type="video/mp4">
-
-        आपका browser video को support नहीं करता।
-
-      </video>
-
-      <div class="video-caption">
-        ⛺ NCC 
+      <div class="photo-caption">
+        🇮🇳 NCC Parade
       </div>
 
     </div>
@@ -500,6 +456,61 @@
 
 </section>
 
+
+<!-- ==========================================
+     PHOTO LIGHTBOX
+========================================== -->
+
+<div id="nccPhotoLightbox"
+     class="ncc-photo-lightbox"
+     onclick="closeNCCPhoto()">
+
+  <span class="ncc-photo-close">✕</span>
+
+  <img
+    id="nccLargePhoto"
+    src=""
+    alt="NCC Photo">
+
+</div>
+
+
+<!-- ==========================================
+     NCC VIDEO GALLERY
+========================================== -->
+
+<section class="ncc-video-section">
+
+  <h2 class="gallery-title">🎥 NCC Video Gallery</h2>
+
+  <p class="gallery-subtitle">
+    एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
+  </p>
+
+  <div class="ncc-video-grid">
+
+    <!-- NCC PARADE VIDEO -->
+
+    <div class="ncc-video-card">
+
+      <iframe
+        src="https://drive.google.com/file/d/1kDXmYJNQ15r6DsdxFwN6PtFyjKNKCDK-/preview"
+        width="100%"
+        height="280"
+        allow="autoplay"
+        allowfullscreen
+        style="border:0; display:block;">
+      </iframe>
+
+      <div class="video-caption">
+        🇮🇳 NCC Parade
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- इसके बाद आपका पुराना Back Button -->
 
@@ -510,7 +521,7 @@
  </div>
 </div>
 <footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
- <script>
+<script>
 
 /* ==========================================
    NCC PHOTO LIGHTBOX
@@ -544,43 +555,13 @@ function closeNCCPhoto() {
 }
 
 
-/* ESC key से photo बंद */
+/* ESC से फोटो बंद */
 
-document.addEventListener(
-  "keydown",
-  function(event) {
+document.addEventListener("keydown", function(event) {
 
-    if (event.key === "Escape") {
-      closeNCCPhoto();
-    }
-
+  if (event.key === "Escape") {
+    closeNCCPhoto();
   }
-);
-
- </script>
-<script>
-
-/* ==========================================
-   NCC VIDEO CONTROL
-   एक समय में केवल एक वीडियो चलेगा
-========================================== */
-
-const nccVideos =
-  document.querySelectorAll(".ncc-video");
-
-nccVideos.forEach(function(video) {
-
-  video.addEventListener("play", function() {
-
-    nccVideos.forEach(function(otherVideo) {
-
-      if (otherVideo !== video) {
-        otherVideo.pause();
-      }
-
-    });
-
-  });
 
 });
 
