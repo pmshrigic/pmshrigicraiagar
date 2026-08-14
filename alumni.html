@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alumni Corner | PM SHRI GIC Raiagar</title>
+
+  <meta name="description"
+    content="PM SHRI GIC Raiagar Alumni Corner - Connect with our former students and celebrate their achievements.">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* TOP TRICOLOUR */
+
+    .tri-line {
+      height: 6px;
+      display: flex;
+      width: 100%;
+    }
+
+    .tri-line span {
+      flex: 1;
+    }
+
+    .tri-line span:nth-child(1) {
+      background: #ff9933;
+    }
+
+    .tri-line span:nth-child(2) {
+      background: #ffffff;
+    }
+
+    .tri-line span:nth-child(3) {
+      background: #138808;
+    }
+
+
+    /* HEADER */
+
+    .alumni-header {
+      background: linear-gradient(135deg, #17365d, #28598a);
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    .alumni-logo {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .alumni-header h1 {
+      margin: 5px 0;
+      font-size: 32px;
+    }
+
+    .alumni-header h2 {
+      margin: 5px 0 12px;
+      font-size: 21px;
+      font-weight: normal;
+    }
+
+    .alumni-header p {
+      margin: 0;
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+
+    /* TAGLINE */
+
+    .tagline {
+      text-align: center;
+      padding: 22px 15px;
+      background: white;
+    }
+
+    .tagline strong {
+      color: #17365d;
+      font-size: 22px;
+    }
+
+    .tagline p {
+      margin: 7px 0 0;
+      color: #666;
+    }
+
+
+    /* MAIN */
+
+    .alumni-container {
+      width: 94%;
+      max-width: 1150px;
+      margin: 30px auto;
+    }
+
+
+    /* INTRO */
+
+    .intro-box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 5px solid #ff9933;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .intro-box h2 {
+      color: #17365d;
+      margin-top: 0;
+    }
+
+
+    /* CARDS */
+
+    .alumni-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .alumni-card {
+      background: white;
+      padding: 25px 20px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.09);
+      transition: 0.3s;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      font-size: 42px;
+    }
+
+    .alumni-card h3 {
+      color: #17365d;
+      margin: 12px 0 8px;
+    }
+
+    .alumni-card p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+
+    /* REGISTER SECTION */
+
+    .register-section {
+      margin-top: 35px;
+      padding: 35px 20px;
+      text-align: center;
+
+      background: linear-gradient(135deg, #fff7ed, #ffffff);
+
+      border-radius: 18px;
+      border: 1px solid #eee;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .register-section h2 {
+      color: #17365d;
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    .register-section p {
+      color: #555;
+      max-width: 700px;
+      margin: 10px auto 22px;
+      line-height: 1.7;
+    }
+
+
+    /* REGISTER BUTTON */
+
+    .register-btn {
+      display: inline-block;
+      padding: 14px 30px;
+
+      background: linear-gradient(135deg, #ff9933, #e87500);
+
+      color: white !important;
+      text-decoration: none !important;
+
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: bold;
+
+      box-shadow: 0 5px 15px rgba(230,120,0,0.25);
+
+      transition: 0.3s;
+    }
+
+    .register-btn:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* BACK BUTTON */
+
+    .back-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 22px;
+
+      background: #17365d;
+      color: white !important;
+
+      text-decoration: none !important;
+
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 40px;
+      padding: 20px 15px;
+      background: #17365d;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .alumni-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .alumni-header h1 {
+        font-size: 27px;
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .alumni-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .alumni-header {
+        padding: 28px 12px;
+      }
+
+      .alumni-header h1 {
+        font-size: 24px;
+      }
+
+      .alumni-header h2 {
+        font-size: 18px;
+      }
+
+      .intro-box {
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- TRICOLOUR -->
+
+  <div class="tri-line">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header class="alumni-header">
+
+    <div class="alumni-logo">
+      🎓
+    </div>
+
+    <h1>Alumni Corner</h1>
+
+    <h2>पूर्व छात्र कॉर्नर</h2>
+
+    <p>
+      PM SHRI Government Inter College Raiagar
+    </p>
+
+  </header>
+
+
+  <!-- TAGLINE -->
+
+  <section class="tagline">
+
+    <strong>
+      Once a Raiagarian, Always a Raiagarian
+    </strong>
+
+    <p>
+      हमारे अतीत को जोड़ते हुए, वर्तमान को प्रेरित करते हुए और भविष्य को आकार देते हुए।
+    </p>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="alumni-container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro-box">
+
+      <h2>🎓 हमारे पूर्व छात्र</h2>
+
+      <p>
+        PM SHRI GIC Raiagar के Alumni Corner में आपका स्वागत है।
+        यह मंच हमारे गौरवशाली पूर्व छात्रों को विद्यालय परिवार से जोड़ने,
+        उनकी उपलब्धियों को साझा करने तथा वर्तमान विद्यार्थियों को उनके
+        अनुभव एवं मार्गदर्शन से प्रेरित करने के उद्देश्य से बनाया गया है।
+      </p>
+
+      <p>
+        यदि आप हमारे विद्यालय के पूर्व छात्र हैं, तो Alumni Community
+        से जुड़ने के लिए अपना विवरण दर्ज करें।
+      </p>
+
+    </section>
+
+
+    <!-- CARDS -->
+
+    <section class="alumni-grid">
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">🏆</div>
+
+        <h3>Distinguished Alumni</h3>
+
+        <p>
+          हमारे विद्यालय के उन पूर्व छात्रों की उपलब्धियों को
+          प्रदर्शित किया जाएगा जिन्होंने विभिन्न क्षेत्रों में
+          उल्लेखनीय योगदान दिया है।
+        </p>
+
+      </div>
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">📸</div>
+
+        <h3>Alumni Memories</h3>
+
+        <p>
+          पुराने बैच, विद्यालय के कार्यक्रमों और पूर्व छात्रों
+          से जुड़ी यादगार तस्वीरों की झलकियाँ।
+        </p>
+
+      </div>
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">💬</div>
+
+        <h3>Alumni Voices</h3>
+
+        <p>
+          हमारे पूर्व छात्रों के अनुभव, शुभकामनाएँ और विद्यालय
+          के प्रति उनके संदेश।
+        </p>
+
+      </div>
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">🤝</div>
+
+        <h3>Alumni Connect</h3>
+
+        <p>
+          पूर्व छात्रों को विद्यालय तथा वर्तमान विद्यार्थियों
+          से जोड़ने का एक साझा मंच।
+        </p>
+
+      </div>
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">💡</div>
+
+        <h3>Alumni Contributions</h3>
+
+        <p>
+          Career Guidance, Mentorship, व्याख्यान तथा विद्यालय
+          के विकास में पूर्व छात्रों के सहयोग को प्रदर्शित किया जाएगा।
+        </p>
+
+      </div>
+
+
+      <div class="alumni-card">
+
+        <div class="card-icon">📅</div>
+
+        <h3>Alumni Events</h3>
+
+        <p>
+          Alumni Meet, Career Guidance और अन्य पूर्व छात्र
+          कार्यक्रमों की जानकारी यहाँ उपलब्ध होगी।
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- REGISTER -->
+
+    <section class="register-section">
+
+      <div style="font-size:45px;">
+        🎓
+      </div>
+
+      <h2>
+        Are You Our Alumni?
+      </h2>
+
+      <p>
+        यदि आपने PM SHRI GIC Raiagar से शिक्षा प्राप्त की है,
+        तो Alumni Community से जुड़ें और अपने अनुभव एवं उपलब्धियों
+        को विद्यालय परिवार के साथ साझा करें।
+      </p>
+
+
+      <!-- GOOGLE FORM LINK -->
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdu7Z7Te9_b4p5hjM7P4CSJNTnEwa-iLX5zbP9Et7iU5NVeVw/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener"
+        class="register-btn">
+
+        🎓 Register Now
+
+      </a>
+
+    </section>
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="back-section">
+
+      <a href="index.html" class="back-btn">
+        ← Back to Home
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      🎓 <strong>PM SHRI GIC RAIAGAR</strong>
+    </p>
+
+    <p>
+      Alumni Community
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
