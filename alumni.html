@@ -161,7 +161,114 @@
       line-height: 1.6;
       font-size: 14px;
     }
+/* ================================
+   DYNAMIC ALUMNI SECTION
+================================ */
 
+.dynamic-alumni-section {
+  margin: 35px 0;
+}
+
+.dynamic-alumni-title {
+  text-align: center;
+  color: #17365d;
+  margin-bottom: 22px;
+  font-size: 28px;
+}
+
+.dynamic-alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dynamic-alumni-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.09);
+  transition: 0.3s;
+  border-top: 4px solid #ff9933;
+}
+
+.dynamic-alumni-card:hover {
+  transform: translateY(-5px);
+}
+
+.dynamic-alumni-photo {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #138808;
+  margin-bottom: 12px;
+}
+
+.dynamic-alumni-placeholder {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3f8;
+  font-size: 48px;
+}
+
+.dynamic-alumni-card h3 {
+  color: #17365d;
+  margin: 8px 0;
+  font-size: 21px;
+}
+
+.dynamic-alumni-batch {
+  display: inline-block;
+  background: #fff1df;
+  color: #c65c00;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dynamic-alumni-info {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+
+.dynamic-alumni-message {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f5f7fa;
+  border-radius: 10px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.alumni-loading {
+  text-align: center;
+  padding: 25px;
+  color: #666;
+}
+
+@media (max-width: 800px) {
+  .dynamic-alumni-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .dynamic-alumni-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* REGISTER SECTION */
 
@@ -462,6 +569,26 @@
 
     </section>
 
+    <!-- ================================
+     DYNAMIC ALUMNI FROM GOOGLE SHEET
+================================ -->
+
+<section class="dynamic-alumni-section">
+
+  <h2 class="dynamic-alumni-title">
+    🎓 Our Alumni
+  </h2>
+
+  <div id="dynamicAlumniGrid" class="dynamic-alumni-grid">
+
+    <div class="alumni-loading">
+      ⏳ Alumni information loading...
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- REGISTER -->
 
@@ -509,6 +636,194 @@
 
 
   </main>
+  <script>
+
+/* ==========================================
+   GOOGLE SHEET → ALUMNI CORNER
+   Only PUBLISH = YES will be displayed
+========================================== */
+
+const alumniSheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vSnNFCylXhm_nzWTYhvnR0iPOsOOIqcYg1T_f2IdiuIYjsLmSh4xi3FSMxxn201o_pTrb4iwpCd7g8A/gviz/tq?tqx=out:json&sheet=Form%20responses%201&tq=select%20B,C,F,G,H,I,J%20where%20K='YES'";
+
+
+async function loadAlumni() {
+
+  const container = document.getElementById("dynamicAlumniGrid");
+
+  try {
+
+    const response = await fetch(alumniSheetURL);
+
+    const text = await response.text();
+
+    /*
+      Google Visualization JSON के आगे/पीछे
+      कुछ extra characters आते हैं।
+    */
+
+    const jsonText = text.substring(
+      text.indexOf("{"),
+      text.lastIndexOf("}") + 1
+    );
+
+    const data = JSON.parse(jsonText);
+
+    const rows = data.table.rows || [];
+
+    if (rows.length === 0) {
+
+      container.innerHTML = `
+        <div class="alumni-loading">
+          अभी कोई Alumni profile प्रकाशित नहीं की गई है।
+        </div>
+      `;
+
+      return;
+    }
+
+    container.innerHTML = "";
+
+    rows.forEach(function(row) {
+
+      const cells = row.c || [];
+
+      const name =
+        cells[0]?.v || "";
+
+      const batch =
+        cells[1]?.v || "";
+
+      const occupation =
+        cells[2]?.v || "";
+
+      const city =
+        cells[3]?.v || "";
+
+      const achievement =
+        cells[4]?.v || "";
+
+      const message =
+        cells[5]?.v || "";
+
+      const photo =
+        cells[6]?.v || "";
+
+
+      /* Alumni Card */
+
+      const card =
+        document.createElement("div");
+
+      card.className =
+        "dynamic-alumni-card";
+
+
+      /* Photo */
+
+      let photoHTML = `
+        <div class="dynamic-alumni-placeholder">
+          🎓
+        </div>
+      `;
+
+
+      if (photo) {
+
+        photoHTML = `
+          <img
+            src="${photo}"
+            alt="${name}"
+            class="dynamic-alumni-photo"
+            loading="lazy"
+          >
+        `;
+
+      }
+
+
+      card.innerHTML = `
+
+        ${photoHTML}
+
+        <h3>
+          ${name}
+        </h3>
+
+        <div class="dynamic-alumni-batch">
+          🎓 Batch: ${batch}
+        </div>
+
+        ${
+          occupation
+          ? `<div class="dynamic-alumni-info">
+               💼 <strong>Occupation:</strong>
+               ${occupation}
+             </div>`
+          : ""
+        }
+
+        ${
+          city
+          ? `<div class="dynamic-alumni-info">
+               📍 <strong>Place:</strong>
+               ${city}
+             </div>`
+          : ""
+        }
+
+        ${
+          achievement
+          ? `<div class="dynamic-alumni-info">
+               🏆 <strong>Achievement:</strong><br>
+               ${achievement}
+             </div>`
+          : ""
+        }
+
+        ${
+          message
+          ? `<div class="dynamic-alumni-message">
+               “${message}”
+             </div>`
+          : ""
+        }
+
+      `;
+
+
+      container.appendChild(card);
+
+    });
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "Alumni loading error:",
+      error
+    );
+
+    container.innerHTML = `
+      <div class="alumni-loading">
+        Alumni information अभी उपलब्ध नहीं है।
+      </div>
+    `;
+
+  }
+
+}
+
+
+/* Load Alumni */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadAlumni
+);
+
+  </script>
 
 
   <!-- FOOTER -->
