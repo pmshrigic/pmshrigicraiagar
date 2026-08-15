@@ -266,7 +266,9 @@ nav ul li a:hover{
 }
 
 
-/* PHOTO GRID */
+/* ================================
+   PHOTO GRID
+================================ */
 
 .ncc-photo-grid{
   display:grid;
@@ -277,7 +279,9 @@ nav ul li a:hover{
 }
 
 
-/* PHOTO CARD */
+/* ================================
+   PHOTO CARD
+================================ */
 
 .ncc-photo-card{
   background:#f8f9fa;
@@ -400,8 +404,15 @@ nav ul li a:hover{
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:25px;
+  gap:20px;
+
+  align-items:start;
 }
+
+
+/* ================================
+   VIDEO CARD
+================================ */
 
 .ncc-video-card{
   background:#f8f9fa;
@@ -411,12 +422,23 @@ nav ul li a:hover{
   overflow:hidden;
 
   box-shadow:0 4px 12px rgba(0,0,0,.10);
+
+  width:100%;
+
+  max-width:520px;
+
+  margin:0 auto;
 }
+
+
+/* ================================
+   VIDEO FRAME
+================================ */
 
 .ncc-video{
   width:100%;
 
-  height:280px;
+  height:220px;
 
   display:block;
 
@@ -425,8 +447,29 @@ nav ul li a:hover{
   border:0;
 }
 
+
+/* GOOGLE DRIVE VIDEO
+================================ */
+
+.ncc-drive-video{
+  width:100%;
+
+  height:220px;
+
+  display:block;
+
+  border:0;
+
+  background:#000;
+}
+
+
+/* ================================
+   VIDEO CAPTION
+================================ */
+
 .video-caption{
-  padding:13px;
+  padding:10px;
 
   text-align:center;
 
@@ -434,7 +477,26 @@ nav ul li a:hover{
 
   font-weight:600;
 
-  font-size:15px;
+  font-size:14px;
+
+  background:#f8f9fa;
+}
+
+
+/* ================================
+   DOUBLE CLICK HINT
+================================ */
+
+.video-hint{
+  text-align:center;
+
+  font-size:12px;
+
+  color:#777;
+
+  padding:5px 8px 9px;
+
+  background:#f8f9fa;
 }
 
 
@@ -500,6 +562,10 @@ footer{
     font-size:32px;
   }
 
+  .ncc-video-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
 
@@ -527,8 +593,9 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .ncc-video{
-    height:230px;
+  .ncc-video,
+  .ncc-drive-video{
+    height:200px;
   }
 
 }
@@ -573,6 +640,11 @@ footer{
 
   .ncc-photo-card img{
     height:240px;
+  }
+
+  .ncc-video,
+  .ncc-drive-video{
+    height:190px;
   }
 
 }
@@ -732,7 +804,7 @@ footer{
 <div class="ncc-photo-grid">
 
 
-<!-- PHOTO 1 : GOOGLE DRIVE -->
+<!-- PHOTO 1 -->
 
 <div
   class="ncc-photo-card"
@@ -740,11 +812,9 @@ footer{
   'https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600'
   )">
 
-
 <img
   src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
   alt="NCC Parade">
-
 
 <div class="photo-caption">
   🇮🇳 NCC Parade
@@ -752,6 +822,8 @@ footer{
 
 </div>
 
+
+<!-- PHOTO 2 -->
 
 <div
   class="ncc-photo-card"
@@ -759,17 +831,17 @@ footer{
   'https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1600'
   )">
 
-
 <img
   src="https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1000"
   alt="NCC Parade">
-
 
 <div class="photo-caption">
   🇮🇳 NCC Parade
 </div>
 
 </div>
+
+
 <!-- PHOTO 3 -->
 
 <div
@@ -852,17 +924,14 @@ footer{
   class="ncc-photo-lightbox"
   onclick="closeNCCPhoto()">
 
-
 <span class="ncc-photo-close">
   ✕
 </span>
-
 
 <img
   id="nccLargePhoto"
   src=""
   alt="NCC Photo">
-
 
 </div>
 
@@ -873,56 +942,60 @@ footer{
 
 <section class="ncc-video-section">
 
-
 <h2 class="gallery-title">
   🎥 NCC Video Gallery
 </h2>
 
-
 <p class="gallery-subtitle">
-
-एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
-
+  एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
 </p>
 
 
-   <div class="ncc-video-card">
+<div class="ncc-video-grid">
 
-  <iframe
-    src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
 
-  <div class="video-caption">
-   GUARD OF HONOUR
-  </div>
+<!-- VIDEO 1 -->
 
-</div>
 <div class="ncc-video-card">
 
-  <iframe
-    src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
+<iframe
+  class="ncc-drive-video"
+  src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
+  allow="autoplay"
+  allowfullscreen
+  title="NCC Guard of Honour">
+</iframe>
 
-  <div class="video-caption">
-  INSPECTION
-  </div>
+<div class="video-caption">
+  🇮🇳 GUARD OF HONOUR
+</div>
+
+<div class="video-hint">
+  ▶ वीडियो चलाने के लिए डबल-क्लिक करें
+</div>
 
 </div>
 
 
+<!-- VIDEO 2 -->
 
+<div class="ncc-video-card">
 
+<iframe
+  class="ncc-drive-video"
+  src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
+  allow="autoplay"
+  allowfullscreen
+  title="NCC Inspection">
+</iframe>
 
+<div class="video-caption">
+  🇮🇳 INSPECTION
+</div>
+
+<div class="video-hint">
+  ▶ वीडियो चलाने के लिए डबल-क्लिक करें
+</div>
 
 </div>
 
@@ -970,7 +1043,6 @@ footer{
 ================================ -->
 
 <script>
-
 
 /* ==========================================
    PHOTO LIGHTBOX
@@ -1025,31 +1097,34 @@ document.addEventListener(
 
 
 /* ==========================================
-   LOCAL VIDEOS
-   ONE VIDEO AT A TIME
+   VIDEO DOUBLE CLICK
+   Double-click = play
 ========================================== */
 
-const localVideos =
-  document.querySelectorAll(".local-ncc-video");
+const videoCards =
+  document.querySelectorAll(".ncc-video-card");
 
 
-localVideos.forEach(function(video){
+videoCards.forEach(function(card){
 
-  video.addEventListener(
-    "play",
+  const iframe =
+    card.querySelector(".ncc-drive-video");
+
+
+  card.addEventListener(
+    "dblclick",
     function(){
 
-      localVideos.forEach(
-        function(otherVideo){
+      /*
+        Google Drive iframe के अंदर
+        directly play command नहीं भेजी जा सकती।
+        
+        इसलिए double-click पर iframe को
+        focus किया जाता है और browser में
+        video player active होता है।
+      */
 
-          if(otherVideo !== video){
-
-            otherVideo.pause();
-
-          }
-
-        }
-      );
+      iframe.focus();
 
     }
   );
