@@ -1,141 +1,519 @@
-<!DOCTYPE html> 
-<html lang="hi"> 
-<head> 
- <meta charset="UTF-8"> 
- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- <title>Art & Cultural Activity | PM SHRI GIC Raiagar</title> 
- <style> 
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; } 
-  body { background-color: #f8f9fa; color: #333; line-height: 1.6; } 
-  .top-bar { background-color: #002147; color: #fff; padding: 10px 20px; font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; } 
-  .top-bar a { color: #ffbc00; text-decoration: none; font-weight: bold; } 
-  header { background: #ffffff; padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } 
-  .school-custom-logo { width: 90px; height: 90px; margin-right: 20px; } 
-  .school-custom-logo img { width: 100%; height: 100%; object-fit: contain; } 
-  .school-name h1 { font-size: 42px; color: #002147; font-weight: 700; } 
-  nav { background-color: #002147; position: sticky; top: 0; z-index: 1000; } 
-  nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; } 
-  nav ul li { position: relative; } 
-  nav ul li a { display: block; padding: 15px 20px; color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; } 
-  nav ul li a:hover { background-color: #003366; color: #ffbc00; } 
-  .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; } 
-  .main-panel { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #ffbc00; } 
-  .main-panel h2 { color: #002147; margin-bottom: 15px; }
-  .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #002147; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
-  .back-btn:hover { background-color: #ffbc00; color: #002147; }
-  /* ==========================================
-   ART & CULTURE PHOTO GALLERY
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Art & Cultural Activity | PM SHRI GIC Raiagar</title>
+
+<style>
+
+/* ==========================================
+   BASIC
 ========================================== */
 
-.culture-gallery-section {
-  margin-top: 35px;
-  padding: 30px 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  border-left: 5px solid #ff9933;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',sans-serif;
 }
 
-.culture-gallery-title {
-  text-align: center;
-  color: #002147;
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.culture-gallery-subtitle {
-  text-align: center;
-  color: #666;
-  margin-bottom: 25px;
-  font-size: 15px;
-}
-
-.culture-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.culture-photo-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-  transition: transform 0.3s ease,
-              box-shadow 0.3s ease;
-}
-
-.culture-photo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
-}
-
-.culture-photo-card img {
-  width: 100%;
-  height: 220px;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.culture-photo-card:hover img {
-  transform: scale(1.03);
-}
-
-.culture-photo-caption {
-  padding: 12px;
-  text-align: center;
-  color: #002147;
-  font-weight: 600;
-  font-size: 15px;
+body{
+  background:#f8f9fa;
+  color:#333;
+  line-height:1.6;
 }
 
 
 /* ==========================================
-   CULTURE PHOTO LIGHTBOX
+   TOP BAR
 ========================================== */
 
-.culture-photo-lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.90);
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 25px;
+.top-bar{
+  background:#002147;
+  color:#fff;
+  padding:10px 20px;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
 }
 
-.culture-photo-lightbox img {
-  max-width: 92%;
-  max-height: 88vh;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+.top-bar a{
+  color:#ffbc00;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.culture-photo-close {
-  position: absolute;
-  top: 18px;
-  right: 28px;
 
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
+/* ==========================================
+   HEADER
+========================================== */
 
-  cursor: pointer;
+header{
+  background:linear-gradient(
+    135deg,
+    #FF9933 0%,
+    #FFFFFF 50%,
+    #138808 100%
+  );
 
-  line-height: 1;
+  padding:15px 40px;
+
+  display:flex;
+  align-items:center;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+  border-bottom:3px solid #000080;
 }
 
-.culture-photo-close:hover {
-  color: #ffbc00;
+.logo-area{
+  display:flex;
+  align-items:center;
+  width:100%;
+}
+
+.school-custom-logo{
+  width:90px;
+  height:90px;
+
+  margin-right:20px;
+
+  background:rgba(255,255,255,0.85);
+
+  padding:5px;
+
+  border-radius:50%;
+
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+
+  flex-shrink:0;
+}
+
+.school-custom-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.school-name{
+  flex-grow:1;
+}
+
+.school-name h1{
+  font-size:42px;
+  color:#002147;
+  font-weight:700;
+  margin:0;
+
+  text-shadow:1px 1px 2px rgba(255,255,255,0.8);
+}
+
+
+/* ==========================================
+   MARQUEE
+========================================== */
+
+.school-marquee{
+  width:100%;
+
+  background:rgba(0,33,71,0.9);
+
+  border-radius:4px;
+
+  padding:6px 0;
+
+  margin-top:8px;
+
+  overflow:hidden;
+
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.school-marquee span{
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  letter-spacing:.5px;
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav{
+  background:#002147;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+}
+
+nav ul{
+  list-style:none;
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+nav ul li a{
+  display:block;
+
+  padding:15px 20px;
+
+  color:#fff;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  font-size:16px;
+}
+
+nav ul li a:hover{
+  background:#003366;
+
+  color:#ffbc00;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.container{
+  max-width:1200px;
+
+  margin:30px auto;
+
+  padding:0 20px;
+}
+
+.main-panel{
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:10px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+
+  border-left:5px solid #ffbc00;
+}
+
+.main-panel h2{
+  color:#002147;
+
+  margin-bottom:15px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn{
+  display:inline-block;
+
+  margin-top:30px;
+
+  padding:10px 20px;
+
+  background:#002147;
+
+  color:white;
+
+  text-decoration:none;
+
+  border-radius:5px;
+
+  font-weight:bold;
+}
+
+.back-btn:hover{
+  background:#ffbc00;
+
+  color:#002147;
+}
+
+
+/* ==========================================
+   PHOTO GALLERY
+========================================== */
+
+.culture-gallery-section{
+  margin-top:30px;
+
+  padding:25px 18px;
+
+  background:#fff;
+
+  border-radius:12px;
+
+  border-left:5px solid #ff9933;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.06);
+}
+
+.culture-gallery-title{
+  text-align:center;
+
+  color:#002147;
+
+  font-size:28px;
+
+  margin-bottom:6px;
+}
+
+.culture-gallery-subtitle{
+  text-align:center;
+
+  color:#666;
+
+  margin-bottom:20px;
+
+  font-size:14px;
+}
+
+
+/* ==========================================
+   PHOTO GRID
+========================================== */
+
+.culture-photo-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:15px;
+
+}
+
+
+/* ==========================================
+   PHOTO CARD
+========================================== */
+
+.culture-photo-card{
+
+  background:#f8f9fa;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  box-shadow:0 3px 10px rgba(0,0,0,0.10);
+
+  transition:.25s ease;
+
+}
+
+.culture-photo-card:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:0 6px 16px rgba(0,0,0,0.15);
+
+}
+
+
+.culture-photo-card img{
+
+  width:100%;
+
+  height:170px;
+
+  display:block;
+
+  object-fit:cover;
+
+}
+
+
+.culture-photo-caption{
+
+  padding:9px;
+
+  text-align:center;
+
+  color:#002147;
+
+  font-weight:600;
+
+  font-size:14px;
+
+}
+
+
+/* ==========================================
+   PHOTO LIGHTBOX
+========================================== */
+
+.culture-photo-lightbox{
+
+  display:none;
+
+  position:fixed;
+
+  z-index:99999;
+
+  left:0;
+
+  top:0;
+
+  width:100%;
+
+  height:100%;
+
+  background:rgba(0,0,0,.88);
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+}
+
+
+.culture-photo-lightbox img{
+
+  width:auto;
+
+  height:auto;
+
+  max-width:85vw;
+
+  max-height:82vh;
+
+  object-fit:contain;
+
+  border-radius:8px;
+
+}
+
+
+.culture-photo-close{
+
+  position:absolute;
+
+  top:15px;
+
+  right:22px;
+
+  color:white;
+
+  font-size:35px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+/* ==========================================
+   VIDEO GALLERY
+========================================== */
+
+.culture-video-section{
+
+  margin-top:30px;
+
+  padding:25px 18px;
+
+  background:#fff;
+
+  border-radius:12px;
+
+  border-left:5px solid #138808;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.06);
+
+}
+
+
+.culture-video-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+
+/* ==========================================
+   VIDEO CARD
+========================================== */
+
+.culture-video-card{
+
+  background:#f8f9fa;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  box-shadow:0 3px 10px rgba(0,0,0,0.10);
+
+}
+
+
+/* ==========================================
+   GOOGLE DRIVE VIDEO
+========================================== */
+
+.culture-video{
+
+  width:100%;
+
+  height:210px;
+
+  display:block;
+
+  border:0;
+
+  background:#000;
+
+}
+
+
+/* ==========================================
+   VIDEO CAPTION
+========================================== */
+
+.culture-video-caption{
+
+  padding:9px;
+
+  text-align:center;
+
+  color:#002147;
+
+  font-weight:600;
+
+  font-size:14px;
+
 }
 
 
@@ -143,425 +521,735 @@
    MOBILE
 ========================================== */
 
-@media (max-width: 900px) {
+@media(max-width:900px){
 
-  .culture-photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .culture-photo-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+  .school-name h1{
+
+    font-size:32px;
+
   }
 
 }
 
-@media (max-width: 550px) {
 
-  .culture-gallery-section {
-    padding: 22px 15px;
+@media(max-width:700px){
+
+  header{
+
+    padding:15px;
+
   }
 
-  .culture-gallery-title {
-    font-size: 24px;
+  .school-custom-logo{
+
+    width:70px;
+
+    height:70px;
+
+    margin-right:12px;
+
   }
 
-  .culture-photo-grid {
-    grid-template-columns: 1fr;
+  .school-name h1{
+
+    font-size:25px;
+
   }
 
-  .culture-photo-card img {
-    height: 230px;
+  .school-marquee span{
+
+    font-size:12px;
+
+  }
+
+  .culture-video-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .culture-video{
+
+    height:200px;
+
   }
 
 }
-  /* ==========================================
-   ART & CULTURE VIDEO GALLERY
+
+
+@media(max-width:550px){
+
+  .top-bar{
+
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:12px;
+
+  }
+
+  .container{
+
+    padding:0 10px;
+
+    margin-top:20px;
+
+  }
+
+  .main-panel{
+
+    padding:20px 15px;
+
+  }
+
+  .culture-gallery-section,
+  .culture-video-section{
+
+    padding:20px 12px;
+
+  }
+
+  .culture-gallery-title{
+
+    font-size:23px;
+
+  }
+
+  .culture-gallery-subtitle{
+
+    font-size:13px;
+
+  }
+
+  .culture-photo-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .culture-photo-card img{
+
+    height:210px;
+
+  }
+
+  .culture-video{
+
+    height:190px;
+
+  }
+
+  .culture-photo-lightbox img{
+
+    max-width:92vw;
+
+    max-height:75vh;
+
+  }
+
+}
+
+
+/* ==========================================
+   FOOTER
 ========================================== */
 
-.culture-video-section {
-  margin-top: 35px;
-  padding: 30px 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  border-left: 5px solid #138808;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-}
+footer{
 
-.culture-video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
+  background:#001530;
 
-.culture-video-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-}
+  color:white;
 
-.culture-video {
-  width: 100%;
-  height: 280px;
-  display: block;
-  background: #000;
-}
+  padding:20px;
 
-.culture-video-caption {
-  padding: 13px;
-  text-align: center;
-  color: #002147;
-  font-weight: 600;
-  font-size: 15px;
-}
+  text-align:center;
 
+  margin-top:40px;
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .culture-video-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .culture-video {
-    height: 230px;
-  }
+  font-size:14px;
 
 }
-  footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
- </style> 
-</head> 
+
+</style>
+
+</head>
+
+
 <body>
-<div class="top-bar"> 
- <div> Raiagar, Uttarakhand, India</div> 
- <div> संपर्क: <a href="tel:+918057513300">+91 8057513300</a></div> 
- <div>Udise: <a>05070702603</a></div> 
- <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div> 
-</div>
-<header style="background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-bottom: 3px solid #000080;"> 
- <div class="logo-area" style="display: flex; align-items: center; width: 100%;"> 
-  
-  <div class="school-custom-logo" style="width: 90px; height: 90px; margin-right: 20px; background: rgba(255,255,255,0.85); padding: 5px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-   <img src="logo.png" alt="logo" style="width: 100%; height: 100%; object-fit: contain;">
-  </div> 
-  
-  <div class="school-name" style="flex-grow: 1;"> 
-   <h1 style="font-size: 42px; color: #002147; font-weight: 700; margin: 0; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">PM SHRI GIC RAIAGAR</h1> 
-   
-   <div style="width: 100%; background: rgba(0, 33, 71, 0.9); border-radius: 4px; padding: 6px 0; margin-top: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
-     <span style="color: #ffffff; font-size: 15px; font-weight: 700; font-family: 'Segoe UI', sans-serif; letter-spacing: 0.5px;">
-      ⚡ PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा • संस्कार • नवाचार ⚡
-     </span>
-    </marquee>
-   </div>
 
-  </div> 
- </div> 
-</header>
-<nav> 
- <ul> 
-  <li><a href="index.html">मुख्य पृष्ठ</a></li> 
- </ul> 
-</nav> 
-<div class="container">
- <div class="main-panel">
-  <h2>सांस्कृतिक गतिविधियां (Art & Cultural Activity)</h2>
-  <p>लोक नृत्य, नाटक, संगीत और कला प्रदर्शनी क्षेत्र। विद्यालय के छात्र-छात्राएं कुमाऊंनी लोक कला, पारंपरिक सांस्कृतिक कार्यक्रमों और राज्य स्तरीय प्रतियोगिताओं में बढ़-चढ़कर भाग लेते हैं।</p>
-  <!-- ==========================================
-     ART & CULTURE PHOTO GALLERY
+
+<!-- ==========================================
+     TOP BAR
 ========================================== -->
 
-<section class="culture-gallery-section">
+<div class="top-bar">
 
-  <h2 class="culture-gallery-title">
-    🎨📸 Art & Cultural Photo Gallery
-  </h2>
+  <div>
+    Raiagar, Uttarakhand, India
+  </div>
 
-  <p class="culture-gallery-subtitle">
-    लोक नृत्य, संगीत, चित्रकला, नाटक एवं सांस्कृतिक गतिविधियों की झलकियाँ
-  </p>
+  <div>
+    संपर्क:
+    <a href="tel:+918057513300">
+      +91 8057513300
+    </a>
+  </div>
 
-   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: #fff; padding: 15px; border-radius: 6px;"> 
+  <div>
+    Udise:
+    <a href="#">
+      05070702603
+    </a>
+  </div>
 
-    <!-- PHOTO 1 -->
-    <div
-  class="ncc-photo-card"
-  onclick="open independance day photo(
-  'https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1600'
-  )">
-
-
-<img
-  src="https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1000"
-  alt="NCC Parade">
-
-
- INDEPENDANCE DAY
-</div>
-
-</div>
-
-
-    <!-- PHOTO 2 -->
-   <div
-  class="ncc-photo-card"
-  onclick="open independance day photo(
-  'https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1600'
-  )">
-
-
-<img
-  src="https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1000"
-  alt="MARTCH PASS">
-
-
-<div class="photo-caption">
- INDEPENDANCE DAY
-</div>
+  <div>
+    ✉ email:
+    <a href="mailto:principal.gic.raiagar@gmail.com">
+      principal.gic.raiagar@gmail.com
+    </a>
+  </div>
 
 </div>
 
-    <!-- PHOTO 3 -->
-    <div class="culture-photo-card"
-         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+  <div class="logo-area">
+
+    <div class="school-custom-logo">
 
       <img
-        src="culture-photo3.jpg"
-        alt="Music Activity">
-
-      <div class="culture-photo-caption">
-        🎵 संगीत गतिविधि
-      </div>
+        src="logo.png"
+        alt="PM SHRI GIC Raiagar Logo">
 
     </div>
 
 
-    <!-- PHOTO 4 -->
-    <div class="culture-photo-card"
-         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+    <div class="school-name">
 
-      <img
-        src="culture-photo4.jpg"
-        alt="Painting Activity">
-
-      <div class="culture-photo-caption">
-        🎨 चित्रकला गतिविधि
-      </div>
-
-    </div>
+      <h1>
+        PM SHRI GIC RAIAGAR
+      </h1>
 
 
-    <!-- PHOTO 5 -->
-    <div class="culture-photo-card"
-         ondblclick="openCulturePhoto(this.querySelector('img').src)">
+      <div class="school-marquee">
 
-      <img
-        src="culture-photo5.jpg"
-        alt="Drama Activity">
+        <marquee
+          behavior="scroll"
+          direction="left"
+          scrollamount="5"
+          onmouseover="this.stop();"
+          onmouseout="this.start();">
 
-      <div class="culture-photo-caption">
-        🎭 नाटक एवं अभिनय
-      </div>
+          <span>
+            ⚡ PM SHRI GIC Raiagar |
+            Empowering Young Minds for Viksit Bharat @2047 |
+            सत्यमेव जयते |
+            शिक्षा • संस्कार • नवाचार ⚡
+          </span>
 
-    </div>
+        </marquee>
 
-
-    <!-- PHOTO 6 -->
-    <div class="culture-photo-card"
-         ondblclick="openCulturePhoto(this.querySelector('img').src)">
-
-      <img
-        src="culture-photo6.jpg"
-        alt="Art Activity">
-
-      <div class="culture-photo-caption">
-        🖌️ कला एवं रचनात्मक गतिविधि
       </div>
 
     </div>
 
   </div>
+
+</header>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav>
+
+  <ul>
+
+    <li>
+      <a href="index.html">
+        मुख्य पृष्ठ
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<div class="container">
+
+<div class="main-panel">
+
+
+<h2>
+  सांस्कृतिक गतिविधियां (Art & Cultural Activity)
+</h2>
+
+
+<p>
+
+लोक नृत्य, नाटक, संगीत और कला प्रदर्शनी क्षेत्र।
+विद्यालय के छात्र-छात्राएं कुमाऊंनी लोक कला,
+पारंपरिक सांस्कृतिक कार्यक्रमों और राज्य स्तरीय
+प्रतियोगिताओं में बढ़-चढ़कर भाग लेते हैं।
+
+</p>
+
+
+<!-- ==========================================
+     PHOTO GALLERY
+========================================== -->
+
+<section class="culture-gallery-section">
+
+
+<h2 class="culture-gallery-title">
+
+🎨📸 Art & Cultural Photo Gallery
+
+</h2>
+
+
+<p class="culture-gallery-subtitle">
+
+लोक नृत्य, संगीत, चित्रकला, नाटक एवं
+सांस्कृतिक गतिविधियों की झलकियाँ
+
+</p>
+
+
+<div class="culture-photo-grid">
+
+
+<!-- PHOTO 1 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  'https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1600'
+  )">
+
+<img
+  src="https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1000"
+  alt="Independence Day">
+
+<div class="culture-photo-caption">
+
+🇮🇳 INDEPENDENCE DAY
+
+</div>
+
+</div>
+
+
+<!-- PHOTO 2 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  'https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1600'
+  )">
+
+<img
+  src="https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1000"
+  alt="March Past">
+
+<div class="culture-photo-caption">
+
+🇮🇳 INDEPENDENCE DAY
+
+</div>
+
+</div>
+
+
+<!-- PHOTO 3 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  this.querySelector('img').src
+  )">
+
+<img
+  src="culture-photo3.jpg"
+  alt="Music Activity">
+
+<div class="culture-photo-caption">
+
+🎵 संगीत गतिविधि
+
+</div>
+
+</div>
+
+
+<!-- PHOTO 4 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  this.querySelector('img').src
+  )">
+
+<img
+  src="culture-photo4.jpg"
+  alt="Painting Activity">
+
+<div class="culture-photo-caption">
+
+🎨 चित्रकला गतिविधि
+
+</div>
+
+</div>
+
+
+<!-- PHOTO 5 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  this.querySelector('img').src
+  )">
+
+<img
+  src="culture-photo5.jpg"
+  alt="Drama Activity">
+
+<div class="culture-photo-caption">
+
+🎭 नाटक एवं अभिनय
+
+</div>
+
+</div>
+
+
+<!-- PHOTO 6 -->
+
+<div
+  class="culture-photo-card"
+  onclick="openCulturePhoto(
+  this.querySelector('img').src
+  )">
+
+<img
+  src="culture-photo6.jpg"
+  alt="Art Activity">
+
+<div class="culture-photo-caption">
+
+🖌️ कला एवं रचनात्मक गतिविधि
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <!-- ==========================================
-     CULTURE PHOTO LIGHTBOX
+     PHOTO LIGHTBOX
 ========================================== -->
 
-<div id="culturePhotoLightbox"
-     class="culture-photo-lightbox"
-     onclick="closeCulturePhoto()">
+<div
+  id="culturePhotoLightbox"
+  class="culture-photo-lightbox"
+  onclick="closeCulturePhoto()">
 
-  <span class="culture-photo-close">
-    ✕
-  </span>
 
-  <img
-    id="cultureLargePhoto"
-    src=""
-    alt="Cultural Activity Photo">
+<span class="culture-photo-close">
+
+✕
+
+</span>
+
+
+<img
+  id="cultureLargePhoto"
+  src=""
+  alt="Cultural Activity Photo">
+
 
 </div>
-  <!-- ==========================================
-     ART & CULTURE VIDEO GALLERY
+
+
+<!-- ==========================================
+     VIDEO GALLERY
 ========================================== -->
 
 <section class="culture-video-section">
 
-  <h2 class="culture-gallery-title">
-    🎥 Art & Cultural Video Gallery
-  </h2>
 
-  <p class="culture-gallery-subtitle">
-    लोक नृत्य, संगीत, नाटक एवं विभिन्न सांस्कृतिक कार्यक्रमों के वीडियो
-  </p>
+<h2 class="culture-gallery-title">
 
-  <div class="culture-video-grid">
- <iframe
-    src="https://drive.google.com/file/d/1tDmUa0tIC48iRXST6aydDhLgnKk_ju_C/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
+🎥 Art & Cultural Video Gallery
 
-  <div class="video-caption">
-   CULTURAL DANCE
-  </div>
+</h2>
 
-</div>
-   <div class="culture-video-card">
 
-  <iframe
-    src="https://drive.google.com/file/d/1zRH6pNNsOKd4glyEsXFGX2Fn3HkC0Ce8/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
+<p class="culture-gallery-subtitle">
 
-  <div class="video-caption">
-   CULTURAL DANCE
-  </div>
+लोक नृत्य, संगीत, नाटक एवं विभिन्न
+सांस्कृतिक कार्यक्रमों के वीडियो
 
-</div>
+</p>
+
+
+<div class="culture-video-grid">
+
+
+<!-- VIDEO 1 -->
 
 <div class="culture-video-card">
 
-  <iframe
-    src="https://drive.google.com/file/d/1Hsplx1kiqVlTGeN69BQzEz1ESe2Yefdu/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
+<iframe
+  class="culture-video"
+  src="https://drive.google.com/file/d/1tDmUa0tIC48iRXST6aydDhLgnKk_ju_C/preview"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+  title="Cultural Dance 1">
+</iframe>
 
-  <div class="video-caption">
-   CULTURAL DANCE
-  </div>
+<div class="culture-video-caption">
+
+🎵 CULTURAL DANCE
+
+</div>
 
 </div>
 
-   <div class="culture-video-card">
 
-  <iframe
-    src="https://drive.google.com/file/d/1y6isuY0oOpQNCT0BHUC9U1PoY-sIgoWG/preview"
-    width="100%"
-    height="280"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0; display:block;">
-  </iframe>
+<!-- VIDEO 2 -->
 
-  <div class="video-caption">
-   CULTURAL DANCE
-  </div>
+<div class="culture-video-card">
+
+<iframe
+  class="culture-video"
+  src="https://drive.google.com/file/d/1zRH6pNNsOKd4glyEsXFGX2Fn3HkC0Ce8/preview"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+  title="Cultural Dance 2">
+</iframe>
+
+<div class="culture-video-caption">
+
+🎵 CULTURAL DANCE
 
 </div>
- 
-  </div>
+
+</div>
+
+
+<!-- VIDEO 3 -->
+
+<div class="culture-video-card">
+
+<iframe
+  class="culture-video"
+  src="https://drive.google.com/file/d/1Hsplx1kiqVlTGeN69BQzEz1ESe2Yefdu/preview"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+  title="Cultural Dance 3">
+</iframe>
+
+<div class="culture-video-caption">
+
+🎵 CULTURAL DANCE
+
+</div>
+
+</div>
+
+
+<!-- VIDEO 4 -->
+
+<div class="culture-video-card">
+
+<iframe
+  class="culture-video"
+  src="https://drive.google.com/file/d/1y6isuY0oOpQNCT0BHUC9U1PoY-sIgoWG/preview"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+  title="Cultural Dance 4">
+</iframe>
+
+<div class="culture-video-caption">
+
+🎵 CULTURAL DANCE
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
-  <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
- </div>
+
+
+<!-- ==========================================
+     BACK BUTTON
+========================================== -->
+
+<a
+  href="index.html"
+  class="back-btn">
+
+← मुख्य पृष्ठ पर वापस जाएँ
+
+</a>
+
+
 </div>
-<footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
- <script>
+
+</div>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+<p>
+
+&copy; 2026
+पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर।
+सर्वाधिकार सुरक्षित।
+
+</p>
+
+</footer>
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
 
 /* ==========================================
-   CULTURE PHOTO LIGHTBOX
+   PHOTO LIGHTBOX
 ========================================== */
 
-function openCulturePhoto(photoURL) {
+function openCulturePhoto(photoURL){
 
   const lightbox =
-    document.getElementById("culturePhotoLightbox");
+    document.getElementById(
+      "culturePhotoLightbox"
+    );
 
   const largePhoto =
-    document.getElementById("cultureLargePhoto");
+    document.getElementById(
+      "cultureLargePhoto"
+    );
 
   largePhoto.src = photoURL;
 
   lightbox.style.display = "flex";
+
 }
 
 
-function closeCulturePhoto() {
+/* ==========================================
+   CLOSE PHOTO
+========================================== */
+
+function closeCulturePhoto(){
 
   const lightbox =
-    document.getElementById("culturePhotoLightbox");
+    document.getElementById(
+      "culturePhotoLightbox"
+    );
 
   const largePhoto =
-    document.getElementById("cultureLargePhoto");
+    document.getElementById(
+      "cultureLargePhoto"
+    );
 
   lightbox.style.display = "none";
 
   largePhoto.src = "";
+
 }
 
 
-/* ESC दबाने पर photo बंद */
+/* ==========================================
+   ESC KEY
+========================================== */
 
 document.addEventListener(
   "keydown",
-  function(event) {
+  function(event){
 
-    if (event.key === "Escape") {
+    if(event.key === "Escape"){
+
       closeCulturePhoto();
+
     }
 
   }
 );
 
-</script>
- <script>
 
 /* ==========================================
-   CULTURE VIDEO CONTROL
-   एक समय में केवल एक वीडियो चलेगा
+   GOOGLE DRIVE VIDEOS
 ========================================== */
 
+/*
+  Google Drive iframe अलग origin में चलता है।
+  इसलिए उसके अंदर के play/pause button को
+  JavaScript से सीधे control नहीं किया जा सकता।
+
+  नीचे का code केवल यह सुनिश्चित करता है कि
+  page पर कोई video automatic playback शुरू
+  न करे।
+*/
+
 const cultureVideos =
-  document.querySelectorAll(".culture-video");
+  document.querySelectorAll(
+    ".culture-video"
+  );
 
-cultureVideos.forEach(function(video) {
 
-  video.addEventListener("play", function() {
+cultureVideos.forEach(
+  function(video){
 
-    cultureVideos.forEach(function(otherVideo) {
+    video.setAttribute(
+      "loading",
+      "lazy"
+    );
 
-      if (otherVideo !== video) {
-        otherVideo.pause();
-      }
+  }
+);
 
-    });
 
-  });
+</script>
 
-});
 
- </script>
-</body> 
+</body>
+
 </html>
