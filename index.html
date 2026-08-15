@@ -162,7 +162,15 @@
 </header>
 <div style="max-width:950px; margin:30px auto; padding:15px; font-family:Arial, sans-serif; clear:both;">
   
-
+<style>
+    @keyframes smallWave {
+      0% { transform: rotate(-2deg) skewY(-2deg); }
+      100% { transform: rotate(2deg) skewY(2deg); }
+    }
+    @keyframes smallSpin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 <nav> 
  <ul> 
   <li><a id="tab-home" class="active-tab" onclick="switchTab(event, 'home-section')">मुख्य पृष्ठ</a></li> 
