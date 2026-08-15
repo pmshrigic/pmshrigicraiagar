@@ -292,16 +292,20 @@ nav ul li a:hover{
 
 
 /* ==========================================
-   PHOTO GRID
+   ONLY 2 PHOTOS
 ========================================== */
 
 .culture-photo-grid{
 
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
 
-  gap:15px;
+  gap:18px;
+
+  max-width:850px;
+
+  margin:0 auto;
 
 }
 
@@ -339,7 +343,7 @@ nav ul li a:hover{
 
   width:100%;
 
-  height:170px;
+  height:190px;
 
   display:block;
 
@@ -790,7 +794,7 @@ footer{
 
 
 <!-- ==========================================
-     MAIN
+     MAIN CONTENT
 ========================================== -->
 
 <div class="container">
@@ -829,8 +833,7 @@ footer{
 
 <p class="culture-gallery-subtitle">
 
-लोक नृत्य, संगीत, चित्रकला, नाटक एवं
-सांस्कृतिक गतिविधियों की झलकियाँ
+सांस्कृतिक एवं स्वतंत्रता दिवस कार्यक्रमों की झलकियाँ
 
 </p>
 
@@ -838,7 +841,9 @@ footer{
 <div class="culture-photo-grid">
 
 
-<!-- PHOTO 1 -->
+<!-- ==========================================
+     PHOTO 1
+========================================== -->
 
 <div
   class="culture-photo-card"
@@ -846,20 +851,22 @@ footer{
   'https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1600'
   )">
 
-<img
-  src="https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1000"
-  alt="Independence Day">
+  <img
+    src="https://drive.google.com/thumbnail?id=1Omle2iLTsoZqh384e_nbe72adni1AL64&sz=w1000"
+    alt="Independence Day">
 
-<div class="culture-photo-caption">
+  <div class="culture-photo-caption">
 
-🇮🇳 INDEPENDENCE DAY
+    🇮🇳 INDEPENDENCE DAY
+
+  </div>
 
 </div>
 
-</div>
 
-
-<!-- PHOTO 2 -->
+<!-- ==========================================
+     PHOTO 2
+========================================== -->
 
 <div
   class="culture-photo-card"
@@ -867,99 +874,15 @@ footer{
   'https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1600'
   )">
 
-<img
-  src="https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1000"
-  alt="March Past">
+  <img
+    src="https://drive.google.com/thumbnail?id=1SZlTWdIcJhjam3sycwPCyE_r2Ktbc8ke&sz=w1000"
+    alt="March Past">
 
-<div class="culture-photo-caption">
+  <div class="culture-photo-caption">
 
-🇮🇳 INDEPENDENCE DAY
+    🇮🇳 INDEPENDENCE DAY
 
-</div>
-
-</div>
-
-
-<!-- PHOTO 3 -->
-
-<div
-  class="culture-photo-card"
-  onclick="openCulturePhoto(
-  this.querySelector('img').src
-  )">
-
-<img
-  src="culture-photo3.jpg"
-  alt="Music Activity">
-
-<div class="culture-photo-caption">
-
-🎵 संगीत गतिविधि
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 4 -->
-
-<div
-  class="culture-photo-card"
-  onclick="openCulturePhoto(
-  this.querySelector('img').src
-  )">
-
-<img
-  src="culture-photo4.jpg"
-  alt="Painting Activity">
-
-<div class="culture-photo-caption">
-
-🎨 चित्रकला गतिविधि
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 5 -->
-
-<div
-  class="culture-photo-card"
-  onclick="openCulturePhoto(
-  this.querySelector('img').src
-  )">
-
-<img
-  src="culture-photo5.jpg"
-  alt="Drama Activity">
-
-<div class="culture-photo-caption">
-
-🎭 नाटक एवं अभिनय
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 6 -->
-
-<div
-  class="culture-photo-card"
-  onclick="openCulturePhoto(
-  this.querySelector('img').src
-  )">
-
-<img
-  src="culture-photo6.jpg"
-  alt="Art Activity">
-
-<div class="culture-photo-caption">
-
-🖌️ कला एवं रचनात्मक गतिविधि
-
-</div>
+  </div>
 
 </div>
 
@@ -1020,86 +943,94 @@ footer{
 <div class="culture-video-grid">
 
 
-<!-- VIDEO 1 -->
+<!-- ==========================================
+     VIDEO 1
+========================================== -->
 
 <div class="culture-video-card">
 
-<iframe
-  class="culture-video"
-  src="https://drive.google.com/file/d/1tDmUa0tIC48iRXST6aydDhLgnKk_ju_C/preview"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-  title="Cultural Dance 1">
-</iframe>
+  <iframe
+    class="culture-video"
+    src="https://drive.google.com/file/d/1tDmUa0tIC48iRXST6aydDhLgnKk_ju_C/preview"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    title="Cultural Dance 1">
+  </iframe>
 
-<div class="culture-video-caption">
+  <div class="culture-video-caption">
 
-🎵 CULTURAL DANCE
+    🎵 CULTURAL DANCE
+
+  </div>
 
 </div>
 
-</div>
 
-
-<!-- VIDEO 2 -->
+<!-- ==========================================
+     VIDEO 2
+========================================== -->
 
 <div class="culture-video-card">
 
-<iframe
-  class="culture-video"
-  src="https://drive.google.com/file/d/1zRH6pNNsOKd4glyEsXFGX2Fn3HkC0Ce8/preview"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-  title="Cultural Dance 2">
-</iframe>
+  <iframe
+    class="culture-video"
+    src="https://drive.google.com/file/d/1zRH6pNNsOKd4glyEsXFGX2Fn3HkC0Ce8/preview"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    title="Cultural Dance 2">
+  </iframe>
 
-<div class="culture-video-caption">
+  <div class="culture-video-caption">
 
-🎵 CULTURAL DANCE
+    🎵 CULTURAL DANCE
+
+  </div>
 
 </div>
 
-</div>
 
-
-<!-- VIDEO 3 -->
+<!-- ==========================================
+     VIDEO 3
+========================================== -->
 
 <div class="culture-video-card">
 
-<iframe
-  class="culture-video"
-  src="https://drive.google.com/file/d/1Hsplx1kiqVlTGeN69BQzEz1ESe2Yefdu/preview"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-  title="Cultural Dance 3">
-</iframe>
+  <iframe
+    class="culture-video"
+    src="https://drive.google.com/file/d/1Hsplx1kiqVlTGeN69BQzEz1ESe2Yefdu/preview"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    title="Cultural Dance 3">
+  </iframe>
 
-<div class="culture-video-caption">
+  <div class="culture-video-caption">
 
-🎵 CULTURAL DANCE
+    🎵 CULTURAL DANCE
+
+  </div>
 
 </div>
 
-</div>
 
-
-<!-- VIDEO 4 -->
+<!-- ==========================================
+     VIDEO 4
+========================================== -->
 
 <div class="culture-video-card">
 
-<iframe
-  class="culture-video"
-  src="https://drive.google.com/file/d/1y6isuY0oOpQNCT0BHUC9U1PoY-sIgoWG/preview"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-  title="Cultural Dance 4">
-</iframe>
+  <iframe
+    class="culture-video"
+    src="https://drive.google.com/file/d/1y6isuY0oOpQNCT0BHUC9U1PoY-sIgoWG/preview"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    title="Cultural Dance 4">
+  </iframe>
 
-<div class="culture-video-caption">
+  <div class="culture-video-caption">
 
-🎵 CULTURAL DANCE
+    🎵 CULTURAL DANCE
 
-</div>
+  </div>
 
 </div>
 
@@ -1117,7 +1048,7 @@ footer{
   href="index.html"
   class="back-btn">
 
-← मुख्य पृष्ठ पर वापस जाएँ
+  ← मुख्य पृष्ठ पर वापस जाएँ
 
 </a>
 
@@ -1152,7 +1083,7 @@ footer{
 
 
 /* ==========================================
-   PHOTO LIGHTBOX
+   OPEN PHOTO
 ========================================== */
 
 function openCulturePhoto(photoURL){
@@ -1216,24 +1147,13 @@ document.addEventListener(
 
 
 /* ==========================================
-   GOOGLE DRIVE VIDEOS
+   PREVENT AUTOMATIC VIDEO PLAY
 ========================================== */
-
-/*
-  Google Drive iframe अलग origin में चलता है।
-  इसलिए उसके अंदर के play/pause button को
-  JavaScript से सीधे control नहीं किया जा सकता।
-
-  नीचे का code केवल यह सुनिश्चित करता है कि
-  page पर कोई video automatic playback शुरू
-  न करे।
-*/
 
 const cultureVideos =
   document.querySelectorAll(
     ".culture-video"
   );
-
 
 cultureVideos.forEach(
   function(video){
