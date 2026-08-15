@@ -82,17 +82,11 @@ header{
 .school-custom-logo{
   width:90px;
   height:90px;
-
   margin-right:20px;
-
   background:rgba(255,255,255,0.85);
-
   padding:5px;
-
   border-radius:50%;
-
   box-shadow:0 2px 8px rgba(0,0,0,0.1);
-
   flex-shrink:0;
 }
 
@@ -111,7 +105,6 @@ header{
   color:#002147;
   font-weight:700;
   margin:0;
-
   text-shadow:1px 1px 2px rgba(255,255,255,0.8);
 }
 
@@ -122,27 +115,18 @@ header{
 
 .school-marquee{
   width:100%;
-
   background:rgba(0,33,71,0.9);
-
   border-radius:4px;
-
   padding:6px 0;
-
   margin-top:8px;
-
   overflow:hidden;
-
   box-shadow:0 2px 5px rgba(0,0,0,0.2);
 }
 
 .school-marquee span{
   color:#fff;
-
   font-size:15px;
-
   font-weight:700;
-
   letter-spacing:.5px;
 }
 
@@ -153,41 +137,29 @@ header{
 
 nav{
   background:#002147;
-
   position:sticky;
-
   top:0;
-
   z-index:1000;
 }
 
 nav ul{
   list-style:none;
-
   display:flex;
-
   justify-content:center;
-
   flex-wrap:wrap;
 }
 
 nav ul li a{
   display:block;
-
   padding:15px 20px;
-
   color:#fff;
-
   font-weight:600;
-
   text-decoration:none;
-
   font-size:16px;
 }
 
 nav ul li a:hover{
   background:#003366;
-
   color:#ffbc00;
 }
 
@@ -198,27 +170,20 @@ nav ul li a:hover{
 
 .container{
   max-width:1200px;
-
   margin:30px auto;
-
   padding:0 20px;
 }
 
 .main-panel{
   background:#fff;
-
   padding:30px;
-
   border-radius:10px;
-
   box-shadow:0 4px 15px rgba(0,0,0,0.05);
-
   border-left:5px solid #ffbc00;
 }
 
 .main-panel h2{
   color:#002147;
-
   margin-bottom:15px;
 }
 
@@ -233,35 +198,24 @@ nav ul li a:hover{
 
 .ncc-gallery-section{
   margin-top:35px;
-
   padding:30px 20px;
-
   background:#fff;
-
   border-radius:12px;
-
   border-left:5px solid #138808;
-
   box-shadow:0 4px 15px rgba(0,0,0,0.07);
 }
 
 .gallery-title{
   text-align:center;
-
   color:#002147;
-
   font-size:28px;
-
   margin-bottom:8px;
 }
 
 .gallery-subtitle{
   text-align:center;
-
   color:#666;
-
   font-size:15px;
-
   margin-bottom:25px;
 }
 
@@ -272,9 +226,7 @@ nav ul li a:hover{
 
 .ncc-photo-grid{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
-
   gap:20px;
 }
 
@@ -285,43 +237,30 @@ nav ul li a:hover{
 
 .ncc-photo-card{
   background:#f8f9fa;
-
   border-radius:12px;
-
   overflow:hidden;
-
   cursor:pointer;
-
   box-shadow:0 4px 12px rgba(0,0,0,0.10);
-
   transition:.3s ease;
 }
 
 .ncc-photo-card:hover{
   transform:translateY(-4px);
-
   box-shadow:0 8px 20px rgba(0,0,0,0.16);
 }
 
 .ncc-photo-card img{
   width:100%;
-
   height:230px;
-
   display:block;
-
   object-fit:cover;
 }
 
 .photo-caption{
   padding:12px;
-
   text-align:center;
-
   color:#002147;
-
   font-weight:600;
-
   font-size:15px;
 }
 
@@ -332,51 +271,33 @@ nav ul li a:hover{
 
 .ncc-photo-lightbox{
   display:none;
-
   position:fixed;
-
   z-index:99999;
-
   left:0;
   top:0;
-
   width:100%;
   height:100%;
-
   background:rgba(0,0,0,.92);
-
   align-items:center;
-
   justify-content:center;
-
   padding:20px;
-
   cursor:pointer;
 }
 
 .ncc-photo-lightbox img{
   max-width:95%;
-
   max-height:90vh;
-
   object-fit:contain;
-
   border-radius:8px;
 }
 
 .ncc-photo-close{
   position:absolute;
-
   top:15px;
-
   right:22px;
-
   color:white;
-
   font-size:38px;
-
   font-weight:bold;
-
   cursor:pointer;
 }
 
@@ -387,25 +308,22 @@ nav ul li a:hover{
 
 .ncc-video-section{
   margin-top:35px;
-
   padding:30px 20px;
-
   background:#fff;
-
   border-radius:12px;
-
   border-left:5px solid #ff9933;
-
   box-shadow:0 4px 15px rgba(0,0,0,0.07);
 }
 
+
+/* ================================
+   VIDEO GRID
+================================ */
+
 .ncc-video-grid{
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:20px;
-
   align-items:start;
 }
 
@@ -416,57 +334,100 @@ nav ul li a:hover{
 
 .ncc-video-card{
   background:#f8f9fa;
-
   border-radius:12px;
-
   overflow:hidden;
-
   box-shadow:0 4px 12px rgba(0,0,0,.10);
+  cursor:pointer;
+  transition:.3s ease;
+}
 
-  width:100%;
-
-  max-width:520px;
-
-  margin:0 auto;
+.ncc-video-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 7px 18px rgba(0,0,0,.15);
 }
 
 
 /* ================================
-   VIDEO FRAME
+   VIDEO PREVIEW
 ================================ */
 
-.ncc-video{
+.ncc-video-preview{
+  height:190px;
   width:100%;
+  background:
+    linear-gradient(
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.55)
+    ),
+    linear-gradient(
+      135deg,
+      #002147,
+      #004d80
+    );
 
-  height:220px;
-
-  display:block;
-
-  background:#000;
-
-  border:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
 }
 
 
-/* GOOGLE DRIVE VIDEO
-================================ */
+/* PLAY BUTTON */
 
-.ncc-drive-video{
-  width:100%;
+.ncc-play-button{
+  width:65px;
+  height:65px;
 
-  height:220px;
+  border-radius:50%;
 
-  display:block;
+  background:rgba(255,255,255,.95);
 
-  border:0;
+  color:#002147;
 
-  background:#000;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:30px;
+
+  padding-left:5px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,.30);
+
+  transition:.25s ease;
+}
+
+.ncc-video-card:hover .ncc-play-button{
+  transform:scale(1.08);
 }
 
 
-/* ================================
-   VIDEO CAPTION
-================================ */
+/* VIDEO TITLE */
+
+.ncc-video-title{
+  position:absolute;
+
+  bottom:12px;
+
+  left:0;
+
+  width:100%;
+
+  text-align:center;
+
+  color:white;
+
+  font-weight:600;
+
+  font-size:13px;
+
+  text-shadow:0 1px 3px #000;
+}
+
+
+/* VIDEO CAPTION */
 
 .video-caption{
   padding:10px;
@@ -478,25 +439,115 @@ nav ul li a:hover{
   font-weight:600;
 
   font-size:14px;
-
-  background:#f8f9fa;
 }
-
-
-/* ================================
-   DOUBLE CLICK HINT
-================================ */
 
 .video-hint{
   text-align:center;
 
-  font-size:12px;
-
   color:#777;
 
-  padding:5px 8px 9px;
+  font-size:12px;
 
-  background:#f8f9fa;
+  padding:0 8px 10px;
+}
+
+
+/* ================================
+   VIDEO MODAL
+================================ */
+
+.ncc-video-modal{
+
+  display:none;
+
+  position:fixed;
+
+  z-index:100000;
+
+  left:0;
+
+  top:0;
+
+  width:100%;
+
+  height:100%;
+
+  background:rgba(0,0,0,.92);
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+}
+
+
+.ncc-video-modal-box{
+
+  width:90%;
+
+  max-width:850px;
+
+  background:#000;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+
+.ncc-video-modal iframe{
+
+  width:100%;
+
+  height:480px;
+
+  display:block;
+
+  border:0;
+
+  background:#000;
+}
+
+
+.ncc-video-close{
+
+  position:absolute;
+
+  right:12px;
+
+  top:8px;
+
+  z-index:5;
+
+  width:38px;
+
+  height:38px;
+
+  border-radius:50%;
+
+  background:rgba(0,0,0,.75);
+
+  color:white;
+
+  font-size:25px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  cursor:pointer;
+}
+
+.ncc-video-close:hover{
+  background:#ff9933;
+  color:#000;
 }
 
 
@@ -506,25 +557,17 @@ nav ul li a:hover{
 
 .back-btn{
   display:inline-block;
-
   margin-top:30px;
-
   padding:10px 20px;
-
   background:#002147;
-
   color:white;
-
   text-decoration:none;
-
   border-radius:5px;
-
   font-weight:bold;
 }
 
 .back-btn:hover{
   background:#ffbc00;
-
   color:#002147;
 }
 
@@ -535,15 +578,10 @@ nav ul li a:hover{
 
 footer{
   background:#001530;
-
   color:white;
-
   padding:20px;
-
   text-align:center;
-
   margin-top:40px;
-
   font-size:14px;
 }
 
@@ -560,10 +598,6 @@ footer{
 
   .school-name h1{
     font-size:32px;
-  }
-
-  .ncc-video-grid{
-    grid-template-columns:1fr;
   }
 
 }
@@ -593,9 +627,16 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .ncc-video,
-  .ncc-drive-video{
-    height:200px;
+  .ncc-video-preview{
+    height:190px;
+  }
+
+  .ncc-video-modal-box{
+    width:96%;
+  }
+
+  .ncc-video-modal iframe{
+    height:300px;
   }
 
 }
@@ -605,15 +646,12 @@ footer{
 
   .top-bar{
     justify-content:center;
-
     text-align:center;
-
     font-size:12px;
   }
 
   .container{
     padding:0 10px;
-
     margin-top:20px;
   }
 
@@ -642,11 +680,31 @@ footer{
     height:240px;
   }
 
-  .ncc-video,
-  .ncc-drive-video{
-    height:190px;
+  .ncc-video-preview{
+    height:180px;
   }
 
+  .ncc-video-modal{
+    padding:10px;
+  }
+
+  .ncc-video-modal-box{
+    width:100%;
+  }
+
+  .ncc-video-modal iframe{
+    height:230px;
+  }
+
+}
+
+
+/* ================================
+   PREVENT BODY SCROLL WHEN MODAL OPEN
+================================ */
+
+body.ncc-modal-open{
+  overflow:hidden;
 }
 
 </style>
@@ -924,14 +982,17 @@ footer{
   class="ncc-photo-lightbox"
   onclick="closeNCCPhoto()">
 
+
 <span class="ncc-photo-close">
   ✕
 </span>
+
 
 <img
   id="nccLargePhoto"
   src=""
   alt="NCC Photo">
+
 
 </div>
 
@@ -942,60 +1003,94 @@ footer{
 
 <section class="ncc-video-section">
 
+
 <h2 class="gallery-title">
   🎥 NCC Video Gallery
 </h2>
 
+
 <p class="gallery-subtitle">
-  एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
+
+एन.सी.सी. परेड, प्रशिक्षण एवं गतिविधियों के वीडियो
+
 </p>
 
 
 <div class="ncc-video-grid">
 
 
-<!-- VIDEO 1 -->
+<!-- ================================
+     VIDEO 1
+================================ -->
 
-<div class="ncc-video-card">
+<div
+  class="ncc-video-card"
+  ondblclick="openNCCVideo(
+  'https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview',
+  'GUARD OF HONOUR'
+  )">
 
-<iframe
-  class="ncc-drive-video"
-  src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
-  allow="autoplay"
-  allowfullscreen
-  title="NCC Guard of Honour">
-</iframe>
+
+<div class="ncc-video-preview">
+
+<div class="ncc-play-button">
+  ▶
+</div>
+
+<div class="ncc-video-title">
+  Double-click to play
+</div>
+
+</div>
+
 
 <div class="video-caption">
   🇮🇳 GUARD OF HONOUR
 </div>
 
+
 <div class="video-hint">
-  ▶ वीडियो चलाने के लिए डबल-क्लिक करें
+  वीडियो चलाने के लिए डबल-क्लिक करें
+</div>
+
+
+</div>
+
+
+<!-- ================================
+     VIDEO 2
+================================ -->
+
+<div
+  class="ncc-video-card"
+  ondblclick="openNCCVideo(
+  'https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview',
+  'INSPECTION'
+  )">
+
+
+<div class="ncc-video-preview">
+
+<div class="ncc-play-button">
+  ▶
+</div>
+
+<div class="ncc-video-title">
+  Double-click to play
 </div>
 
 </div>
 
-
-<!-- VIDEO 2 -->
-
-<div class="ncc-video-card">
-
-<iframe
-  class="ncc-drive-video"
-  src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
-  allow="autoplay"
-  allowfullscreen
-  title="NCC Inspection">
-</iframe>
 
 <div class="video-caption">
   🇮🇳 INSPECTION
 </div>
 
+
 <div class="video-hint">
-  ▶ वीडियो चलाने के लिए डबल-क्लिक करें
+  वीडियो चलाने के लिए डबल-क्लिक करें
 </div>
+
 
 </div>
 
@@ -1003,6 +1098,44 @@ footer{
 </div>
 
 </section>
+
+
+<!-- ================================
+     VIDEO MODAL
+================================ -->
+
+<div
+  id="nccVideoModal"
+  class="ncc-video-modal"
+  onclick="closeNCCVideo(event)">
+
+
+<div
+  class="ncc-video-modal-box"
+  onclick="event.stopPropagation()">
+
+
+<span
+  class="ncc-video-close"
+  onclick="closeNCCVideo()">
+
+  ✕
+
+</span>
+
+
+<iframe
+  id="nccVideoFrame"
+  src=""
+  allow="autoplay"
+  allowfullscreen
+  title="NCC Video">
+</iframe>
+
+
+</div>
+
+</div>
 
 
 <!-- ================================
@@ -1044,6 +1177,7 @@ footer{
 
 <script>
 
+
 /* ==========================================
    PHOTO LIGHTBOX
 ========================================== */
@@ -1079,6 +1213,80 @@ function closeNCCPhoto(){
 
 
 /* ==========================================
+   VIDEO MODAL
+   केवल एक iframe
+   एक समय में केवल एक वीडियो
+========================================== */
+
+function openNCCVideo(videoURL, videoTitle){
+
+  const modal =
+    document.getElementById("nccVideoModal");
+
+  const frame =
+    document.getElementById("nccVideoFrame");
+
+
+  /* पहले पुराने वीडियो को पूरी तरह हटाएँ */
+
+  frame.src = "";
+
+
+  /* थोड़ी देर बाद नया वीडियो load करें */
+
+  setTimeout(function(){
+
+    frame.src = videoURL;
+
+  },100);
+
+
+  /* Modal खोलें */
+
+  modal.style.display = "flex";
+
+  document.body.classList.add("ncc-modal-open");
+
+}
+
+
+/* ==========================================
+   CLOSE VIDEO
+========================================== */
+
+function closeNCCVideo(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id !== "nccVideoModal"
+  ){
+
+    return;
+
+  }
+
+
+  const modal =
+    document.getElementById("nccVideoModal");
+
+  const frame =
+    document.getElementById("nccVideoFrame");
+
+
+  /* वीडियो बंद करने का सबसे जरूरी हिस्सा */
+
+  frame.src = "";
+
+
+  modal.style.display = "none";
+
+  document.body.classList.remove("ncc-modal-open");
+
+}
+
+
+/* ==========================================
    ESC KEY
 ========================================== */
 
@@ -1088,49 +1296,22 @@ document.addEventListener(
 
     if(event.key === "Escape"){
 
+      const modal =
+        document.getElementById("nccVideoModal");
+
+
+      if(modal.style.display === "flex"){
+
+        closeNCCVideo();
+
+      }
+
       closeNCCPhoto();
 
     }
 
   }
 );
-
-
-/* ==========================================
-   VIDEO DOUBLE CLICK
-   Double-click = play
-========================================== */
-
-const videoCards =
-  document.querySelectorAll(".ncc-video-card");
-
-
-videoCards.forEach(function(card){
-
-  const iframe =
-    card.querySelector(".ncc-drive-video");
-
-
-  card.addEventListener(
-    "dblclick",
-    function(){
-
-      /*
-        Google Drive iframe के अंदर
-        directly play command नहीं भेजी जा सकती।
-        
-        इसलिए double-click पर iframe को
-        focus किया जाता है और browser में
-        video player active होता है।
-      */
-
-      iframe.focus();
-
-    }
-  );
-
-});
-
 
 </script>
 
