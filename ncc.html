@@ -5,15 +5,18 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#002147">
 
 <title>NCC | PM SHRI GIC Raiagar</title>
 
 <style>
 
-/* ================================
+/* =====================================================
    BASIC
-================================ */
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -29,17 +32,20 @@ body{
 }
 
 
-/* ================================
+/* =====================================================
    TOP BAR
-================================ */
+===================================================== */
 
 .top-bar{
   background:#002147;
   color:#fff;
   padding:10px 20px;
   font-size:14px;
+
   display:flex;
   justify-content:space-between;
+  align-items:center;
+
   flex-wrap:wrap;
   gap:8px;
 }
@@ -51,9 +57,9 @@ body{
 }
 
 
-/* ================================
+/* =====================================================
    HEADER
-================================ */
+===================================================== */
 
 header{
   background:linear-gradient(
@@ -116,9 +122,9 @@ header{
 }
 
 
-/* ================================
+/* =====================================================
    MARQUEE
-================================ */
+===================================================== */
 
 .school-marquee{
   width:100%;
@@ -147,9 +153,9 @@ header{
 }
 
 
-/* ================================
+/* =====================================================
    NAVIGATION
-================================ */
+===================================================== */
 
 nav{
   background:#002147;
@@ -192,9 +198,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    MAIN
-================================ */
+===================================================== */
 
 .container{
   max-width:1200px;
@@ -227,9 +233,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    PHOTO GALLERY
-================================ */
+===================================================== */
 
 .ncc-gallery-section{
   margin-top:35px;
@@ -266,9 +272,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    PHOTO GRID
-================================ */
+===================================================== */
 
 .ncc-photo-grid{
   display:grid;
@@ -279,9 +285,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    PHOTO CARD
-================================ */
+===================================================== */
 
 .ncc-photo-card{
   background:#f8f9fa;
@@ -326,9 +332,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    PHOTO LIGHTBOX
-================================ */
+===================================================== */
 
 .ncc-photo-lightbox{
   display:none;
@@ -381,9 +387,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
-   VIDEO GALLERY
-================================ */
+/* =====================================================
+   VIDEO SECTION
+===================================================== */
 
 .ncc-video-section{
   margin-top:35px;
@@ -400,24 +406,24 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    VIDEO GRID
-================================ */
+===================================================== */
 
 .ncc-video-grid{
   display:grid;
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:20px;
+  gap:25px;
 
   align-items:start;
 }
 
 
-/* ================================
+/* =====================================================
    VIDEO CARD
-================================ */
+===================================================== */
 
 .ncc-video-card{
   background:#f8f9fa;
@@ -429,21 +435,29 @@ nav ul li a:hover{
   box-shadow:0 4px 12px rgba(0,0,0,.10);
 
   width:100%;
-
-  margin:0;
-
-  padding:0;
 }
 
 
-/* ================================
-   GOOGLE DRIVE VIDEO
-================================ */
+/* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+.ncc-video-frame{
+  position:relative;
+
+  width:100%;
+
+  aspect-ratio:16 / 9;
+
+  background:#000;
+
+  overflow:hidden;
+}
 
 .ncc-drive-video{
   width:100%;
 
-  height:220px;
+  height:100%;
 
   display:block;
 
@@ -453,28 +467,119 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
+   VIDEO LOADING / PLAY AREA
+===================================================== */
+
+.video-overlay{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:rgba(0,0,0,0.12);
+
+  pointer-events:none;
+}
+
+.video-play-icon{
+  width:64px;
+  height:64px;
+
+  border-radius:50%;
+
+  background:rgba(0,33,71,0.90);
+
+  color:#fff;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
    VIDEO CAPTION
-================================ */
+===================================================== */
 
 .video-caption{
-  padding:10px;
+  padding:12px;
 
   text-align:center;
 
   color:#002147;
 
-  font-weight:600;
+  font-weight:700;
 
-  font-size:14px;
+  font-size:15px;
 
   background:#f8f9fa;
 }
 
 
-/* ================================
+/* =====================================================
+   MOBILE VIDEO BUTTON
+===================================================== */
+
+.video-open-btn{
+  display:block;
+
+  margin:0 12px 14px;
+
+  padding:11px 15px;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  background:#002147;
+
+  color:#fff;
+
+  border-radius:6px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:.3s ease;
+}
+
+.video-open-btn:hover{
+  background:#ffbc00;
+
+  color:#002147;
+}
+
+
+/* =====================================================
+   ACTIVE VIDEO
+===================================================== */
+
+.ncc-video-card.active-video{
+  box-shadow:
+  0 0 0 3px #ffbc00,
+  0 8px 20px rgba(0,0,0,.18);
+}
+
+
+/* =====================================================
    BACK BUTTON
-================================ */
+===================================================== */
 
 .back-btn{
   display:inline-block;
@@ -501,9 +606,9 @@ nav ul li a:hover{
 }
 
 
-/* ================================
+/* =====================================================
    FOOTER
-================================ */
+===================================================== */
 
 footer{
   background:#001530;
@@ -520,9 +625,9 @@ footer{
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media(max-width:900px){
 
@@ -537,6 +642,10 @@ footer{
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:700px){
 
   header{
@@ -546,6 +655,7 @@ footer{
   .school-custom-logo{
     width:70px;
     height:70px;
+
     margin-right:12px;
   }
 
@@ -561,12 +671,21 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .ncc-video-frame{
+    aspect-ratio:16 / 9;
+  }
+
   .ncc-drive-video{
-    height:210px;
+    width:100%;
+    height:100%;
   }
 
 }
 
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media(max-width:550px){
 
@@ -609,8 +728,30 @@ footer{
     height:240px;
   }
 
-  .ncc-drive-video{
-    height:200px;
+  .video-caption{
+    font-size:14px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+  .school-name h1{
+    font-size:21px;
+  }
+
+  .school-custom-logo{
+    width:60px;
+    height:60px;
+  }
+
+  .ncc-video-frame{
+    aspect-ratio:16 / 10;
   }
 
 }
@@ -623,13 +764,15 @@ footer{
 <body>
 
 
-<!-- ================================
+<!-- =====================================================
      TOP BAR
-================================ -->
+===================================================== -->
 
 <div class="top-bar">
 
-  <div>Raiagar, Uttarakhand, India</div>
+  <div>
+    Raiagar, Uttarakhand, India
+  </div>
 
   <div>
     संपर्क:
@@ -655,9 +798,9 @@ footer{
 </div>
 
 
-<!-- ================================
+<!-- =====================================================
      HEADER
-================================ -->
+===================================================== -->
 
 <header>
 
@@ -671,13 +814,11 @@ footer{
 
     </div>
 
-
     <div class="school-name">
 
       <h1>
         PM SHRI GIC RAIAGAR
       </h1>
-
 
       <div class="school-marquee">
 
@@ -706,18 +847,20 @@ footer{
 </header>
 
 
-<!-- ================================
+<!-- =====================================================
      NAVIGATION
-================================ -->
+===================================================== -->
 
 <nav>
 
   <ul>
 
     <li>
+
       <a href="index.html">
         मुख्य पृष्ठ
       </a>
+
     </li>
 
   </ul>
@@ -725,9 +868,9 @@ footer{
 </nav>
 
 
-<!-- ================================
+<!-- =====================================================
      MAIN CONTENT
-================================ -->
+===================================================== -->
 
 <div class="container">
 
@@ -749,9 +892,9 @@ footer{
 </p>
 
 
-<!-- ================================
+<!-- =====================================================
      PHOTO GALLERY
-================================ -->
+===================================================== -->
 
 <section class="ncc-gallery-section">
 
@@ -773,19 +916,17 @@ footer{
 <!-- PHOTO 1 -->
 
 <div
-  class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600'
-  )">
-
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1600'
+)">
 
 <img
-  src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
-  alt="NCC Parade">
-
+src="https://drive.google.com/thumbnail?id=1OqRoPZB5vjylxiTtAfdtMPDd79Pjlryd&sz=w1000"
+alt="NCC Parade">
 
 <div class="photo-caption">
-  🇮🇳 NCC Parade
+🇮🇳 NCC Parade
 </div>
 
 </div>
@@ -794,123 +935,128 @@ footer{
 <!-- PHOTO 2 -->
 
 <div
-  class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1600'
-  )">
-
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1600'
+)">
 
 <img
-  src="https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1000"
-  alt="NCC Parade">
-
+src="https://drive.google.com/thumbnail?id=1swrGsNd9rQpTDVEFb6u956XH71jqgXHE&sz=w1000"
+alt="NCC Parade">
 
 <div class="photo-caption">
-  🇮🇳 NCC Parade
+🇮🇳 NCC Parade
 </div>
 
 </div>
+
+
+<!-- PHOTO 3 -->
 
 <div
-  class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1Pq6R5-pV-Tk55Cp6Fadr_PX1mHGCn_FT&sz=w1600'
-  )">
-
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1Pq6R5-pV-Tk55Cp6Fadr_PX1mHGCn_FT&sz=w1600'
+)">
 
 <img
-  src="https://drive.google.com/thumbnail?id=1Pq6R5-pV-Tk55Cp6Fadr_PX1mHGCn_FT&sz=w1000"
-  alt="NCC Parade">
-
+src="https://drive.google.com/thumbnail?id=1Pq6R5-pV-Tk55Cp6Fadr_PX1mHGCn_FT&sz=w1000"
+alt="NCC Parade">
 
 <div class="photo-caption">
-  🇮🇳 NCC Parade
+🇮🇳 NCC Parade
 </div>
 
 </div>
+
+
+<!-- PHOTO 4 -->
 
 <div
-  class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1M05fvq92l8qSx-vkJpaEqCNEoYJlIW_b&sz=w1600'
-  )">
-
-
-<img
-  src="https://drive.google.com/thumbnail?id=1M05fvq92l8qSx-vkJpaEqCNEoYJlIW_b&sz=w1000"
-  alt="NCC Parade">
-
-
-<div class="photo-caption">
-  🇮🇳 NCC Parade
-</div>
-
-</div>
-   <div class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1J3P4qdlOuDDTRd2dvXZIe1_fX8U-QQ-Z&sz=w1600'
-  )">
-
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1M05fvq92l8qSx-vkJpaEqCNEoYJlIW_b&sz=w1600'
+)">
 
 <img
-  src="https://drive.google.com/thumbnail?id=1J3P4qdlOuDDTRd2dvXZIe1_fX8U-QQ-Z&sz=w1000"
-  alt="NCC Parade">
-
+src="https://drive.google.com/thumbnail?id=1M05fvq92l8qSx-vkJpaEqCNEoYJlIW_b&sz=w1000"
+alt="NCC Parade">
 
 <div class="photo-caption">
-  🇮🇳 NCC Parade
+🇮🇳 NCC Parade
 </div>
 
 </div>
-<div class="ncc-photo-card"
-  onclick="openNCCPhoto(
-  'https://drive.google.com/thumbnail?id=1lrr1bZYXXaAT1Eb1kcXBEe-LHxgBoe9p&sz=w1600'
-  )">
 
+
+<!-- PHOTO 5 -->
+
+<div
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1J3P4qdlOuDDTRd2dvXZIe1_fX8U-QQ-Z&sz=w1600'
+)">
 
 <img
-  src="https://drive.google.com/thumbnail?id=1lrr1bZYXXaAT1Eb1kcXBEe-LHxgBoe9p&sz=w1000"
-  alt="NCC Parade">
-
+src="https://drive.google.com/thumbnail?id=1J3P4qdlOuDDTRd2dvXZIe1_fX8U-QQ-Z&sz=w1000"
+alt="NCC Parade">
 
 <div class="photo-caption">
-  🇮🇳 NCC Parade
+🇮🇳 NCC Parade
 </div>
 
 </div>
+
+
+<!-- PHOTO 6 -->
+
+<div
+class="ncc-photo-card"
+onclick="openNCCPhoto(
+'https://drive.google.com/thumbnail?id=1lrr1bZYXXaAT1Eb1kcXBEe-LHxgBoe9p&sz=w1600'
+)">
+
+<img
+src="https://drive.google.com/thumbnail?id=1lrr1bZYXXaAT1Eb1kcXBEe-LHxgBoe9p&sz=w1000"
+alt="NCC Parade">
+
+<div class="photo-caption">
+🇮🇳 NCC Parade
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- ================================
+<!-- =====================================================
      PHOTO LIGHTBOX
-================================ -->
+===================================================== -->
 
 <div
-  id="nccPhotoLightbox"
-  class="ncc-photo-lightbox"
-  onclick="closeNCCPhoto()">
+id="nccPhotoLightbox"
+class="ncc-photo-lightbox"
+onclick="closeNCCPhoto()">
 
-
-<span class="ncc-photo-close">
-  ✕
+<span
+class="ncc-photo-close">
+✕
 </span>
 
-
 <img
-  id="nccLargePhoto"
-  src=""
-  alt="NCC Photo">
-
+id="nccLargePhoto"
+src=""
+alt="NCC Photo">
 
 </div>
 
 
-<!-- ================================
+<!-- =====================================================
      VIDEO GALLERY
-================================ -->
+===================================================== -->
 
 <section class="ncc-video-section">
 
@@ -930,44 +1076,90 @@ footer{
 <div class="ncc-video-grid">
 
 
-<!-- ================================
+<!-- =====================================================
      VIDEO 1
-================================ -->
+===================================================== -->
 
-<div class="ncc-video-card">
+<div
+class="ncc-video-card"
+id="videoCard1">
 
-  <iframe
-    class="ncc-drive-video"
-    src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    title="NCC Guard of Honour">
-  </iframe>
 
-  <div class="video-caption">
-    🇮🇳 GUARD OF HONOUR
-  </div>
+<div class="ncc-video-frame">
+
+<iframe
+id="nccVideo1"
+class="ncc-drive-video"
+src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
+allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+allowfullscreen
+loading="lazy"
+referrerpolicy="strict-origin-when-cross-origin"
+title="NCC Guard of Honour">
+</iframe>
 
 </div>
 
 
-<!-- ================================
+<div class="video-caption">
+🇮🇳 GUARD OF HONOUR
+</div>
+
+
+<a
+class="video-open-btn"
+href="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/view"
+target="_blank"
+rel="noopener">
+
+▶️ मोबाइल/नए पेज में वीडियो खोलें
+
+</a>
+
+
+</div>
+
+
+<!-- =====================================================
      VIDEO 2
-================================ -->
+===================================================== -->
 
-<div class="ncc-video-card">
+<div
+class="ncc-video-card"
+id="videoCard2">
 
-  <iframe
-    class="ncc-drive-video"
-    src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    title="NCC Inspection">
-  </iframe>
 
-  <div class="video-caption">
-    🇮🇳 INSPECTION
-  </div>
+<div class="ncc-video-frame">
+
+<iframe
+id="nccVideo2"
+class="ncc-drive-video"
+src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
+allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+allowfullscreen
+loading="lazy"
+referrerpolicy="strict-origin-when-cross-origin"
+title="NCC Inspection">
+</iframe>
+
+</div>
+
+
+<div class="video-caption">
+🇮🇳 INSPECTION
+</div>
+
+
+<a
+class="video-open-btn"
+href="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/view"
+target="_blank"
+rel="noopener">
+
+▶️ मोबाइल/नए पेज में वीडियो खोलें
+
+</a>
+
 
 </div>
 
@@ -977,15 +1169,15 @@ footer{
 </section>
 
 
-<!-- ================================
+<!-- =====================================================
      BACK BUTTON
-================================ -->
+===================================================== -->
 
 <a
-  href="index.html"
-  class="back-btn">
+href="index.html"
+class="back-btn">
 
-  ← मुख्य पृष्ठ पर वापस जाएँ
+← मुख्य पृष्ठ पर वापस जाएँ
 
 </a>
 
@@ -995,31 +1187,33 @@ footer{
 </div>
 
 
-<!-- ================================
+<!-- =====================================================
      FOOTER
-================================ -->
+===================================================== -->
 
 <footer>
 
 <p>
-  &copy; 2026
-  पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर।
-  सर्वाधिकार सुरक्षित।
+
+&copy; 2026
+पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर।
+सर्वाधिकार सुरक्षित।
+
 </p>
 
 </footer>
 
 
-<!-- ================================
+<!-- =====================================================
      JAVASCRIPT
-================================ -->
+===================================================== -->
 
 <script>
 
 
-/* ==========================================
+/* =====================================================
    PHOTO LIGHTBOX
-========================================== */
+===================================================== */
 
 function openNCCPhoto(photoURL){
 
@@ -1051,9 +1245,9 @@ function closeNCCPhoto(){
 }
 
 
-/* ==========================================
-   ESC KEY FOR PHOTO
-========================================== */
+/* =====================================================
+   ESC KEY
+===================================================== */
 
 document.addEventListener(
   "keydown",
@@ -1069,68 +1263,172 @@ document.addEventListener(
 );
 
 
-/* ==========================================
-   GOOGLE DRIVE VIDEO
+/* =====================================================
    ONE VIDEO AT A TIME
-========================================== */
+===================================================== */
 
 /*
-   Google Drive iframe के अंदर का video
-   अलग document में चलता है।
 
-   इसलिए दूसरे iframe के चलने पर पहले को
-   सीधे pause करना संभव नहीं है।
+Google Drive iframe cross-origin होता है।
+इसलिए उसके अंदर के Play/Pause button को
+JavaScript सीधे control नहीं कर सकती।
 
-   यहाँ Intersection Observer और iframe
-   visibility control से unwanted simultaneous
-   playback को रोकने की कोशिश की गई है।
+इस समाधान में जब user दूसरे video card को
+activate करता है, पहले iframe को reset किया जाता है।
+
+इससे पहला video रुक जाता है।
+
 */
 
-const nccVideos =
-  document.querySelectorAll(".ncc-drive-video");
+
+const videoData = {
+
+  video1:
+  "https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview",
+
+  video2:
+  "https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
+
+};
 
 
-/* जब page पर video visible हो */
+const video1 =
+  document.getElementById("nccVideo1");
 
-nccVideos.forEach(function(video){
+const video2 =
+  document.getElementById("nccVideo2");
 
-  video.addEventListener(
-    "load",
-    function(){
 
-      /* iframe को active रहने दें */
+const card1 =
+  document.getElementById("videoCard1");
+
+const card2 =
+  document.getElementById("videoCard2");
+
+
+/* =====================================================
+   RESET VIDEO 1
+===================================================== */
+
+function resetVideo1(){
+
+  video1.src = "";
+
+  setTimeout(function(){
+
+    video1.src = videoData.video1;
+
+  },100);
+
+  card1.classList.remove("active-video");
+
+}
+
+
+/* =====================================================
+   RESET VIDEO 2
+===================================================== */
+
+function resetVideo2(){
+
+  video2.src = "";
+
+  setTimeout(function(){
+
+    video2.src = videoData.video2;
+
+  },100);
+
+  card2.classList.remove("active-video");
+
+}
+
+
+/* =====================================================
+   VIDEO 1 CLICK
+===================================================== */
+
+card1.addEventListener(
+  "click",
+  function(event){
+
+    /*
+       यदि user "मोबाइल/नए पेज में वीडियो खोलें"
+       button पर click करता है तो iframe reset
+       करने की आवश्यकता नहीं।
+    */
+
+    if(
+      event.target.classList.contains(
+        "video-open-btn"
+      )
+    ){
+
+      return;
 
     }
-  );
 
-});
 
+    /* दूसरा video reset */
+
+    resetVideo2();
+
+
+    /* पहला video active */
+
+    card1.classList.add("active-video");
+
+  }
+);
+
+
+/* =====================================================
+   VIDEO 2 CLICK
+===================================================== */
+
+card2.addEventListener(
+  "click",
+  function(event){
+
+    if(
+      event.target.classList.contains(
+        "video-open-btn"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    /* पहला video reset */
+
+    resetVideo1();
+
+
+    /* दूसरा video active */
+
+    card2.classList.add("active-video");
+
+  }
+);
+
+
+/* =====================================================
+   MOBILE VIDEO FALLBACK
+===================================================== */
 
 /*
-   यदि user किसी दूसरे video पर click करता है,
-   browser focus दूसरे iframe को देता है।
+
+यदि मोबाइल browser Google Drive iframe को
+सही तरीके से play नहीं करता है तो ऊपर दिया गया
+
+"▶️ मोबाइल/नए पेज में वीडियो खोलें"
+
+button Google Drive का official video page
+नए tab/page में खोल देगा।
+
 */
-
-nccVideos.forEach(function(video){
-
-  video.addEventListener(
-    "click",
-    function(){
-
-      nccVideos.forEach(function(otherVideo){
-
-        if(otherVideo !== video){
-
-          otherVideo.blur();
-
-        }
-
-      });
-
-    }
-  );
-
-});
 
 
 </script>
