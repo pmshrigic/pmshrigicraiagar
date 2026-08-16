@@ -435,6 +435,8 @@ nav ul li a:hover{
   box-shadow:0 4px 12px rgba(0,0,0,.10);
 
   width:100%;
+
+  transition:.3s ease;
 }
 
 
@@ -468,51 +470,6 @@ nav ul li a:hover{
 
 
 /* =====================================================
-   VIDEO LOADING / PLAY AREA
-===================================================== */
-
-.video-overlay{
-  position:absolute;
-
-  left:0;
-  top:0;
-
-  width:100%;
-  height:100%;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  background:rgba(0,0,0,0.12);
-
-  pointer-events:none;
-}
-
-.video-play-icon{
-  width:64px;
-  height:64px;
-
-  border-radius:50%;
-
-  background:rgba(0,33,71,0.90);
-
-  color:#fff;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  font-size:28px;
-
-  box-shadow:0 4px 15px rgba(0,0,0,.35);
-}
-
-
-/* =====================================================
    VIDEO CAPTION
 ===================================================== */
 
@@ -532,7 +489,7 @@ nav ul li a:hover{
 
 
 /* =====================================================
-   MOBILE VIDEO BUTTON
+   VIDEO BUTTON
 ===================================================== */
 
 .video-open-btn{
@@ -571,9 +528,11 @@ nav ul li a:hover{
 ===================================================== */
 
 .ncc-video-card.active-video{
+
   box-shadow:
   0 0 0 3px #ffbc00,
   0 8px 20px rgba(0,0,0,.18);
+
 }
 
 
@@ -673,11 +632,6 @@ footer{
 
   .ncc-video-frame{
     aspect-ratio:16 / 9;
-  }
-
-  .ncc-drive-video{
-    width:100%;
-    height:100%;
   }
 
 }
@@ -1084,38 +1038,34 @@ alt="NCC Photo">
 class="ncc-video-card"
 id="videoCard1">
 
+  <div class="ncc-video-frame">
 
-<div class="ncc-video-frame">
+    <iframe
+      id="nccVideo1"
+      class="ncc-drive-video"
+      src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="NCC Guard of Honour">
+    </iframe>
 
-<iframe
-id="nccVideo1"
-class="ncc-drive-video"
-src="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview"
-allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-allowfullscreen
-loading="lazy"
-referrerpolicy="strict-origin-when-cross-origin"
-title="NCC Guard of Honour">
-</iframe>
+  </div>
 
-</div>
+  <div class="video-caption">
+    🇮🇳 GUARD OF HONOUR
+  </div>
 
+  <a
+    class="video-open-btn"
+    href="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/view"
+    target="_blank"
+    rel="noopener">
 
-<div class="video-caption">
-🇮🇳 GUARD OF HONOUR
-</div>
+    ▶️ मोबाइल/नए पेज में वीडियो खोलें
 
-
-<a
-class="video-open-btn"
-href="https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/view"
-target="_blank"
-rel="noopener">
-
-▶️ मोबाइल/नए पेज में वीडियो खोलें
-
-</a>
-
+  </a>
 
 </div>
 
@@ -1128,81 +1078,74 @@ rel="noopener">
 class="ncc-video-card"
 id="videoCard2">
 
+  <div class="ncc-video-frame">
 
-<div class="ncc-video-frame">
+    <iframe
+      id="nccVideo2"
+      class="ncc-drive-video"
+      src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="NCC Inspection">
+    </iframe>
 
-<iframe
-id="nccVideo2"
-class="ncc-drive-video"
-src="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
-allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-allowfullscreen
-loading="lazy"
-referrerpolicy="strict-origin-when-cross-origin"
-title="NCC Inspection">
-</iframe>
+  </div>
 
-</div>
+  <div class="video-caption">
+    🇮🇳 INSPECTION
+  </div>
 
+  <a
+    class="video-open-btn"
+    href="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/view"
+    target="_blank"
+    rel="noopener">
 
-<div class="video-caption">
-🇮🇳 INSPECTION
-</div>
+    ▶️ मोबाइल/नए पेज में वीडियो खोलें
 
-  
-</div>
-
-
-
-<a
-class="video-open-btn"
-href="https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/view"
-target="_blank"
-rel="noopener">
-
-▶️ मोबाइल/नए पेज में वीडियो खोलें
-
-</a>
-
+  </a>
 
 </div>
+
+
+<!-- =====================================================
+     VIDEO 3
+===================================================== -->
 
 <div
 class="ncc-video-card"
 id="videoCard3">
 
+  <div class="ncc-video-frame">
 
-<div class="ncc-video-frame">
+    <iframe
+      id="nccVideo3"
+      class="ncc-drive-video"
+      src="https://drive.google.com/file/d/1orkv62umh8rg8uosayinuz06pec9muz1/preview"
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="NCC DANCE ACTIVITY">
+    </iframe>
 
-<iframe
-id="nccVideo3"
-class="ncc-drive-video"
-src="https://drive.google.com/file/d/1orkv62umh8rg8uosayinuz06pec9muz1/preview"
-allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-allowfullscreen
-loading="lazy"
-referrerpolicy="strict-origin-when-cross-origin"
-title="NCC DANCE ACTIVITY">
-</iframe>
+  </div>
 
-</div>
+  <div class="video-caption">
+    🇮🇳 NCC DANCE ACTIVITY
+  </div>
 
+  <a
+    class="video-open-btn"
+    href="https://drive.google.com/file/d/1orkv62umh8rg8uosayinuz06pec9muz1/view"
+    target="_blank"
+    rel="noopener">
 
-<div class="video-caption">
-NCC DANCE ACTIVITY
-</div>
+    ▶️ मोबाइल/नए पेज में वीडियो खोलें
 
-
-<a
-class="video-open-btn"
-href="https://drive.google.com/file/d/1orkv62umh8rg8uosayinuz06pec9muz1/view"
-target="_blank"
-rel="noopener">
-
-▶️ मोबाइल/नए पेज में वीडियो खोलें
-
-</a>
-
+  </a>
 
 </div>
 
@@ -1307,22 +1250,8 @@ document.addEventListener(
 
 
 /* =====================================================
-   ONE VIDEO AT A TIME
+   VIDEO DATA
 ===================================================== */
-
-/*
-
-Google Drive iframe cross-origin होता है।
-इसलिए उसके अंदर के Play/Pause button को
-JavaScript सीधे control नहीं कर सकती।
-
-इस समाधान में जब user दूसरे video card को
-activate करता है, पहले iframe को reset किया जाता है।
-
-इससे पहला video रुक जाता है।
-
-*/
-
 
 const videoData = {
 
@@ -1330,59 +1259,116 @@ const videoData = {
   "https://drive.google.com/file/d/1l54qTn43T-KaNyy58UJnyQki7z0Lk2D4/preview",
 
   video2:
-  "https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview"
+  "https://drive.google.com/file/d/15z3j6L_ydiFlvgYmTsf0BhYA0hVzAqQD/preview",
+
+  video3:
+  "https://drive.google.com/file/d/1orkv62umh8rg8uosayinuz06pec9muz1/preview"
 
 };
 
 
-const video1 =
-  document.getElementById("nccVideo1");
+/* =====================================================
+   GET ALL VIDEOS
+===================================================== */
 
-const video2 =
-  document.getElementById("nccVideo2");
+const videos = {
 
+  video1:
+  document.getElementById("nccVideo1"),
 
-const card1 =
-  document.getElementById("videoCard1");
+  video2:
+  document.getElementById("nccVideo2"),
 
-const card2 =
-  document.getElementById("videoCard2");
+  video3:
+  document.getElementById("nccVideo3")
+
+};
 
 
 /* =====================================================
-   RESET VIDEO 1
+   GET ALL CARDS
 ===================================================== */
 
-function resetVideo1(){
+const cards = {
 
-  video1.src = "";
+  video1:
+  document.getElementById("videoCard1"),
+
+  video2:
+  document.getElementById("videoCard2"),
+
+  video3:
+  document.getElementById("videoCard3")
+
+};
+
+
+/* =====================================================
+   RESET VIDEO
+===================================================== */
+
+function resetVideo(videoName){
+
+  const video =
+    videos[videoName];
+
+  const card =
+    cards[videoName];
+
+  if(!video || !card){
+
+    return;
+
+  }
+
+
+  /*
+     Google Drive iframe cross-origin होने के कारण
+     हम iframe के अंदर Play/Pause को सीधे control
+     नहीं कर सकते।
+
+     इसलिए iframe को reload करके video reset किया जाता है।
+  */
+
+  video.src = "";
 
   setTimeout(function(){
 
-    video1.src = videoData.video1;
+    video.src =
+      videoData[videoName];
 
   },100);
 
-  card1.classList.remove("active-video");
+
+  card.classList.remove(
+    "active-video"
+  );
 
 }
 
 
 /* =====================================================
-   RESET VIDEO 2
+   RESET ALL OTHER VIDEOS
 ===================================================== */
 
-function resetVideo2(){
+function activateVideo(activeVideo){
 
-  video2.src = "";
+  Object.keys(videos).forEach(
+    function(videoName){
 
-  setTimeout(function(){
+      if(videoName !== activeVideo){
 
-    video2.src = videoData.video2;
+        resetVideo(videoName);
 
-  },100);
+      }
 
-  card2.classList.remove("active-video");
+    }
+  );
+
+
+  cards[activeVideo].classList.add(
+    "active-video"
+  );
 
 }
 
@@ -1391,19 +1377,13 @@ function resetVideo2(){
    VIDEO 1 CLICK
 ===================================================== */
 
-card1.addEventListener(
+cards.video1.addEventListener(
   "click",
   function(event){
 
-    /*
-       यदि user "मोबाइल/नए पेज में वीडियो खोलें"
-       button पर click करता है तो iframe reset
-       करने की आवश्यकता नहीं।
-    */
-
     if(
-      event.target.classList.contains(
-        "video-open-btn"
+      event.target.closest(
+        ".video-open-btn"
       )
     ){
 
@@ -1412,14 +1392,7 @@ card1.addEventListener(
     }
 
 
-    /* दूसरा video reset */
-
-    resetVideo2();
-
-
-    /* पहला video active */
-
-    card1.classList.add("active-video");
+    activateVideo("video1");
 
   }
 );
@@ -1429,13 +1402,13 @@ card1.addEventListener(
    VIDEO 2 CLICK
 ===================================================== */
 
-card2.addEventListener(
+cards.video2.addEventListener(
   "click",
   function(event){
 
     if(
-      event.target.classList.contains(
-        "video-open-btn"
+      event.target.closest(
+        ".video-open-btn"
       )
     ){
 
@@ -1444,32 +1417,50 @@ card2.addEventListener(
     }
 
 
-    /* पहला video reset */
-
-    resetVideo1();
-
-
-    /* दूसरा video active */
-
-    card2.classList.add("active-video");
+    activateVideo("video2");
 
   }
 );
 
 
 /* =====================================================
-   MOBILE VIDEO FALLBACK
+   VIDEO 3 CLICK
+===================================================== */
+
+cards.video3.addEventListener(
+  "click",
+  function(event){
+
+    if(
+      event.target.closest(
+        ".video-open-btn"
+      )
+    ){
+
+      return;
+
+    }
+
+
+    activateVideo("video3");
+
+  }
+);
+
+
+/* =====================================================
+   MOBILE FALLBACK
 ===================================================== */
 
 /*
 
 यदि मोबाइल browser Google Drive iframe को
-सही तरीके से play नहीं करता है तो ऊपर दिया गया
+सही तरीके से play नहीं करता है तो
 
 "▶️ मोबाइल/नए पेज में वीडियो खोलें"
 
 button Google Drive का official video page
-नए tab/page में खोल देगा।
+नए page में खोल देगा।
 
 */
 
