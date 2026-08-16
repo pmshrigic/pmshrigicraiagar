@@ -23,7 +23,9 @@
       color: #333;
     }
 
-    /* TOP TRICOLOUR */
+    /* ==========================================
+       TOP TRICOLOUR
+    ========================================== */
 
     .tri-line {
       height: 6px;
@@ -48,44 +50,101 @@
     }
 
 
-    /* HEADER */
+    /* ==========================================
+       ALUMNI HEADER
+    ========================================== */
 
     .alumni-header {
-      background: linear-gradient(135deg, #17365d, #28598a);
-      color: white;
+      position: relative;
+      background: linear-gradient(
+        135deg,
+        #ff9933 0%,
+        #fff8ef 48%,
+        #eaf7e8 52%,
+        #138808 100%
+      );
+
+      color: #17365d;
       text-align: center;
-      padding: 35px 15px;
+      padding: 28px 15px 30px;
+
+      border-bottom: 1px solid #ddd;
+      overflow: hidden;
+    }
+
+    .alumni-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: #ff9933;
+    }
+
+    .alumni-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: #138808;
+    }
+
+    .alumni-header-content {
+      position: relative;
+      z-index: 2;
     }
 
     .alumni-logo {
-      font-size: 55px;
-      margin-bottom: 10px;
+      font-size: 50px;
+      margin-bottom: 5px;
     }
 
     .alumni-header h1 {
-      margin: 5px 0;
+      margin: 4px 0;
       font-size: 32px;
+      font-weight: 700;
     }
 
     .alumni-header h2 {
-      margin: 5px 0 12px;
+      margin: 4px 0 12px;
       font-size: 21px;
       font-weight: normal;
     }
 
-    .alumni-header p {
-      margin: 0;
+    .school-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 8px 0;
+      color: #17365d;
+    }
+
+    .school-tagline {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px 0 5px;
+      color: #17365d;
+    }
+
+    .school-motto {
       font-size: 15px;
-      opacity: 0.95;
+      font-weight: bold;
+      margin: 6px 0 0;
+      color: #555;
     }
 
 
-    /* TAGLINE */
+    /* ==========================================
+       TAGLINE
+    ========================================== */
 
     .tagline {
       text-align: center;
       padding: 22px 15px;
       background: white;
+      border-bottom: 1px solid #eee;
     }
 
     .tagline strong {
@@ -96,10 +155,13 @@
     .tagline p {
       margin: 7px 0 0;
       color: #666;
+      line-height: 1.6;
     }
 
 
-    /* MAIN */
+    /* ==========================================
+       MAIN
+    ========================================== */
 
     .alumni-container {
       width: 94%;
@@ -108,7 +170,9 @@
     }
 
 
-    /* INTRO */
+    /* ==========================================
+       INTRODUCTION
+    ========================================== */
 
     .intro-box {
       background: white;
@@ -126,9 +190,80 @@
     }
 
 
-    /* ================================
+    /* ==========================================
+       REGISTER SECTION
+    ========================================== */
+
+    .register-section {
+      margin: 30px 0 35px;
+      padding: 35px 20px;
+      text-align: center;
+
+      background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #ffffff,
+        #f1faef
+      );
+
+      border-radius: 18px;
+      border: 1px solid #eee;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .register-icon {
+      font-size: 45px;
+    }
+
+    .register-section h2 {
+      color: #17365d;
+      margin: 8px 0 10px;
+      font-size: 27px;
+    }
+
+    .register-section p {
+      color: #555;
+      max-width: 700px;
+      margin: 10px auto 22px;
+      line-height: 1.7;
+    }
+
+
+    /* ==========================================
+       REGISTER BUTTON
+    ========================================== */
+
+    .register-btn {
+      display: inline-block;
+      padding: 14px 30px;
+
+      background: linear-gradient(
+        135deg,
+        #ff9933,
+        #e87500
+      );
+
+      color: white !important;
+      text-decoration: none !important;
+
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: bold;
+
+      box-shadow: 0 5px 15px rgba(230,120,0,0.25);
+
+      transition: 0.3s;
+    }
+
+    .register-btn:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* ==========================================
        DYNAMIC ALUMNI SECTION
-    ================================= */
+    ========================================== */
 
     .dynamic-alumni-section {
       margin: 35px 0;
@@ -155,6 +290,7 @@
       box-shadow: 0 5px 18px rgba(0,0,0,0.09);
       transition: 0.3s;
       border-top: 4px solid #ff9933;
+      border-bottom: 4px solid #138808;
     }
 
     .dynamic-alumni-card:hover {
@@ -180,6 +316,7 @@
       justify-content: center;
       background: #eef3f8;
       font-size: 48px;
+      border: 4px solid #138808;
     }
 
     .dynamic-alumni-card h3 {
@@ -224,61 +361,9 @@
     }
 
 
-    /* REGISTER SECTION */
-
-    .register-section {
-      margin-top: 35px;
-      padding: 35px 20px;
-      text-align: center;
-
-      background: linear-gradient(135deg, #fff7ed, #ffffff);
-
-      border-radius: 18px;
-      border: 1px solid #eee;
-
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .register-section h2 {
-      color: #17365d;
-      margin-top: 0;
-      font-size: 27px;
-    }
-
-    .register-section p {
-      color: #555;
-      max-width: 700px;
-      margin: 10px auto 22px;
-      line-height: 1.7;
-    }
-
-
-    /* REGISTER BUTTON */
-
-    .register-btn {
-      display: inline-block;
-      padding: 14px 30px;
-
-      background: linear-gradient(135deg, #ff9933, #e87500);
-
-      color: white !important;
-      text-decoration: none !important;
-
-      border-radius: 30px;
-      font-size: 17px;
-      font-weight: bold;
-
-      box-shadow: 0 5px 15px rgba(230,120,0,0.25);
-
-      transition: 0.3s;
-    }
-
-    .register-btn:hover {
-      transform: scale(1.05);
-    }
-
-
-    /* BACK BUTTON */
+    /* ==========================================
+       BACK BUTTON
+    ========================================== */
 
     .back-section {
       text-align: center;
@@ -299,23 +384,40 @@
     }
 
 
-    /* FOOTER */
+    /* ==========================================
+       FOOTER
+       सबसे आखिरी हिस्सा
+    ========================================== */
 
     footer {
       margin-top: 40px;
-      padding: 20px 15px;
+      padding: 25px 15px;
+
       background: #17365d;
       color: white;
+
       text-align: center;
       font-size: 14px;
+
+      border-top: 6px solid #ff9933;
     }
 
-    footer p {
-      margin: 5px;
+    footer .copyright {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    footer .developer {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 13px;
     }
 
 
-    /* MOBILE */
+    /* ==========================================
+       MOBILE
+    ========================================== */
 
     @media (max-width: 800px) {
 
@@ -325,6 +427,14 @@
 
       .alumni-header h1 {
         font-size: 27px;
+      }
+
+      .school-name {
+        font-size: 16px;
+      }
+
+      .school-tagline {
+        font-size: 14px;
       }
 
     }
@@ -337,7 +447,11 @@
       }
 
       .alumni-header {
-        padding: 28px 12px;
+        padding: 25px 12px 28px;
+      }
+
+      .alumni-logo {
+        font-size: 45px;
       }
 
       .alumni-header h1 {
@@ -348,8 +462,29 @@
         font-size: 18px;
       }
 
+      .school-name {
+        font-size: 15px;
+      }
+
+      .school-tagline {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .school-motto {
+        font-size: 13px;
+      }
+
       .intro-box {
         padding: 20px;
+      }
+
+      .register-section {
+        padding: 28px 16px;
+      }
+
+      footer .developer {
+        font-size: 12px;
       }
 
     }
@@ -362,7 +497,9 @@
 <body>
 
 
-  <!-- TRICOLOUR -->
+  <!-- ==========================================
+       TOP TRICOLOUR
+  ========================================== -->
 
   <div class="tri-line">
     <span></span>
@@ -371,26 +508,46 @@
   </div>
 
 
-  <!-- HEADER -->
+  <!-- ==========================================
+       ALUMNI HEADER
+  ========================================== -->
 
   <header class="alumni-header">
 
-    <div class="alumni-logo">
-      🎓
+    <div class="alumni-header-content">
+
+      <div class="alumni-logo">
+        🎓
+      </div>
+
+      <h1>
+        Alumni Corner
+      </h1>
+
+      <h2>
+        पूर्व छात्र कॉर्नर
+      </h2>
+
+      <div class="school-name">
+        PM SHRI GIC RAIAGAR
+      </div>
+
+      <div class="school-tagline">
+        Empowering Young Minds for Viksit Bharat @2047
+      </div>
+
+      <div class="school-motto">
+        शिक्षा • संस्कार • नवाचार
+      </div>
+
     </div>
-
-    <h1>Alumni Corner</h1>
-
-    <h2>पूर्व छात्र कॉर्नर</h2>
-
-    <p>
-      PM SHRI Government Inter College Raiagar
-    </p>
 
   </header>
 
 
-  <!-- TAGLINE -->
+  <!-- ==========================================
+       TAGLINE
+  ========================================== -->
 
   <section class="tagline">
 
@@ -405,16 +562,22 @@
   </section>
 
 
-  <!-- MAIN -->
+  <!-- ==========================================
+       MAIN
+  ========================================== -->
 
   <main class="alumni-container">
 
 
-    <!-- INTRODUCTION -->
+    <!-- ==========================================
+         INTRODUCTION
+    ========================================== -->
 
     <section class="intro-box">
 
-      <h2>🎓 हमारे पूर्व छात्र</h2>
+      <h2>
+        🎓 हमारे पूर्व छात्र
+      </h2>
 
       <p>
         PM SHRI GIC Raiagar के Alumni Corner में आपका स्वागत है।
@@ -431,11 +594,13 @@
     </section>
 
 
-    <!-- REGISTER SECTION -->
+    <!-- ==========================================
+         REGISTER
+    ========================================== -->
 
     <section class="register-section">
 
-      <div style="font-size:45px;">
+      <div class="register-icon">
         🎓
       </div>
 
@@ -448,9 +613,6 @@
         तो Alumni Community से जुड़ें और अपने अनुभव एवं उपलब्धियों
         को विद्यालय परिवार के साथ साझा करें।
       </p>
-
-
-      <!-- GOOGLE FORM LINK -->
 
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdu7Z7Te9_b4p5hjM7P4CSJNTnEwa-iLX5zbP9Et7iU5NVeVw/viewform?usp=dialog"
@@ -465,9 +627,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- ==========================================
          DYNAMIC ALUMNI FROM GOOGLE SHEET
-    ================================= -->
+    ========================================== -->
 
     <section class="dynamic-alumni-section">
 
@@ -475,7 +637,9 @@
         🎓 Our Alumni
       </h2>
 
-      <div id="dynamicAlumniGrid" class="dynamic-alumni-grid">
+      <div
+        id="dynamicAlumniGrid"
+        class="dynamic-alumni-grid">
 
         <div class="alumni-loading">
           ⏳ Alumni information loading...
@@ -486,12 +650,18 @@
     </section>
 
 
-    <!-- BACK BUTTON -->
+    <!-- ==========================================
+         BACK BUTTON
+    ========================================== -->
 
     <div class="back-section">
 
-      <a href="index.html" class="back-btn">
+      <a
+        href="index.html"
+        class="back-btn">
+
         ← Back to Home
+
       </a>
 
     </div>
@@ -500,393 +670,441 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ==========================================
+       FOOTER
+       इसके बाद कुछ नहीं
+  ========================================== -->
 
   <footer>
 
-    <p>
-      🎓 <strong>PM SHRI GIC RAIAGAR</strong>
+    <p class="copyright">
+      सर्वाधिकार सुरक्षित।
     </p>
 
-    <p>
-      Alumni Community
+    <p class="developer">
+      This website is designed and developed by Puneet Pant of Physics Department under the supervision of our Principal Sir Shri Bhagwati Prasad Pant.
     </p>
 
   </footer>
 
 
-<script>
+  <!-- ==========================================
+       GOOGLE SHEET SCRIPT
+  ========================================== -->
 
-/* ==========================================
-   GOOGLE SHEET → ALUMNI CORNER
-   केवल PUBLISH = YES वाली entries दिखेंगी
-========================================== */
+  <script>
 
-const alumniSheetURL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSnNFCylXhm_nzWTYhvnR0iPOsOOIqcYg1T_f2IdiuIYjsLmSh4xi3FSMxxn201o_pTrb4iwpCd7g8A/pub?gid=716467829&single=true&output=csv";
+    /* ==========================================
+       GOOGLE SHEET → ALUMNI CORNER
+       केवल PUBLISH = YES वाली entries दिखेंगी
+    ========================================== */
 
-
-async function loadAlumni() {
-
-  const container =
-    document.getElementById("dynamicAlumniGrid");
-
-  try {
-
-    const response =
-      await fetch(alumniSheetURL);
-
-    if (!response.ok) {
-      throw new Error("Google Sheet could not be loaded");
-    }
-
-    const csv =
-      await response.text();
-
-    const rows =
-      parseCSV(csv);
-
-    if (rows.length < 2) {
-
-      container.innerHTML = `
-        <div class="alumni-loading">
-          अभी कोई Alumni profile उपलब्ध नहीं है।
-        </div>
-      `;
-
-      return;
-    }
+    const alumniSheetURL =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSnNFCylXhm_nzWTYhvnR0iPOsOOIqcYg1T_f2IdiuIYjsLmSh4xi3FSMxxn201o_pTrb4iwpCd7g8A/pub?gid=716467829&single=true&output=csv";
 
 
-    /* पहली row = headings */
+    async function loadAlumni() {
 
-    const headers =
-      rows[0].map(function(h) {
-        return h.trim().toUpperCase();
-      });
+      const container =
+        document.getElementById("dynamicAlumniGrid");
 
+      try {
 
-    const nameIndex =
-      headers.indexOf("FULL NAME");
+        const response =
+          await fetch(alumniSheetURL);
 
-    const batchIndex =
-      headers.indexOf("PASS OUT BATCH YEAR");
+        if (!response.ok) {
+          throw new Error(
+            "Google Sheet could not be loaded"
+          );
+        }
 
-    const occupationIndex =
-      headers.indexOf("CURRENT STATUS/OCCUPATION");
+        const csv =
+          await response.text();
 
-    const cityIndex =
-      headers.indexOf("CURRENT CITY/PLACE");
-
-    const achievementIndex =
-      headers.indexOf("SPECIAL ACHIEVEMENT");
-
-    const messageIndex =
-      headers.indexOf("MESSAGE TO OUR SCHOOL");
-
-    const photoIndex =
-      headers.indexOf("PASSPORT SIZE PHOTOGRAPH");
-
-    const publishIndex =
-      headers.indexOf("PUBLISH");
+        const rows =
+          parseCSV(csv);
 
 
-    container.innerHTML = "";
+        if (rows.length < 2) {
 
+          container.innerHTML = `
+            <div class="alumni-loading">
+              अभी कोई Alumni profile उपलब्ध नहीं है।
+            </div>
+          `;
 
-    rows.slice(1).forEach(function(row) {
-
-      /* केवल YES वाली entry दिखाई जाएगी */
-
-      const publish =
-        (row[publishIndex] || "")
-        .trim()
-        .toUpperCase();
-
-      if (publish !== "YES") {
-        return;
-      }
-
-
-      const name =
-        row[nameIndex] || "";
-
-      const batch =
-        row[batchIndex] || "";
-
-      const occupation =
-        row[occupationIndex] || "";
-
-      const city =
-        row[cityIndex] || "";
-
-      const achievement =
-        row[achievementIndex] || "";
-
-      const message =
-        row[messageIndex] || "";
-
-      const photo =
-        row[photoIndex] || "";
-
-
-      /* Alumni Card */
-
-      const card =
-        document.createElement("div");
-
-      card.className =
-        "dynamic-alumni-card";
-
-
-      /* Photo */
-
-      let photoHTML = `
-        <div class="dynamic-alumni-placeholder">
-          🎓
-        </div>
-      `;
-
-
-      if (photo) {
-
-        let photoUrl = photo;
-
-        /* Google Drive file ID निकालना */
-
-        const driveMatch =
-          photo.match(/[-\w]{25,}/);
-
-        if (driveMatch) {
-
-          const fileId =
-            driveMatch[0];
-
-          photoUrl =
-            "https://drive.google.com/thumbnail?id=" +
-            fileId +
-            "&sz=w500";
+          return;
 
         }
 
-        photoHTML = `
-          <img
-            src="${photoUrl}"
-            alt="${name}"
-            class="dynamic-alumni-photo"
-            loading="lazy"
-            onerror="this.style.display='none';"
-          >
+
+        /* पहली row = headings */
+
+        const headers =
+          rows[0].map(function(h) {
+
+            return h
+              .trim()
+              .toUpperCase();
+
+          });
+
+
+        const nameIndex =
+          headers.indexOf("FULL NAME");
+
+        const batchIndex =
+          headers.indexOf("PASS OUT BATCH YEAR");
+
+        const occupationIndex =
+          headers.indexOf(
+            "CURRENT STATUS/OCCUPATION"
+          );
+
+        const cityIndex =
+          headers.indexOf(
+            "CURRENT CITY/PLACE"
+          );
+
+        const achievementIndex =
+          headers.indexOf(
+            "SPECIAL ACHIEVEMENT"
+          );
+
+        const messageIndex =
+          headers.indexOf(
+            "MESSAGE TO OUR SCHOOL"
+          );
+
+        const photoIndex =
+          headers.indexOf(
+            "PASSPORT SIZE PHOTOGRAPH"
+          );
+
+        const publishIndex =
+          headers.indexOf("PUBLISH");
+
+
+        container.innerHTML = "";
+
+
+        rows.slice(1).forEach(function(row) {
+
+
+          /* केवल YES वाली entry दिखाई जाएगी */
+
+          const publish =
+            (row[publishIndex] || "")
+              .trim()
+              .toUpperCase();
+
+
+          if (publish !== "YES") {
+            return;
+          }
+
+
+          const name =
+            row[nameIndex] || "";
+
+          const batch =
+            row[batchIndex] || "";
+
+          const occupation =
+            row[occupationIndex] || "";
+
+          const city =
+            row[cityIndex] || "";
+
+          const achievement =
+            row[achievementIndex] || "";
+
+          const message =
+            row[messageIndex] || "";
+
+          const photo =
+            row[photoIndex] || "";
+
+
+          /* Alumni Card */
+
+          const card =
+            document.createElement("div");
+
+          card.className =
+            "dynamic-alumni-card";
+
+
+          /* Photo */
+
+          let photoHTML = `
+            <div class="dynamic-alumni-placeholder">
+              🎓
+            </div>
+          `;
+
+
+          if (photo) {
+
+            let photoUrl = photo;
+
+
+            /* Google Drive file ID निकालना */
+
+            const driveMatch =
+              photo.match(/[-\w]{25,}/);
+
+
+            if (driveMatch) {
+
+              const fileId =
+                driveMatch[0];
+
+              photoUrl =
+                "https://drive.google.com/thumbnail?id=" +
+                fileId +
+                "&sz=w500";
+
+            }
+
+
+            photoHTML = `
+              <img
+                src="${photoUrl}"
+                alt="${name}"
+                class="dynamic-alumni-photo"
+                loading="lazy"
+                onerror="this.style.display='none';"
+              >
+            `;
+
+          }
+
+
+          card.innerHTML = `
+
+            ${photoHTML}
+
+            <h3>
+              ${name}
+            </h3>
+
+            <div class="dynamic-alumni-batch">
+              🎓 Batch: ${batch}
+            </div>
+
+
+            ${
+              occupation
+              ? `
+                <div class="dynamic-alumni-info">
+                  💼 <strong>Occupation:</strong>
+                  ${occupation}
+                </div>
+              `
+              : ""
+            }
+
+
+            ${
+              city
+              ? `
+                <div class="dynamic-alumni-info">
+                  📍 <strong>Place:</strong>
+                  ${city}
+                </div>
+              `
+              : ""
+            }
+
+
+            ${
+              achievement
+              ? `
+                <div class="dynamic-alumni-info">
+                  🏆 <strong>Achievement:</strong><br>
+                  ${achievement}
+                </div>
+              `
+              : ""
+            }
+
+
+            ${
+              message
+              ? `
+                <div class="dynamic-alumni-message">
+                  “${message}”
+                </div>
+              `
+              : ""
+            }
+
+          `;
+
+
+          container.appendChild(card);
+
+        });
+
+
+        /* अगर कोई YES entry नहीं है */
+
+        if (container.children.length === 0) {
+
+          container.innerHTML = `
+            <div class="alumni-loading">
+              अभी कोई Alumni profile प्रकाशित नहीं की गई है।
+            </div>
+          `;
+
+        }
+
+      }
+
+
+      catch (error) {
+
+        console.error(
+          "Alumni loading error:",
+          error
+        );
+
+
+        container.innerHTML = `
+          <div class="alumni-loading">
+            Alumni information अभी उपलब्ध नहीं है।
+          </div>
         `;
 
       }
 
-
-      card.innerHTML = `
-
-        ${photoHTML}
-
-        <h3>
-          ${name}
-        </h3>
-
-        <div class="dynamic-alumni-batch">
-          🎓 Batch: ${batch}
-        </div>
-
-        ${
-          occupation
-          ? `
-            <div class="dynamic-alumni-info">
-              💼 <strong>Occupation:</strong>
-              ${occupation}
-            </div>
-          `
-          : ""
-        }
-
-        ${
-          city
-          ? `
-            <div class="dynamic-alumni-info">
-              📍 <strong>Place:</strong>
-              ${city}
-            </div>
-          `
-          : ""
-        }
-
-        ${
-          achievement
-          ? `
-            <div class="dynamic-alumni-info">
-              🏆 <strong>Achievement:</strong><br>
-              ${achievement}
-            </div>
-          `
-          : ""
-        }
-
-        ${
-          message
-          ? `
-            <div class="dynamic-alumni-message">
-              “${message}”
-            </div>
-          `
-          : ""
-        }
-
-      `;
-
-
-      container.appendChild(card);
-
-    });
-
-
-    /* अगर कोई YES entry नहीं है */
-
-    if (container.children.length === 0) {
-
-      container.innerHTML = `
-        <div class="alumni-loading">
-          अभी कोई Alumni profile प्रकाशित नहीं की गई है।
-        </div>
-      `;
-
     }
 
-  }
 
-  catch (error) {
+    /* ==========================================
+       CSV PARSER
+    ========================================== */
 
-    console.error(
-      "Alumni loading error:",
-      error
-    );
+    function parseCSV(text) {
 
-    container.innerHTML = `
-      <div class="alumni-loading">
-        Alumni information अभी उपलब्ध नहीं है।
-      </div>
-    `;
+      const rows = [];
 
-  }
+      let row = [];
 
-}
+      let value = "";
+
+      let insideQuotes = false;
 
 
-/* ==========================================
-   CSV PARSER
-========================================== */
-
-function parseCSV(text) {
-
-  const rows = [];
-
-  let row = [];
-
-  let value = "";
-
-  let insideQuotes = false;
-
-
-  for (let i = 0; i < text.length; i++) {
-
-    const char = text[i];
-
-    const next = text[i + 1];
-
-
-    if (
-      char === '"' &&
-      insideQuotes &&
-      next === '"'
-    ) {
-
-      value += '"';
-
-      i++;
-
-    }
-
-    else if (char === '"') {
-
-      insideQuotes =
-        !insideQuotes;
-
-    }
-
-    else if (
-      char === "," &&
-      !insideQuotes
-    ) {
-
-      row.push(value);
-
-      value = "";
-
-    }
-
-    else if (
-      (char === "\n" || char === "\r") &&
-      !insideQuotes
-    ) {
-
-      if (
-        char === "\r" &&
-        next === "\n"
+      for (
+        let i = 0;
+        i < text.length;
+        i++
       ) {
-        i++;
+
+        const char = text[i];
+
+        const next = text[i + 1];
+
+
+        if (
+          char === '"' &&
+          insideQuotes &&
+          next === '"'
+        ) {
+
+          value += '"';
+
+          i++;
+
+        }
+
+
+        else if (char === '"') {
+
+          insideQuotes =
+            !insideQuotes;
+
+        }
+
+
+        else if (
+          char === "," &&
+          !insideQuotes
+        ) {
+
+          row.push(value);
+
+          value = "";
+
+        }
+
+
+        else if (
+          (char === "\n" ||
+           char === "\r") &&
+          !insideQuotes
+        ) {
+
+          if (
+            char === "\r" &&
+            next === "\n"
+          ) {
+
+            i++;
+
+          }
+
+
+          row.push(value);
+
+          rows.push(row);
+
+          row = [];
+
+          value = "";
+
+        }
+
+
+        else {
+
+          value += char;
+
+        }
+
       }
 
-      row.push(value);
 
-      rows.push(row);
+      if (
+        value !== "" ||
+        row.length > 0
+      ) {
 
-      row = [];
+        row.push(value);
 
-      value = "";
+        rows.push(row);
+
+      }
+
+
+      return rows;
 
     }
 
-    else {
 
-      value += char;
+    /* ==========================================
+       PAGE LOAD
+    ========================================== */
 
-    }
+    document.addEventListener(
+      "DOMContentLoaded",
+      loadAlumni
+    );
 
-  }
-
-
-  if (
-    value !== "" ||
-    row.length > 0
-  ) {
-
-    row.push(value);
-
-    rows.push(row);
-
-  }
-
-
-  return rows;
-
-}
-
-
-/* ==========================================
-   PAGE LOAD
-========================================== */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  loadAlumni
-);
-
-</script>
+  </script>
 
 
 </body>
