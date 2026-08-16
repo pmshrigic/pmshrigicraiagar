@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Art & Cultural Activity | PM SHRI GIC Raiagar</title>
@@ -188,6 +189,27 @@ nav ul li a:hover{
 
 
 /* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:10px 20px;
+  background:#002147;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+.back-btn:hover{
+  background:#ffbc00;
+  color:#002147;
+}
+
+
+/* ==========================================
    PHOTO GALLERY
 ========================================== */
 
@@ -214,6 +236,11 @@ nav ul li a:hover{
   font-size:14px;
 }
 
+
+/* ==========================================
+   PHOTO GRID
+========================================== */
+
 .culture-photo-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -221,6 +248,11 @@ nav ul li a:hover{
   max-width:850px;
   margin:0 auto;
 }
+
+
+/* ==========================================
+   PHOTO CARD
+========================================== */
 
 .culture-photo-card{
   background:#f8f9fa;
@@ -321,6 +353,11 @@ nav ul li a:hover{
   box-shadow:0 3px 10px rgba(0,0,0,0.10);
 }
 
+
+/* ==========================================
+   GOOGLE DRIVE VIDEO
+========================================== */
+
 .culture-video{
   width:100%;
   height:210px;
@@ -351,9 +388,11 @@ nav ul li a:hover{
 
   display:none;
 
-  margin:0;
+  width:calc(100% - 20px);
 
-  padding:13px 10px;
+  margin:10px auto 12px;
+
+  padding:12px 10px;
 
   background:#002147;
 
@@ -362,58 +401,28 @@ nav ul li a:hover{
   text-decoration:none;
 
   text-align:center;
+
+  border-radius:7px;
 
   font-size:14px;
 
   font-weight:700;
 
-  border-top:1px solid rgba(255,255,255,.15);
+  box-shadow:0 3px 8px rgba(0,0,0,0.15);
 
 }
 
 .mobile-video-btn:hover{
-  background:#138808;
-  color:#fff;
-}
 
-
-/* ==========================================
-   BACK BUTTON
-========================================== */
-
-.back-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:10px 20px;
-  background:#002147;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
-}
-
-.back-btn:hover{
   background:#ffbc00;
+
   color:#002147;
+
 }
 
 
 /* ==========================================
-   FOOTER
-========================================== */
-
-footer{
-  background:#001530;
-  color:white;
-  padding:20px;
-  text-align:center;
-  margin-top:40px;
-  font-size:14px;
-}
-
-
-/* ==========================================
-   TABLET
+   MOBILE
 ========================================== */
 
 @media(max-width:900px){
@@ -430,7 +439,7 @@ footer{
 
 
 /* ==========================================
-   MOBILE
+   TABLET / MOBILE
 ========================================== */
 
 @media(max-width:700px){
@@ -523,9 +532,23 @@ footer{
 
   .mobile-video-btn{
     font-size:13px;
-    padding:12px 6px;
+    padding:11px 8px;
   }
 
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+  background:#001530;
+  color:white;
+  padding:20px;
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
 }
 
 </style>
@@ -586,11 +609,13 @@ footer{
 
     </div>
 
+
     <div class="school-name">
 
       <h1>
         PM SHRI GIC RAIAGAR
       </h1>
+
 
       <div class="school-marquee">
 
@@ -669,11 +694,15 @@ footer{
 <section class="culture-gallery-section">
 
 <h2 class="culture-gallery-title">
-  🎨📸 Art & Cultural Photo Gallery
+
+🎨📸 Art & Cultural Photo Gallery
+
 </h2>
 
 <p class="culture-gallery-subtitle">
-  सांस्कृतिक एवं स्वतंत्रता दिवस कार्यक्रमों की झलकियाँ
+
+सांस्कृतिक एवं स्वतंत्रता दिवस कार्यक्रमों की झलकियाँ
+
 </p>
 
 
@@ -752,12 +781,17 @@ footer{
 
 
 <h2 class="culture-gallery-title">
-  🎥 Art & Cultural Video Gallery
+
+🎥 Art & Cultural Video Gallery
+
 </h2>
 
+
 <p class="culture-gallery-subtitle">
-  लोक नृत्य, संगीत, नाटक एवं विभिन्न
-  सांस्कृतिक कार्यक्रमों के वीडियो
+
+लोक नृत्य, संगीत, नाटक एवं विभिन्न
+सांस्कृतिक कार्यक्रमों के वीडियो
+
 </p>
 
 
@@ -785,9 +819,7 @@ footer{
     href="https://drive.google.com/file/d/1tDmUa0tIC48iRXST6aydDhLgnKk_ju_C/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -814,9 +846,7 @@ footer{
     href="https://drive.google.com/file/d/1zRH6pNNsOKd4glyEsXFGX2Fn3HkC0Ce8/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -843,9 +873,7 @@ footer{
     href="https://drive.google.com/file/d/1Hsplx1kiqVlTGeN69BQzEz1ESe2Yefdu/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -872,9 +900,7 @@ footer{
     href="https://drive.google.com/file/d/1y6isuY0oOpQNCT0BHUC9U1PoY-sIgoWG/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -901,9 +927,7 @@ footer{
     href="https://drive.google.com/file/d/1C7isr9ON50xGxcSD9ULuX2cfAZ9-AWE6/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -917,7 +941,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1UqF_OrDvvej8DP_P3wfFiAHHETnFYKY4/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Activity">
   </iframe>
 
@@ -930,9 +953,7 @@ footer{
     href="https://drive.google.com/file/d/1UqF_OrDvvej8DP_P3wfFiAHHETnFYKY4/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -946,7 +967,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1t4mmay3lWqSQqvHoWnXJpn1E80CfRcYm/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Prabhat Faeri">
   </iframe>
 
@@ -959,9 +979,7 @@ footer{
     href="https://drive.google.com/file/d/1t4mmay3lWqSQqvHoWnXJpn1E80CfRcYm/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -975,7 +993,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/19iBYxoZj5KSfLFVHJqXvrjg09T7H06wN/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -988,9 +1005,7 @@ footer{
     href="https://drive.google.com/file/d/19iBYxoZj5KSfLFVHJqXvrjg09T7H06wN/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1004,7 +1019,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1Lht_Sry85-CRipJFPSnS3KgnWkJib1Ak/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1017,9 +1031,7 @@ footer{
     href="https://drive.google.com/file/d/1Lht_Sry85-CRipJFPSnS3KgnWkJib1Ak/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1033,7 +1045,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1AajpDerQez5TgIYJyViWADXJohjvjwhj/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1046,9 +1057,7 @@ footer{
     href="https://drive.google.com/file/d/1AajpDerQez5TgIYJyViWADXJohjvjwhj/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1062,7 +1071,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1b4Kn5kFe4yjqzuLT6l27FClWSgBIVZE7/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1075,9 +1083,7 @@ footer{
     href="https://drive.google.com/file/d/1b4Kn5kFe4yjqzuLT6l27FClWSgBIVZE7/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1091,7 +1097,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1ziVlHhiBBC5haxtjX0ZPlA2fJ6z1mcz6/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1104,9 +1109,7 @@ footer{
     href="https://drive.google.com/file/d/1ziVlHhiBBC5haxtjX0ZPlA2fJ6z1mcz6/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1120,7 +1123,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1-kF7Rqi30sADnMpRd8Jk9ElSUjmCug1b/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1133,9 +1135,7 @@ footer{
     href="https://drive.google.com/file/d/1-kF7Rqi30sADnMpRd8Jk9ElSUjmCug1b/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1149,7 +1149,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/10SiP0gUCUd3KhByX3ez6L_bcGj38tvWR/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1162,9 +1161,7 @@ footer{
     href="https://drive.google.com/file/d/10SiP0gUCUd3KhByX3ez6L_bcGj38tvWR/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1178,7 +1175,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1xfQ3VO4OY95CDskbqF4t5Hx6OcLDVlLQ/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1191,9 +1187,7 @@ footer{
     href="https://drive.google.com/file/d/1xfQ3VO4OY95CDskbqF4t5Hx6OcLDVlLQ/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1207,7 +1201,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1_iEeIS21CyKVgwZ-dCKG3s6hCLENeDoH/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1220,9 +1213,7 @@ footer{
     href="https://drive.google.com/file/d/1_iEeIS21CyKVgwZ-dCKG3s6hCLENeDoH/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1236,7 +1227,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1kFIRcbauSLfVf2Tw11hpJdz5lDvZn_AR/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1249,9 +1239,7 @@ footer{
     href="https://drive.google.com/file/d/1kFIRcbauSLfVf2Tw11hpJdz5lDvZn_AR/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1265,7 +1253,6 @@ footer{
     class="culture-video"
     src="https://drive.google.com/file/d/1orkv62UmH8Rg8UoSaYiNuZ06peC9mUZ1/preview"
     allow="autoplay; fullscreen"
-    allowfullscreen
     title="Cultural Dance">
   </iframe>
 
@@ -1278,9 +1265,7 @@ footer{
     href="https://drive.google.com/file/d/1orkv62UmH8Rg8UoSaYiNuZ06peC9mUZ1/view"
     target="_blank"
     rel="noopener">
-
     📱 मोबाइल में वीडियो देखने के लिए यहाँ क्लिक करें
-
   </a>
 
 </div>
@@ -1334,7 +1319,7 @@ footer{
 
 
 /* ==========================================
-   OPEN PHOTO
+   PHOTO LIGHTBOX
 ========================================== */
 
 function openCulturePhoto(photoURL){
@@ -1355,10 +1340,6 @@ function openCulturePhoto(photoURL){
 
 }
 
-
-/* ==========================================
-   CLOSE PHOTO
-========================================== */
 
 function closeCulturePhoto(){
 
@@ -1398,22 +1379,80 @@ document.addEventListener(
 
 
 /* ==========================================
-   LAZY LOAD VIDEOS
+   ONE VIDEO AT A TIME
 ========================================== */
+
+/*
+   Google Drive iframe के अंदर चलने वाले
+   videos को JavaScript सीधे pause नहीं कर सकती।
+
+   इसलिए जब user किसी दूसरे iframe पर
+   जाता है, पहले iframe को reload करके
+   उसकी playback रोक दी जाती है।
+*/
 
 const cultureVideos =
   document.querySelectorAll(
     ".culture-video"
   );
 
+
 cultureVideos.forEach(function(video){
 
-  video.setAttribute(
-    "loading",
-    "lazy"
-  );
+  video.addEventListener("load",function(){
+
+    video.dataset.originalSrc =
+      video.getAttribute("src");
+
+  });
 
 });
+
+
+cultureVideos.forEach(function(video){
+
+  video.addEventListener("mouseenter",function(){
+
+    cultureVideos.forEach(function(otherVideo){
+
+      if(otherVideo !== video){
+
+        const src =
+          otherVideo.getAttribute("src");
+
+        /*
+           दूसरे video को reload करने से
+           उसकी current playback रुक जाएगी।
+        */
+
+        otherVideo.setAttribute("src","");
+
+        setTimeout(function(){
+
+          otherVideo.setAttribute(
+            "src",
+            src
+          );
+
+        },50);
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* ==========================================
+   MOBILE VIDEO BUTTON
+========================================== */
+
+/*
+   Mobile पर Google Drive iframe की जगह
+   ऊपर/नीचे दिया गया button उपयोग किया जाएगा।
+*/
 
 
 </script>
