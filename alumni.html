@@ -2,7 +2,9 @@
 <html lang="hi">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Alumni Corner | PM SHRI GIC Raiagar</title>
@@ -22,6 +24,7 @@
       background: #f5f7fa;
       color: #333;
     }
+
 
     /* ==========================================
        TOP TRICOLOUR
@@ -56,6 +59,7 @@
 
     .alumni-header {
       position: relative;
+
       background: linear-gradient(
         135deg,
         #ff9933 0%,
@@ -66,29 +70,37 @@
 
       color: #17365d;
       text-align: center;
+
       padding: 28px 15px 30px;
 
       border-bottom: 1px solid #ddd;
+
       overflow: hidden;
     }
 
     .alumni-header::before {
       content: "";
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 100%;
       height: 6px;
+
       background: #ff9933;
     }
 
     .alumni-header::after {
       content: "";
       position: absolute;
+
       bottom: 0;
       left: 0;
+
       width: 100%;
       height: 6px;
+
       background: #138808;
     }
 
@@ -236,6 +248,7 @@
 
     .register-btn {
       display: inline-block;
+
       padding: 14px 30px;
 
       background: linear-gradient(
@@ -248,6 +261,7 @@
       text-decoration: none !important;
 
       border-radius: 30px;
+
       font-size: 17px;
       font-weight: bold;
 
@@ -287,8 +301,11 @@
       border-radius: 18px;
       padding: 22px 18px;
       text-align: center;
+
       box-shadow: 0 5px 18px rgba(0,0,0,0.09);
+
       transition: 0.3s;
+
       border-top: 4px solid #ff9933;
       border-bottom: 4px solid #138808;
     }
@@ -302,20 +319,28 @@
       height: 105px;
       border-radius: 50%;
       object-fit: cover;
+
       border: 4px solid #138808;
+
       margin-bottom: 12px;
     }
 
     .dynamic-alumni-placeholder {
       width: 105px;
       height: 105px;
+
       border-radius: 50%;
+
       margin: 0 auto 12px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       background: #eef3f8;
+
       font-size: 48px;
+
       border: 4px solid #138808;
     }
 
@@ -327,30 +352,45 @@
 
     .dynamic-alumni-batch {
       display: inline-block;
+
       background: #fff1df;
       color: #c65c00;
+
       padding: 5px 12px;
+
       border-radius: 20px;
+
       font-size: 13px;
       font-weight: bold;
+
       margin-bottom: 10px;
     }
 
     .dynamic-alumni-info {
       color: #555;
+
       font-size: 14px;
+
       line-height: 1.6;
+
       margin: 6px 0;
     }
 
     .dynamic-alumni-message {
       margin-top: 12px;
+
       padding: 12px;
+
       background: #f5f7fa;
+
       border-radius: 10px;
+
       color: #555;
+
       font-size: 14px;
+
       line-height: 1.6;
+
       font-style: italic;
     }
 
@@ -372,31 +412,36 @@
 
     .back-btn {
       display: inline-block;
+
       padding: 10px 22px;
 
       background: #17365d;
+
       color: white !important;
 
       text-decoration: none !important;
 
       border-radius: 25px;
+
       font-size: 14px;
     }
 
 
     /* ==========================================
        FOOTER
-       सबसे आखिरी हिस्सा
     ========================================== */
 
     footer {
       margin-top: 40px;
+
       padding: 25px 15px;
 
       background: #17365d;
+
       color: white;
 
       text-align: center;
+
       font-size: 14px;
 
       border-top: 6px solid #ff9933;
@@ -404,14 +449,70 @@
 
     footer .copyright {
       margin: 0 0 10px;
+
       font-size: 15px;
+
       font-weight: bold;
     }
 
     footer .developer {
       margin: 0;
+
       line-height: 1.7;
+
       font-size: 13px;
+    }
+
+
+    /* ==========================================
+       RUNNING WEBSITE CREDIT
+       सबसे आखिरी में लगातार चलने वाली लाइन
+    ========================================== */
+
+    .bottom-credit {
+      width: 100%;
+
+      overflow: hidden;
+
+      background: #062b52;
+
+      color: white;
+
+      border-top: 3px solid #ff9933;
+
+      border-bottom: 3px solid #138808;
+
+      padding: 9px 0;
+
+      white-space: nowrap;
+
+      box-sizing: border-box;
+    }
+
+    .credit-track {
+      display: inline-block;
+
+      padding-left: 100%;
+
+      animation: creditMove 22s linear infinite;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      line-height: 1.5;
+    }
+
+    @keyframes creditMove {
+
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+
     }
 
 
@@ -487,6 +588,12 @@
         font-size: 12px;
       }
 
+      .credit-track {
+        font-size: 12px;
+
+        animation-duration: 18s;
+      }
+
     }
 
   </style>
@@ -502,9 +609,13 @@
   ========================================== -->
 
   <div class="tri-line">
+
     <span></span>
+
     <span></span>
+
     <span></span>
+
   </div>
 
 
@@ -672,7 +783,6 @@
 
   <!-- ==========================================
        FOOTER
-       इसके बाद कुछ नहीं
   ========================================== -->
 
   <footer>
@@ -686,6 +796,22 @@
     </p>
 
   </footer>
+
+
+  <!-- ==========================================
+       RUNNING CREDIT LINE
+       सबसे लास्ट में यही लाइन लगातार चलेगी
+  ========================================== -->
+
+  <div class="bottom-credit">
+
+    <div class="credit-track">
+
+      🇮🇳 Official Website Designed & Maintained by Physics Department – Puneet Pant, PM SHRI GIC Raiagar | Under the Supervision of our Principal Sir Shri Bhagwati Prasad Pant 🇮🇳
+
+    </div>
+
+  </div>
 
 
   <!-- ==========================================
@@ -714,9 +840,11 @@
           await fetch(alumniSheetURL);
 
         if (!response.ok) {
+
           throw new Error(
             "Google Sheet could not be loaded"
           );
+
         }
 
         const csv =
@@ -729,9 +857,13 @@
         if (rows.length < 2) {
 
           container.innerHTML = `
+
             <div class="alumni-loading">
+
               अभी कोई Alumni profile उपलब्ध नहीं है।
+
             </div>
+
           `;
 
           return;
@@ -754,33 +886,40 @@
         const nameIndex =
           headers.indexOf("FULL NAME");
 
+
         const batchIndex =
           headers.indexOf("PASS OUT BATCH YEAR");
+
 
         const occupationIndex =
           headers.indexOf(
             "CURRENT STATUS/OCCUPATION"
           );
 
+
         const cityIndex =
           headers.indexOf(
             "CURRENT CITY/PLACE"
           );
+
 
         const achievementIndex =
           headers.indexOf(
             "SPECIAL ACHIEVEMENT"
           );
 
+
         const messageIndex =
           headers.indexOf(
             "MESSAGE TO OUR SCHOOL"
           );
 
+
         const photoIndex =
           headers.indexOf(
             "PASSPORT SIZE PHOTOGRAPH"
           );
+
 
         const publishIndex =
           headers.indexOf("PUBLISH");
@@ -801,27 +940,35 @@
 
 
           if (publish !== "YES") {
+
             return;
+
           }
 
 
           const name =
             row[nameIndex] || "";
 
+
           const batch =
             row[batchIndex] || "";
+
 
           const occupation =
             row[occupationIndex] || "";
 
+
           const city =
             row[cityIndex] || "";
+
 
           const achievement =
             row[achievementIndex] || "";
 
+
           const message =
             row[messageIndex] || "";
+
 
           const photo =
             row[photoIndex] || "";
@@ -832,6 +979,7 @@
           const card =
             document.createElement("div");
 
+
           card.className =
             "dynamic-alumni-card";
 
@@ -839,9 +987,13 @@
           /* Photo */
 
           let photoHTML = `
+
             <div class="dynamic-alumni-placeholder">
+
               🎓
+
             </div>
+
           `;
 
 
@@ -870,13 +1022,21 @@
 
 
             photoHTML = `
+
               <img
+
                 src="${photoUrl}"
+
                 alt="${name}"
+
                 class="dynamic-alumni-photo"
+
                 loading="lazy"
+
                 onerror="this.style.display='none';"
+
               >
+
             `;
 
           }
@@ -886,65 +1046,95 @@
 
             ${photoHTML}
 
+
             <h3>
+
               ${name}
+
             </h3>
 
+
             <div class="dynamic-alumni-batch">
+
               🎓 Batch: ${batch}
+
             </div>
 
 
             ${
               occupation
               ? `
+
                 <div class="dynamic-alumni-info">
+
                   💼 <strong>Occupation:</strong>
+
                   ${occupation}
+
                 </div>
+
               `
               : ""
+
             }
 
 
             ${
               city
               ? `
+
                 <div class="dynamic-alumni-info">
+
                   📍 <strong>Place:</strong>
+
                   ${city}
+
                 </div>
+
               `
               : ""
+
             }
 
 
             ${
               achievement
               ? `
+
                 <div class="dynamic-alumni-info">
+
                   🏆 <strong>Achievement:</strong><br>
+
                   ${achievement}
+
                 </div>
+
               `
               : ""
+
             }
 
 
             ${
               message
               ? `
+
                 <div class="dynamic-alumni-message">
+
                   “${message}”
+
                 </div>
+
               `
               : ""
+
             }
 
           `;
 
 
           container.appendChild(card);
+
 
         });
 
@@ -954,15 +1144,19 @@
         if (container.children.length === 0) {
 
           container.innerHTML = `
+
             <div class="alumni-loading">
+
               अभी कोई Alumni profile प्रकाशित नहीं की गई है।
+
             </div>
+
           `;
 
         }
 
-      }
 
+      }
 
       catch (error) {
 
@@ -973,9 +1167,13 @@
 
 
         container.innerHTML = `
+
           <div class="alumni-loading">
+
             Alumni information अभी उपलब्ध नहीं है।
+
           </div>
+
         `;
 
       }
@@ -1003,6 +1201,7 @@
         i < text.length;
         i++
       ) {
+
 
         const char = text[i];
 
@@ -1047,6 +1246,7 @@
            char === "\r") &&
           !insideQuotes
         ) {
+
 
           if (
             char === "\r" &&
