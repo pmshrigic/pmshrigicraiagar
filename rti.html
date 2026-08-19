@@ -1,1 +1,1277 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RTI Corner | PM SHRI GIC Raiagar</title>
+
+<style>
+
+/* ==============================
+   BASIC
+================================ */
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family:"Noto Sans Devanagari",
+                "Mangal",
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+    background:#f4f7fb;
+    color:#263238;
+}
+
+
+/* ==============================
+   HEADER
+================================ */
+
+.rti-header{
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #073b8c,
+        #1565c0
+    );
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:42px 20px 35px;
+
+    overflow:hidden;
+}
+
+
+/* TRICOLOR TOP LINE */
+
+.rti-header::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:7px;
+
+    background:
+    linear-gradient(
+        to right,
+        #ff9933 0%,
+        #ff9933 33.33%,
+        #ffffff 33.33%,
+        #ffffff 66.66%,
+        #138808 66.66%,
+        #138808 100%
+    );
+}
+
+
+.rti-icon{
+
+    font-size:52px;
+
+    margin-bottom:5px;
+}
+
+
+.rti-header h1{
+
+    margin:5px 0 8px;
+
+    font-size:34px;
+
+    font-weight:800;
+}
+
+
+.rti-header p{
+
+    margin:6px 0;
+
+    font-size:16px;
+
+    line-height:1.6;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+================================ */
+
+.rti-container{
+
+    width:92%;
+
+    max-width:1150px;
+
+    margin:30px auto;
+}
+
+
+/* ==============================
+   INTRODUCTION
+================================ */
+
+.rti-intro{
+
+    background:#ffffff;
+
+    padding:27px;
+
+    border-radius:18px;
+
+    border-left:6px solid #1565c0;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom:28px;
+}
+
+
+.rti-intro h2{
+
+    margin-top:0;
+
+    color:#0b3d91;
+
+    font-size:25px;
+}
+
+
+.rti-intro p{
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+
+/* ==============================
+   MAIN BUTTONS
+================================ */
+
+.rti-main-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:18px;
+
+    margin-bottom:30px;
+}
+
+
+.rti-btn{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    padding:22px 15px;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    line-height:1.6;
+
+    box-shadow:
+    0 5px 16px rgba(0,0,0,.13);
+
+    transition:
+    transform .25s,
+    box-shadow .25s;
+}
+
+
+.rti-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18);
+}
+
+
+.apply{
+
+    background:
+    linear-gradient(
+        135deg,
+        #08752e,
+        #138808
+    );
+}
+
+
+.appeal{
+
+    background:
+    linear-gradient(
+        135deg,
+        #e65100,
+        #ff9800
+    );
+}
+
+
+.status{
+
+    background:
+    linear-gradient(
+        135deg,
+        #1565c0,
+        #2196f3
+    );
+}
+
+
+.commission{
+
+    background:
+    linear-gradient(
+        135deg,
+        #512da8,
+        #7e57c2
+    );
+}
+
+
+/* ==============================
+   OFFICER SECTION
+================================ */
+
+.officer{
+
+    background:#ffffff;
+
+    padding:27px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom:28px;
+}
+
+
+.officer h2{
+
+    margin-top:0;
+
+    color:#0b3d91;
+
+    font-size:25px;
+}
+
+
+.officer-box{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(290px,1fr)
+    );
+
+    gap:20px;
+}
+
+
+.officer-item{
+
+    background:#f3f7ff;
+
+    padding:22px;
+
+    border-radius:14px;
+
+    border:1px solid #dbe7f7;
+
+    line-height:1.9;
+}
+
+
+.officer-item strong{
+
+    display:block;
+
+    color:#1565c0;
+
+    font-size:19px;
+
+    margin-bottom:10px;
+}
+
+
+.officer-item b{
+
+    color:#263238;
+}
+
+
+/* ==============================
+   INFORMATION CARDS
+================================ */
+
+.rti-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(270px,1fr)
+    );
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+
+.rti-card{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    border-top:5px solid #1565c0;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.07);
+}
+
+
+.rti-card h3{
+
+    margin-top:0;
+
+    color:#0b3d91;
+
+    font-size:20px;
+}
+
+
+.rti-card p{
+
+    line-height:1.8;
+}
+
+
+.rti-card li{
+
+    line-height:1.8;
+
+    margin-bottom:5px;
+}
+
+
+.rti-card ul{
+
+    padding-left:21px;
+}
+
+
+.rti-link{
+
+    display:inline-block;
+
+    margin-top:8px;
+
+    color:#1565c0;
+
+    font-weight:700;
+
+    text-decoration:none;
+}
+
+
+.rti-link:hover{
+
+    text-decoration:underline;
+}
+
+
+/* ==============================
+   DOCUMENT SECTION
+================================ */
+
+.documents{
+
+    background:#ffffff;
+
+    padding:27px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom:28px;
+}
+
+
+.documents h2{
+
+    margin-top:0;
+
+    color:#0b3d91;
+
+    font-size:25px;
+}
+
+
+.doc-link{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:#f5f8fc;
+
+    color:#263238;
+
+    text-decoration:none;
+
+    padding:16px 18px;
+
+    margin:11px 0;
+
+    border-radius:11px;
+
+    font-weight:600;
+
+    border:1px solid #e2eaf5;
+
+    transition:.2s;
+}
+
+
+.doc-link:hover{
+
+    background:#e6f0ff;
+
+    color:#0b3d91;
+
+    transform:translateX(3px);
+}
+
+
+/* ==============================
+   IMPORTANT NOTE
+================================ */
+
+.rti-note{
+
+    background:#fff8e1;
+
+    border-left:6px solid #ff9800;
+
+    padding:22px;
+
+    border-radius:12px;
+
+    line-height:1.9;
+
+    margin-bottom:28px;
+}
+
+
+.rti-note strong{
+
+    color:#8a4b00;
+}
+
+
+.rti-note a{
+
+    color:#1565c0;
+
+    font-weight:700;
+
+    word-break:break-word;
+}
+
+
+/* ==============================
+   OFFICIAL LINK CARDS
+================================ */
+
+.portal-card{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.08);
+}
+
+
+.portal-card h3{
+
+    margin-top:0;
+
+    color:#0b3d91;
+}
+
+
+.portal-card p{
+
+    line-height:1.8;
+}
+
+
+.portal-button{
+
+    display:inline-block;
+
+    padding:12px 20px;
+
+    border-radius:9px;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    margin-top:5px;
+}
+
+
+.blue-button{
+
+    background:#1565c0;
+}
+
+
+.purple-button{
+
+    background:#5e35b1;
+}
+
+
+.portal-button:hover{
+
+    opacity:.9;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+.rti-footer{
+
+    background:#0b3d91;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    line-height:1.8;
+
+    margin-top:35px;
+}
+
+
+.rti-footer strong{
+
+    font-size:17px;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media(max-width:600px){
+
+    .rti-header{
+
+        padding:35px 15px 28px;
+    }
+
+
+    .rti-header h1{
+
+        font-size:25px;
+    }
+
+
+    .rti-header p{
+
+        font-size:14px;
+    }
+
+
+    .rti-icon{
+
+        font-size:43px;
+    }
+
+
+    .rti-container{
+
+        width:94%;
+
+        margin-top:20px;
+    }
+
+
+    .rti-intro,
+    .officer,
+    .documents,
+    .rti-card,
+    .portal-card{
+
+        padding:20px;
+    }
+
+
+    .rti-intro h2,
+    .officer h2,
+    .documents h2{
+
+        font-size:22px;
+    }
+
+
+    .rti-btn{
+
+        font-size:16px;
+
+        padding:18px 12px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="rti-header">
+
+    <div class="rti-icon">
+        📜
+    </div>
+
+    <h1>
+        सूचना का अधिकार (RTI) Corner
+    </h1>
+
+    <p>
+        <strong>
+            PM SHRI Government Inter College Raiagar
+        </strong>
+    </p>
+
+    <p>
+        बेरीनाग, पिथौरागढ़, उत्तराखण्ड
+    </p>
+
+    <p>
+        Right to Information Act, 2005
+    </p>
+
+</header>
+
+
+
+<div class="rti-container">
+
+
+<!-- ==================================================
+     INTRODUCTION
+================================================== -->
+
+<section class="rti-intro">
+
+    <h2>
+        📖 सूचना का अधिकार
+    </h2>
+
+    <p>
+        सूचना का अधिकार अधिनियम, 2005 नागरिकों को लोक प्राधिकरणों
+        के नियंत्रण में उपलब्ध अभिलेखों एवं सूचनाओं को प्राप्त करने
+        का महत्वपूर्ण अधिकार प्रदान करता है।
+    </p>
+
+    <p>
+        PM SHRI राजकीय इंटर कॉलेज राईआगर से संबंधित सूचना प्राप्त
+        करने के लिए नागरिक निर्धारित प्रक्रिया के अनुसार RTI आवेदन
+        प्रस्तुत कर सकते हैं।
+    </p>
+
+    <p>
+        ऑनलाइन RTI आवेदन, प्रथम अपील तथा निर्धारित शुल्क के ऑनलाइन
+        भुगतान के लिए उत्तराखण्ड सरकार के आधिकारिक RTI Online Portal
+        का उपयोग किया जा सकता है।
+    </p>
+
+</section>
+
+
+
+<!-- ==================================================
+     MAIN BUTTONS
+================================================== -->
+
+<section class="rti-main-buttons">
+
+
+    <!-- ONLINE APPLICATION -->
+
+    <a
+        class="rti-btn apply"
+        href="https://rtionline.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        📝<br>
+
+        ऑनलाइन RTI आवेदन करें
+
+    </a>
+
+
+
+    <!-- FIRST APPEAL -->
+
+    <a
+        class="rti-btn appeal"
+        href="https://rtionline.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        ⚖️<br>
+
+        प्रथम अपील करें
+
+    </a>
+
+
+
+    <!-- STATUS -->
+
+    <a
+        class="rti-btn status"
+        href="https://rtionline.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        🔎<br>
+
+        आवेदन / अपील की स्थिति देखें
+
+    </a>
+
+
+
+    <!-- COMMISSION -->
+
+    <a
+        class="rti-btn commission"
+        href="https://uic.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        🏛️<br>
+
+        उत्तराखण्ड सूचना आयोग
+
+    </a>
+
+</section>
+
+
+
+<!-- ==================================================
+     RTI OFFICERS
+================================================== -->
+
+<section class="officer">
+
+    <h2>
+        👤 RTI अधिकारी
+    </h2>
+
+
+    <div class="officer-box">
+
+
+        <!-- PIO -->
+
+        <div class="officer-item">
+
+            <strong>
+                लोक सूचना अधिकारी (PIO)
+            </strong>
+
+            <span>
+                <b>
+                    श्री भगवती प्रसाद पंत
+                </b>
+            </span>
+
+            <br>
+
+            <span>
+                प्रधानाचार्य
+            </span>
+
+            <br>
+
+            <span>
+                <b>
+                    पी०एम० श्री राजकीय इंटर कॉलेज राईआगर
+                </b>
+            </span>
+
+            <br>
+
+            <span>
+                बेरीनाग, पिथौरागढ़, उत्तराखण्ड
+            </span>
+
+        </div>
+
+
+
+        <!-- FIRST APPELLATE AUTHORITY -->
+
+        <div class="officer-item">
+
+            <strong>
+                प्रथम अपीलीय अधिकारी
+            </strong>
+
+            <span>
+                <b>
+                    श्री भूपेंद्र कुमार
+                </b>
+            </span>
+
+            <br>
+
+            <span>
+                खंड शिक्षा अधिकारी, बेरीनाग
+            </span>
+
+            <br>
+
+            <span>
+                पिथौरागढ़, उत्तराखण्ड
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     INFORMATION CARDS
+================================================== -->
+
+<section class="rti-grid">
+
+
+    <!-- HOW TO APPLY -->
+
+    <div class="rti-card">
+
+        <h3>
+            📌 RTI आवेदन कैसे करें?
+        </h3>
+
+        <ul>
+
+            <li>
+                मांगी गई सूचना को स्पष्ट एवं संक्षिप्त रूप में लिखें।
+            </li>
+
+            <li>
+                निर्धारित माध्यम से RTI आवेदन प्रस्तुत करें।
+            </li>
+
+            <li>
+                निर्धारित आवेदन शुल्क का भुगतान करें।
+            </li>
+
+            <li>
+                आवेदन संख्या / पावती सुरक्षित रखें।
+            </li>
+
+            <li>
+                आवेदन की स्थिति ऑनलाइन देखी जा सकती है।
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- ONLINE PAYMENT -->
+
+    <div class="rti-card">
+
+        <h3>
+            💳 ऑनलाइन शुल्क भुगतान
+        </h3>
+
+        <p>
+            RTI आवेदन के लिए निर्धारित शुल्क का ऑनलाइन भुगतान
+            उत्तराखण्ड के आधिकारिक RTI Online Portal के माध्यम से
+            किया जा सकता है।
+        </p>
+
+        <a
+            class="rti-link"
+            href="https://rtionline.uk.gov.in/"
+            target="_blank"
+            rel="noopener"
+        >
+            👉 RTI Online Portal खोलें
+        </a>
+
+    </div>
+
+
+
+    <!-- FIRST APPEAL -->
+
+    <div class="rti-card">
+
+        <h3>
+            ⚖️ प्रथम अपील
+        </h3>
+
+        <p>
+            यदि आवेदक को निर्धारित अवधि में सूचना प्राप्त नहीं होती
+            अथवा सूचना उपलब्ध कराने से संबंधित कोई आपत्ति हो, तो
+            सूचना का अधिकार अधिनियम के प्रावधानों के अनुसार प्रथम
+            अपील प्रस्तुत की जा सकती है।
+        </p>
+
+    </div>
+
+
+
+    <!-- SECOND APPEAL -->
+
+    <div class="rti-card">
+
+        <h3>
+            🏛️ द्वितीय अपील / शिकायत
+        </h3>
+
+        <p>
+            द्वितीय अपील अथवा शिकायत निर्धारित प्रक्रिया के अनुसार
+            उत्तराखण्ड सूचना आयोग के समक्ष प्रस्तुत की जा सकती है।
+        </p>
+
+        <a
+            class="rti-link"
+            href="https://uic.uk.gov.in/"
+            target="_blank"
+            rel="noopener"
+        >
+            👉 उत्तराखण्ड सूचना आयोग
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     IMPORTANT DOCUMENTS
+================================================== -->
+
+<section class="documents">
+
+    <h2>
+        📂 RTI से संबंधित महत्वपूर्ण जानकारी
+    </h2>
+
+
+    <!-- RTI ACT -->
+
+    <a
+        class="doc-link"
+        href="https://www.indiacode.nic.in/handle/123456789/1362"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <span>
+            📄 सूचना का अधिकार अधिनियम, 2005
+        </span>
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+
+
+    <!-- SECTION 4 -->
+
+    <a
+        class="doc-link"
+        href="#"
+        onclick="
+        alert(
+        'यहाँ विद्यालय की धारा 4(1)(b) के अंतर्गत स्वप्रकाशित सूचना की PDF जोड़ी जा सकती है।'
+        );
+        return false;
+        "
+    >
+
+        <span>
+            📑 धारा 4(1)(b) के अंतर्गत स्वप्रकाशित सूचना
+        </span>
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+
+
+    <!-- PIO DETAILS -->
+
+    <a
+        class="doc-link"
+        href="#"
+        onclick="
+        alert(
+        'यहाँ विद्यालय के RTI अधिकारी संबंधी आदेश / अधिसूचना PDF जोड़ी जा सकती है।'
+        );
+        return false;
+        "
+    >
+
+        <span>
+            👤 RTI अधिकारी / नामांकन आदेश
+        </span>
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+
+
+    <!-- COMMISSION -->
+
+    <a
+        class="doc-link"
+        href="https://uic.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <span>
+            🏛️ उत्तराखण्ड सूचना आयोग
+        </span>
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+</section>
+
+
+
+<!-- ==================================================
+     IMPORTANT NOTE
+================================================== -->
+
+<section class="rti-note">
+
+    <strong>
+        ⚠️ महत्वपूर्ण सूचना
+    </strong>
+
+    <br><br>
+
+    ऑनलाइन RTI आवेदन एवं निर्धारित शुल्क के भुगतान के लिए
+    आवेदकों को उत्तराखण्ड सरकार के आधिकारिक RTI Online Portal
+    का उपयोग करना चाहिए।
+
+    <br><br>
+
+    <strong>
+        आधिकारिक RTI Online Portal:
+    </strong>
+
+    <br>
+
+    <a
+        href="https://rtionline.uk.gov.in/"
+        target="_blank"
+        rel="noopener"
+    >
+        https://rtionline.uk.gov.in/
+    </a>
+
+</section>
+
+
+
+<!-- ==================================================
+     OFFICIAL PORTALS
+================================================== -->
+
+<section class="rti-grid">
+
+
+    <!-- UTTARAKHAND RTI -->
+
+    <div class="portal-card">
+
+        <h3>
+            🌐 उत्तराखण्ड RTI Online Portal
+        </h3>
+
+        <p>
+            ऑनलाइन RTI आवेदन, प्रथम अपील तथा उपलब्ध ऑनलाइन
+            शुल्क भुगतान की सुविधा के लिए आधिकारिक पोर्टल।
+        </p>
+
+        <a
+            class="portal-button blue-button"
+            href="https://rtionline.uk.gov.in/"
+            target="_blank"
+            rel="noopener"
+        >
+            Open RTI Portal →
+        </a>
+
+    </div>
+
+
+
+    <!-- INFORMATION COMMISSION -->
+
+    <div class="portal-card">
+
+        <h3>
+            🏛️ उत्तराखण्ड सूचना आयोग
+        </h3>
+
+        <p>
+            सूचना आयोग से संबंधित जानकारी, द्वितीय अपील,
+            शिकायत एवं अन्य महत्वपूर्ण जानकारी के लिए।
+        </p>
+
+        <a
+            class="portal-button purple-button"
+            href="https://uic.uk.gov.in/"
+            target="_blank"
+            rel="noopener"
+        >
+            Visit Information Commission →
+        </a>
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="rti-footer">
+
+    <strong>
+        PM SHRI Government Inter College Raiagar
+    </strong>
+
+    <br>
+
+    बेरीनाग, पिथौरागढ़, उत्तराखण्ड
+
+    <br><br>
+
+    RTI Corner | Right to Information Act, 2005
+
+</footer>
+
+
+</body>
+              </html>
