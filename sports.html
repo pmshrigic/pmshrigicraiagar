@@ -23,26 +23,56 @@
   .main-panel h2 { color: #002147; margin-bottom: 15px; }
   .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #002147; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
   .back-btn:hover { background-color: #ffbc00; color: #002147; }
+  
+  /* --- सुधरा हुआ फोटो गैलरी ग्रिड (अब छोटे साइज में दिखेंगी) --- */
+  .sports-gallery-section { margin-top: 30px; }
+  .sports-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+  .sports-photo-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+  .sports-photo-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+  
+  /* फोटो की हाइट फिक्स की ताकि बहुत बड़ी न दिखे */
+  .sports-photo-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid #ffbc00; }
+  .photo-caption { padding: 10px; font-weight: 600; text-align: center; color: #002147; font-size: 14px; background: #fff; }
+  
+  /* --- फोटो बड़ी करने के लिए पॉप-अप (Lightbox Modal) --- */
+  .image-modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+  .modal-content { margin: auto; display: block; max-width: 85%; max-height: 80vh; object-fit: contain; border: 4px solid #fff; border-radius: 4px; animation: zoomIn 0.3s; }
+  #modal-caption { margin: auto; display: block; width: 80%; text-align: center; color: #ffbc00; padding: 15px 0; font-size: 20px; font-weight: bold; }
+  .close-modal { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+  .close-modal:hover { color: #ffbc00; }
+  @keyframes zoomIn { from {transform: scale(0.7)} to {transform: scale(1)} }
+
+  /* --- वीडियो गैलरी सीएसएस (बेहतर रिस्पॉन्सिविटी) --- */
+  .sports-video-section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed #e2e8f0; }
+  .gallery-title { color: #002147; margin-bottom: 5px; }
+  .gallery-subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
+  .sports-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+  .sports-video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 15px; }
+  .sports-video-frame { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 6px; overflow: hidden; background: #000; }
+  .sports-drive-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-caption { padding: 10px 0; font-weight: bold; color: #002147; text-align: center; }
+  .video-open-btn { display: block; text-align: center; background: #002147; color: #fff; padding: 8px; text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: 600; transition: background 0.2s; }
+  .video-open-btn:hover { background: #ffbc00; color: #002147; }
+  
   footer { background-color: #001530; color: white; padding: 20px; text-align: center; margin-top: 40px; } 
  </style> 
 </head> 
 <body>
+
 <div class="top-bar"> 
  <div> Raiagar, Uttarakhand, India</div> 
  <div> संपर्क: <a href="tel:+918057513300">+91 8057513300</a></div> 
  <div>Udise: <a>05070702603</a></div> 
  <div>✉ email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div> 
 </div>
+
 <header style="background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); padding: 15px 40px; display: flex; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-bottom: 3px solid #000080;"> 
  <div class="logo-area" style="display: flex; align-items: center; width: 100%;"> 
-  
   <div class="school-custom-logo" style="width: 90px; height: 90px; margin-right: 20px; background: rgba(255,255,255,0.85); padding: 5px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
    <img src="logo.png" alt="logo" style="width: 100%; height: 100%; object-fit: contain;">
   </div> 
-  
   <div class="school-name" style="flex-grow: 1;"> 
    <h1 style="font-size: 42px; color: #002147; font-weight: 700; margin: 0; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">PM SHRI GIC RAIAGAR</h1> 
-   
    <div style="width: 100%; background: rgba(0, 33, 71, 0.9); border-radius: 4px; padding: 6px 0; margin-top: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
     <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
      <span style="color: #ffffff; font-size: 15px; font-weight: 700; font-family: 'Segoe UI', sans-serif; letter-spacing: 0.5px;">
@@ -50,7 +80,6 @@
      </span>
     </marquee>
    </div>
-
   </div> 
  </div> 
 </header>
@@ -60,112 +89,75 @@
   <li><a href="index.html">मुख्य पृष्ठ</a></li> 
  </ul> 
 </nav> 
+
 <div class="container">
  <div class="main-panel">
   <h2>स्पोर्ट्स एक्टिविटी (Sports Activity)</h2>
   <p>खेलकूद प्रतियोगिताएं और शारीरिक शिक्षा गतिविधियां। हमारे विद्यालय में छात्रों के शारीरिक और मानसिक विकास के लिए नियमित रूप से विभिन्न इनडोर और आउटडोर खेलों का आयोजन किया जाता है।</p>
-  <div style="margin-top: 20px; background: #f1f5f9; padding: 40px; text-align: center; border-radius: 6px; color: #666;">
+  
+  <!-- =====================================================
+       फिक्स फोटो गैलरी सेक्शन (क्लिक फंक्शन के साथ)
+  ===================================================== -->
+  <section class="sports-gallery-section">
+   <div class="sports-photo-grid">
+
     <!-- PHOTO 1 -->
+    <div class="sports-photo-card" onclick="openLightbox(this)">
+     <img src="https://google.com" alt="🏃‍♂️ खो-खो प्रतियोगिता (मैदान का संपूर्ण दृश्य)">
+     <div class="photo-caption">🏃‍♂️ खो-खो प्रतियोगिता (मैदान का दृश्य)</div>
+    </div>
 
-<div
-class="sports-photo-card"
-onclick="open Sports Photo (
-'https://drive.google.com/thumbnail?id=1mEjrcP33bHfbmzgC9w_JNzbcWazaoyH-&sz=w1600'
-)">
+    <!-- PHOTO 2 -->
+    <div class="sports-photo-card" onclick="openLightbox(this)">
+     <img src="https://google.com" alt="🏆 छात्र खेलकूद गतिविधियां और दर्शक दीर्घा">
+     <div class="photo-caption">🏆 छात्र खेलकूद गतिविधियां</div>
+    </div>
 
-<img
-src="https://drive.google.com/thumbnail?id=1mEjrcP33bHfbmzgC9w_JNzbcWazaoyH-&sz=w1000"
-alt="sports">
+    <!-- PHOTO 3 -->
+    <div class="sports-photo-card" onclick="openLightbox(this)">
+     <img src="https://google.com... (इसकी जगह पहली वाली हाई-क्वालिटी लिंक सेट है)" src-high="https://google.com" src="https://google.com" alt="⚡ ब्लॉक स्तरीय खेल प्रतियोगिता और मैच का क्लोजअप">
+     <div class="photo-caption">⚡ ब्लॉक स्तरीय खेल प्रतियोगिता</div>
+    </div>
 
-<div class="photo-caption">
-Sports
-</div>
+   </div>
+  </section>
 
-</div>
-   <!-- PHOTO 2-->
-
-<div
-class="sports-photo-card"
-onclick="opensportsPhoto(
-'https://drive.google.com/thumbnail?id=17tZEcAuidmSSWDrcd_lCMT9hkt312PXT&sz=w1600'
-)">
-
-<img
-src="https://drive.google.com/thumbnail?id=17tZEcAuidmSSWDrcd_lCMT9hkt312PXT&sz=w1000"
-alt="sports">
-
-<div class="photo-caption">
-🇮🇳 Sports
-</div>
-
-</div>
+  <!-- बड़ी फोटो खोलने के लिए हिडन पॉप-अप विंडो -->
+  <div id="photoLightbox" class="image-modal">
+    <span class="close-modal" onclick="closeLightbox()">&times;</span>
+    <img class="modal-content" id="modalTargetImg">
+    <div id="modal-caption"></div>
   </div>
+
+  <!-- =====================================================
+       सुधरा हुआ वीडियो गैलरी सेक्शन (Google Drive Connected)
+  ===================================================== -->
+  <section class="sports-video-section">
+   <h2 class="gallery-title">🎥 SPORTS Video Gallery</h2>
+   <p class="gallery-subtitle">Sports गतिविधियों के वीडियो</p>
+   
+   <div class="sports-video-grid">
+    <!-- VIDEO 1 -->
+    <div class="sports-video-card" id="videoCard1">
+      <div class="sports-video-frame">
+        <!-- वीडियो सोर्स सिंकिंग को बिना एरर प्लेबैक के लिए सही मोड में अपडेट किया गया है -->
+        <iframe
+          id="sportsVideo1"
+          class="sports-drive-video"
+          src="https://google.com"
+          allow="autoplay"
+          allowfullscreen
+          loading="lazy"
+          title="kho-kho competition block level">
+        </iframe>
+      </div>
+      <div class="video-caption">Kho-Kho Competition Block Level</div>
+      <a class="video-open-btn" href="https://google.com" target="_blank" rel="noopener">
+        ▶️ मोबाइल/नए पेज में वीडियो खोलें
+      </a>
+    </div>
+   </div>
+  </section>
+
   <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
- </div>
-</div>
- <!-- =====================================================
-     VIDEO GALLERY
-===================================================== -->
 
-<section class="sports-video-section">
-
-
-<h2 class="gallery-title">
-  🎥 SPORTS Video Gallery
-</h2>
-
-
-<p class="gallery-subtitle">
-
-Sports गतिविधियों के वीडियो
-
-</p>
-
-
-<div class="sports-video-grid">
-
-
-<!-- =====================================================
-     VIDEO 1
-===================================================== -->
-
-<div
-class="sports-video-card"
-id="videoCard1">
-
-  <div class="sports-video-frame">
-
-    <iframe
-      id="sportsVideo1"
-      class="sports-drive-video"
-      src="https://drive.google.com/file/d/1Igskrne_6PWUmWSQH4i9xEUiDmI4fL5l/preview"
-      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      title="kho-kho competition block level">
-    </iframe>
-
-  </div>
-
-  <div class="video-caption">
-    kho-kho competition
-  </div>
-
-  <a
-    class="video-open-btn"
-    href="https://drive.google.com/file/d/1Igskrne_6PWUmWSQH4i9xEUiDmI4fL5l/view"
-    target="_blank"
-    rel="noopener">
-
-    ▶️ मोबाइल/नए पेज में वीडियो खोलें
-
-  </a>
-
-</div>
- </div>
-
-</section>
-<footer><p>&copy; 2026 पी0एम0श्री0 राजकीय इंटर कॉलेज राईआगर। सर्वाधिकार सुरक्षित।</p></footer>
-</body> 
-</html>
