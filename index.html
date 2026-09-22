@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://pmshrigicraiagar.com">
 <meta name="robots" content="index, follow">
 <style>
-/* === BASIC RESET === */
+/* === BASIC === */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -160,7 +160,9 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+</style>
+</head>
+<style>
 /* === HERO SCREEN === */
 .hero {
     background: #002147;
@@ -198,7 +200,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
     display: block;
 }
 
-/* === SLIDER (FIXED DOUBLE VIEW) === */
+/* === TREE SLIDER === */
 .tree-slider {
     max-width: 1100px;
     margin: 30px auto;
@@ -210,7 +212,7 @@ nav ul li a:hover, .dropdown:hover .dropbtn {
 }
 .slider {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* डेस्कटॉप पर डबल कॉपी फिक्स */
     gap: 12px;
 }
 .slider img {
@@ -484,6 +486,17 @@ footer {
     }
 }
 </style>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div>Raiagar, Uttarakhand, India</div>
+    <div>संपर्कः <a href="tel:+918057513300">+91 8057513300</a></div>
+    <div>Udise: <a href="#">05070702603</a></div>
+    <div>Email: <a href="mailto:principal.gic.raiagar@gmail.com">principal.gic.raiagar@gmail.com</a></div>
+</div>
+
+<!-- TRICOLOR HEADER -->
 <header class="school-header">
     <div class="school-header-inner">
         <div class="school-custom-logo">
@@ -492,12 +505,13 @@ footer {
         <div class="school-name">
             <h1>PM SHRI GIC RAIAGAR</h1>
             <div class="header-tagline">
-                PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा संस्कार नवाचार
+                22 PM SHRI GIC Raiagar | Empowering Young Minds for Viksit Bharat @2047 | सत्यमेव जयते | शिक्षा संस्कार नवाचार
             </div>
         </div>
     </div>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
     <ul>
         <li><a id="tab-home" class="active-tab" onclick="switchTab(event, 'home-section')">मुख्य पृष्ठ</a></li>
@@ -507,41 +521,92 @@ footer {
     </ul>
 </nav>
 
+<!-- MAIN CONTAINER -->
 <div class="container">
     <div class="main-panel">
-        <!-- मुख्य पृष्ठ (Home Section) का कंटेंट यहाँ आएगा -->
-        <div id="home-section" class="page-section active-section">
-            <p>वेबसाइट के मुख्य कंटेंट को यहाँ जोड़ें।</p>
-        </div>
         
-        <!-- स्कूल स्टाफ (Staff Section) का कंटेंट यहाँ आएगा -->
+        <!-- HOME SECTION -->
+        <div id="home-section" class="page-section active-section">
+            
+            <!-- SPORTS NOTICE -->
+            <div class="sports-notice-box">
+                <div class="sports-notice-header">
+                    <span class="bell-icon">🔔</span>
+                    <strong>खेलकूद प्रतियोगिता सूचना</strong>
+                </div>
+                <div class="sports-notice-body">
+                    <p>विद्यालय के सभी छात्र-छात्राओं को सूचित किया जाता है कि आगामी खेलकूद प्रतियोगिता के पंजीकरण शुरू हो चुके हैं।</p>
+                    <div class="sports-criteria-info">
+                        <strong>पात्रता मानदंड:</strong>
+                        <ul>
+                            <li>नियमित छात्र होना अनिवार्य है।</li>
+                            <li>शारीरिक रूप से स्वस्थ होना चाहिए।</li>
+                        </ul>
+                    </div>
+                    <p class="sports-alert-text">*कृपया ध्यान दें: अंतिम तिथि के बाद कोई भी आवेदन स्वीकार नहीं किया जाएगा।</p>
+                    <a href="#" class="sports-reg-btn">अभी पंजीकरण करें</a>
+                </div>
+            </div>
+
+            <!-- IMAGE SLIDER STRUCTURE -->
+            <div class="tree-slider">
+                <h2>विद्यालय की झलकियां</h2>
+                <div class="slider">
+                    <!-- Add your slider images here -->
+                    <img src="slider1.jpg" alt="School Campus" class="active">
+                    <img src="slider2.jpg" alt="Students">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STAFF SECTION (HIDDEN BY DEFAULT) -->
         <div id="staff-section" class="page-section">
-            <h3>Our School Family</h3>
-            <p>स्टाफ सदस्यों की सूची यहाँ जोड़ें।</p>
+            <h2>School Family</h2>
+            <p>हमारे समर्पित शिक्षक एवं स्टाफ सदस्यों की सूची शीघ्र ही अपडेट की जाएगी।</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- IMPORTANT WEB ADDRESSES -->
+<div class="important-links">
+    <div class="links-container">
+        <h2>महत्वपूर्ण लिंक्स</h2>
+        <div class="links-subtitle">आवश्यक विभागीय वेबसाइट्स एवं पते</div>
+        <div class="links-grid">
+            <a href="https://uk.gov.in" target="_blank">उत्तराखंड शिक्षा विभाग</a>
+            <a href="https://uk.gov.in" target="_blank">उत्तरा学校 बोर्ड (UBSE)</a>
+            <a href="https://uk.gov.in" target="_blank">प्रारंभिक शिक्षा निदेशालय</a>
         </div>
     </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
     <p>&copy; 2026 PM SHRI GIC Raiagar. All Rights Reserved.</p>
 </footer>
 
+<!-- NAVIGATION SCRIPT -->
 <script>
-// टैब बदलने (मेनु नेविगेशन) के लिए बेसिक जावास्क्रिप्ट फंक्शन
 function switchTab(event, sectionId) {
-    event.preventDefault();
+    if(event) event.preventDefault();
     
-    // सभी सेक्शन्स को छुपाएं
+    // Hide all sections
     const sections = document.querySelectorAll('.page-section');
     sections.forEach(section => section.classList.remove('active-section'));
     
-    // सभी टैब्स से एक्टिव क्लास हटाएं
+    // Remove active class from all navigation links
     const tabs = document.querySelectorAll('nav ul li a');
     tabs.forEach(tab => tab.classList.remove('active-tab'));
     
-    // चुने गए सेक्शन और टैब को एक्टिव करें
-    document.getElementById(sectionId).classList.add('active-section');
-    event.target.classList.add('active-tab');
+    // Show current section and highlight current tab
+    const activeSection = document.getElementById(sectionId);
+    if(activeSection) activeSection.classList.add('active-section');
+    
+    if(event && event.target) {
+        event.target.classList.add('active-tab');
+    }
 }
 </script>
 
