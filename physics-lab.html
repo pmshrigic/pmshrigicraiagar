@@ -89,17 +89,90 @@
   <div style="margin-top: 20px; background: #f1f5f9; padding: 40px; text-align: center; border-radius: 6px; color: #666;">
     [यहाँ भौतिक विज्ञान लैब की तस्वीरें जोड़ें]
   </div>
-  <div class="main-container">
+ <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM SHRI GIC RAIAGAR - PHYSICS LAB</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 15px;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        /* मोबाइल पर सिंगल क्लिक सपोर्ट के लिए रिस्पॉन्सिव वीडियो रैपर */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            pointer-events: auto; /* मोबाइल टच को तुरंत रिस्पॉन्ड करने के लिए */
+        }
+        .video-info {
+            padding: 15px;
+        }
+        .video-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .video-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
     <h2>PM SHRI GIC RAIAGAR - PHYSICS LAB VIDEO GALLERY</h2>
     
     <div class="video-grid">
         
-        <!-- VIDEO CARD 1 (Aapki Pehli Video) -->
+        <!-- VIDEO CARD 1 -->
         <div class="video-card">
             <div class="video-wrapper">
+                <!-- मोबाइल में डायरेक्ट प्ले के लिए 'allow' और सही Google Drive Embed लिंक -->
                 <iframe 
                     src="https://drive.google.com/file/d/1FOdWJ5YUrF4iRTKVFi9g_jjfmlrCyIaS/preview" 
-                    allow="autoplay; encrypted-media picture-in-picture" 
+                    allow="autoplay; encrypted-media; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
@@ -108,6 +181,12 @@
                 <p class="video-desc">Is video me aap Physics practical ke upkaran (apparatus) aur prayog karne ki vidhi dekh sakte hain.</p>
             </div>
         </div>
+
+    </div>
+</div>
+
+</body>
+</html>
 
   <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
  </div>
