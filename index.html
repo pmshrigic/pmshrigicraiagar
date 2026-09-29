@@ -1236,10 +1236,150 @@ border-left:5px solid #002147;
 
 </p>
 
-</div>
+</div> 
 
 </div>
+<!-- Helpline Container Starts -->
+<style>
+  .helpline-widget {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 450px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 15px auto;
+  }
 
+  .helpline-header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .helpline-header h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .helpline-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #0284c7;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .helpline-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .helpline-item.mental { border-left-color: #0284c7; }
+  .helpline-item.drug { border-left-color: #dc2626; }
+  .helpline-item.women { border-left-color: #d946ef; }
+  .helpline-item.child { border-left-color: #f59e0b; }
+
+  .helpline-icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+
+  .helpline-details {
+    flex-grow: 1;
+  }
+
+  .helpline-title {
+    font-weight: 600;
+    color: #334155;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .helpline-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .helpline-number:hover {
+    color: #0284c7;
+    text-decoration: underline;
+  }
+
+  .call-btn {
+    background-color: #22c55e;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .call-btn:hover {
+    background-color: #16a34a;
+  }
+</style>
+
+<div class="helpline-widget">
+  <div class="helpline-header">
+    <h3>Uttarakhand Emergency & Support Helplines</h3>
+  </div>
+
+  <!-- Tele-MANAS (Mental Health) -->
+  <div class="helpline-item mental">
+    <div class="helpline-icon">🧠</div>
+    <div class="helpline-details">
+      <div class="helpline-title">Tele-MANAS (Mental Health Support)</div>
+      <a href="tel:14416" class="helpline-number">14416</a> / 
+      <a href="tel:18008914416" class="helpline-number">1800-891-4416</a>
+    </div>
+    <a href="tel:14416" class="call-btn">Call</a>
+  </div>
+
+  <!-- Drug Abuse Helpline -->
+  <div class="helpline-item drug">
+    <div class="helpline-icon">🚫</div>
+    <div class="helpline-details">
+      <div class="helpline-title">National De-Addiction / Drug Abuse</div>
+      <a href="tel:1933" class="helpline-number">1933</a> / 
+      <a href="tel:1800110031" class="helpline-number">1800-110-031</a>
+    </div>
+    <a href="tel:1933" class="call-btn">Call</a>
+  </div>
+
+  <!-- Women Helpline -->
+  <div class="helpline-item women">
+    <div class="helpline-icon">👩</div>
+    <div class="helpline-details">
+      <div class="helpline-title">Uttarakhand Women Helpline</div>
+      <a href="tel:1090" class="helpline-number">1090</a> / 
+      <a href="tel:181" class="helpline-number">181</a>
+    </div>
+    <a href="tel:1090" class="call-btn">Call</a>
+  </div>
+
+  <!-- Child Helpline -->
+  <div class="helpline-item child">
+    <div class="helpline-icon">👶</div>
+    <div class="helpline-details">
+      <div class="helpline-title">Child Helpline (School Students)</div>
+      <a href="tel:1098" class="helpline-number">1098</a>
+    </div>
+    <a href="tel:1098" class="call-btn">Call</a>
+  </div>
+</div>
+<!-- Helpline Container Ends -->
 
 <!-- NOTICE BOARD -->
 
